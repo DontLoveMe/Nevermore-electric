@@ -124,14 +124,27 @@
             _detectorLabel.text = @"探测器: 正常";
             
             _dispatchLabel.text = @"通讯:正常";
+        }else
+        {
+        
+            _detectorLabel.textColor = [UIColor redColor];
+            
+            _dispatchLabel.textColor = [UIColor redColor];
+            
+            _detectorLabel.text = @"探测器: 异常";
+            
+            _dispatchLabel.text = @"通讯:异常";
         }
         
         _addressLabel.text=[NSString stringWithFormat:@"%@%@",[rootDic objectForKey:@"orgName"],[dic objectForKey:@"boxName"]];
         
-        _tempytureLabel.text = [NSString stringWithFormat:@"温度:%@",[dic objectForKey:@"temperature"]];
+//        _tempytureLabel.text = [NSString stringWithFormat:@"温度:%@",[dic objectForKey:@"temperature"]];
+//        
+//        _currentLabel.text = [NSString stringWithFormat:@"剩余电流:%@",[dic objectForKey:@"current"]];
         
-        _currentLabel.text = [NSString stringWithFormat:@"剩余电流:%@",[dic objectForKey:@"current"]];
+       _tempytureLabel.text = @"温度:38.5°C";
         
+       _currentLabel.text = @"剩余电量:1A";
         
     } failure:^(NSError *error) {
         
@@ -198,6 +211,8 @@
     _detectorLabel.font = [UIFont boldSystemFontOfSize:15];
     
     _detectorLabel.textColor = [UIColor whiteColor];
+    
+   
     
     [self.view addSubview:_detectorLabel];
     
@@ -318,6 +333,9 @@
 {
 
     HistoryAlarmController *VC = [[HistoryAlarmController alloc]init];
+    
+    VC.boxIDD=_boxID;
+    
     
     [self.navigationController pushViewController:VC animated:YES];
 

@@ -20,7 +20,7 @@
 //报警详情（图标）
 #define WarnningDetailURL @"/eps/monitor/history/barchart"
 //配电箱历史报警列表
-#define WarnningHistoryListURL @"/eps/ monitor/history/box/list"
+#define WarnningHistoryListURL @"/eps/monitor/history/box/list"
 
 /*--------------电箱------------------*/
 //配电箱列表

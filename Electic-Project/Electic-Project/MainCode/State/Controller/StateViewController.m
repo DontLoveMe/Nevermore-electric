@@ -26,9 +26,16 @@ static NSString *headerViewIdentifier = @"hederview";
 
     UICollectionView *_collectionView;
     
-    NSMutableArray *_dataArray1;
+    //组数
+    NSMutableArray *_dataArray;
+    
+    
+    
+    //存储item个数的数组
+    NSMutableArray *_itemArray;
     
     NSMutableArray *_dataArray2;
+
     
     MyOneModel *_model;
  
@@ -62,10 +69,11 @@ static NSString *headerViewIdentifier = @"hederview";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _dataArray1 = [NSMutableArray array];
+    _dataArray = [NSMutableArray array];
+
+    _itemArray = [NSMutableArray array];
     
     _dataArray2 = [NSMutableArray array];
-
     
     self.title = @"配电箱";
     
@@ -113,8 +121,6 @@ static NSString *headerViewIdentifier = @"hederview";
     
     NSDictionary *userDic = [defaults objectForKey:@"userDic"];
     
-    
-    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [params setObject:[userDic objectForKey:@"staffId"] forKey:@"staffId"];
@@ -125,39 +131,34 @@ static NSString *headerViewIdentifier = @"hederview";
             params:params
            success:^(id json) {
                
+            
+        
+                   
+               _dataArray = [json objectForKey:@"data"];
                
-               NSArray *rootArray = [json objectForKey:@"data"];
                
+             
+               for (NSDictionary *rootdic in _dataArray) {
+                   
+                  
+                   NSArray *array = [rootdic objectForKey:@"boxs"];
+                   
                
-               for (NSDictionary *rootDic in rootArray) {
-                   
-                   _model = [[MyOneModel alloc]init];
-                   
-                 [_model setValuesForKeysWithDictionary:rootDic];
-                   
-                 [_dataArray2 addObject:_model];
-                   
-                   NSArray *array = [rootDic objectForKey:@"boxs"];
-                   
-                   
                    for (NSDictionary *dic in array) {
                        
-                       
+                       _model = [[MyOneModel alloc]init];
                        
                        [_model setValuesForKeysWithDictionary:dic];
                        
-                       [_dataArray1 addObject:_model];
+                       [_dataArray2 addObject:_model];
                        
                    }
+                   
                }
                
-              
-              
-               
-    
                
                [_collectionView reloadData];
-
+              
             
            } failure:^(NSError *error) {
            }];
@@ -221,14 +222,19 @@ static NSString *headerViewIdentifier = @"hederview";
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
 
-    return _dataArray2.count;
+    return _dataArray.count;
 
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-
-    return _dataArray1.count;
+    
+    
+    NSArray *arr = [_dataArray[section] objectForKey:@"boxs"];
+    
+    return arr.count;
+    
+    
 
 }
 
@@ -255,9 +261,8 @@ static NSString *headerViewIdentifier = @"hederview";
 
     MyOneHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerViewIdentifier forIndexPath:indexPath];
     
-    MyOneModel *model = _dataArray2[indexPath.section];
     
-    [headerView configCellWithModel:model];
+    headerView.addressLabel.text = [[_dataArray objectAtIndex:indexPath.section] objectForKey:@"orgName"];
     
     return headerView;
  
@@ -266,7 +271,7 @@ static NSString *headerViewIdentifier = @"hederview";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MyOneModel *model = _dataArray1[indexPath.row];
+    MyOneModel *model = _dataArray2[indexPath.row];
     
     
 
@@ -277,7 +282,10 @@ static NSString *headerViewIdentifier = @"hederview";
     
     VC.name = model.boxName;
     
+   
     NSLog(@"%@",VC.boxID);
+    
+    NSLog(@"%@",VC.name);
     
     [self.navigationController pushViewController:VC animated:YES];
     
@@ -289,14 +297,19 @@ static NSString *headerViewIdentifier = @"hederview";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    MyOneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    MyOneModel *model = _dataArray1[indexPath.row];
+        
+        MyOneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        
+        MyOneModel *model = _dataArray2[indexPath.row];
+        
+        [cell configCellWithModel:model];
     
-    [cell configCellWithModel:model];
+        
+        return cell;
     
     
-    return cell;
+   
 
 }
 

@@ -132,9 +132,12 @@
 		DD073A001D10DED500AC5027 /* HistoryAlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD07397E1D10DED500AC5027 /* HistoryAlarmController.m */; };
 		DD073A011D10DED500AC5027 /* StateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739801D10DED500AC5027 /* StateViewController.m */; };
 		DD073A021D10DED500AC5027 /* StateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0739811D10DED500AC5027 /* StateViewController.xib */; };
-		DD073A031D10DED500AC5027 /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739841D10DED500AC5027 /* MyOneModel.m */; };
 		DD073A041D10DED500AC5027 /* MyOneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739871D10DED500AC5027 /* MyOneCollectionViewCell.m */; };
 		DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739891D10DED500AC5027 /* MyOneHeaderView.m */; };
+		FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */; };
+		FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */; };
+		FCE4B8001D114942009996A7 /* MyOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */; };
+		FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8011D114A56009996A7 /* 警告图像.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -303,13 +306,18 @@
 		DD07397F1D10DED500AC5027 /* StateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateViewController.h; sourceTree = "<group>"; };
 		DD0739801D10DED500AC5027 /* StateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateViewController.m; sourceTree = "<group>"; };
 		DD0739811D10DED500AC5027 /* StateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StateViewController.xib; sourceTree = "<group>"; };
-		DD0739831D10DED500AC5027 /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneModel.h; sourceTree = "<group>"; };
-		DD0739841D10DED500AC5027 /* MyOneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneModel.m; sourceTree = "<group>"; };
 		DD0739861D10DED500AC5027 /* MyOneCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneCollectionViewCell.h; sourceTree = "<group>"; };
 		DD0739871D10DED500AC5027 /* MyOneCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneCollectionViewCell.m; sourceTree = "<group>"; };
 		DD0739881D10DED500AC5027 /* MyOneHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneHeaderView.h; sourceTree = "<group>"; };
 		DD0739891D10DED500AC5027 /* MyOneHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneHeaderView.m; sourceTree = "<group>"; };
 		DD07398A1D10DED500AC5027 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTwoModel.h; path = Model/MyTwoModel.h; sourceTree = "<group>"; };
+		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTwoModel.m; path = Model/MyTwoModel.m; sourceTree = "<group>"; };
+		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOneModel.h; path = Model/MyOneModel.h; sourceTree = "<group>"; };
+		FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOneModel.m; path = Model/MyOneModel.m; sourceTree = "<group>"; };
+		FCE4B7FE1D114942009996A7 /* MyOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneTableViewCell.h; sourceTree = "<group>"; };
+		FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneTableViewCell.m; sourceTree = "<group>"; };
+		FCE4B8011D114A56009996A7 /* 警告图像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "警告图像.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -565,6 +573,7 @@
 		DD0738FE1D10DED500AC5027 /* 状态 */ = {
 			isa = PBXGroup;
 			children = (
+				FCE4B8011D114A56009996A7 /* 警告图像.png */,
 				DD0738FF1D10DED500AC5027 /* 剩余电量.png */,
 				DD0739001D10DED500AC5027 /* 探测器.png */,
 				DD0739011D10DED500AC5027 /* 温度.png */,
@@ -892,8 +901,12 @@
 		DD0739781D10DED500AC5027 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */,
+				FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */,
+				FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */,
+				FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */,
+				FC7FC7F11D1151C4008FAB7D /* Model */,
 				DD0739791D10DED500AC5027 /* Controller */,
-				DD0739821D10DED500AC5027 /* Model */,
 				DD0739851D10DED500AC5027 /* View */,
 			);
 			path = State;
@@ -914,15 +927,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		DD0739821D10DED500AC5027 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DD0739831D10DED500AC5027 /* MyOneModel.h */,
-				DD0739841D10DED500AC5027 /* MyOneModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		DD0739851D10DED500AC5027 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,8 +934,17 @@
 				DD0739871D10DED500AC5027 /* MyOneCollectionViewCell.m */,
 				DD0739881D10DED500AC5027 /* MyOneHeaderView.h */,
 				DD0739891D10DED500AC5027 /* MyOneHeaderView.m */,
+				FCE4B7FE1D114942009996A7 /* MyOneTableViewCell.h */,
+				FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FC7FC7F11D1151C4008FAB7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FD3719CF396F480D7C27D7F0 /* Frameworks */ = {
@@ -1028,6 +1041,7 @@
 				DD0738B01D10DE5000AC5027 /* LaunchScreen.storyboard in Resources */,
 				DD0739C01D10DED500AC5027 /* 登录_横线.png in Resources */,
 				DD0739991D10DED500AC5027 /* 地址图标.png in Resources */,
+				FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */,
 				DD0739B31D10DED500AC5027 /* 输入框2.png in Resources */,
 				DD0739CD1D10DED500AC5027 /* 返回.png in Resources */,
 				DD0739BD1D10DED500AC5027 /* 登录_按钮背景(框).png in Resources */,
@@ -1152,11 +1166,12 @@
 				DD0739E01D10DED500AC5027 /* BindController.m in Sources */,
 				DD0739EA1D10DED500AC5027 /* LoginViewController.m in Sources */,
 				DD0739941D10DED500AC5027 /* NSString+FontAwesome.m in Sources */,
-				DD073A031D10DED500AC5027 /* MyOneModel.m in Sources */,
 				DD0739921D10DED500AC5027 /* UIViewExt.m in Sources */,
 				DD0739E41D10DED500AC5027 /* HomeViewController.m in Sources */,
 				DD073A041D10DED500AC5027 /* MyOneCollectionViewCell.m in Sources */,
+				FCE4B8001D114942009996A7 /* MyOneTableViewCell.m in Sources */,
 				DD0739EF1D10DED500AC5027 /* IdeaViewController.m in Sources */,
+				FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */,
 				DD0739901D10DED500AC5027 /* MD5Security.m in Sources */,
 				DD0739E81D10DED500AC5027 /* ForgetPasswordController.m in Sources */,
 				DD0738A51D10DE5000AC5027 /* AppDelegate.m in Sources */,
@@ -1168,6 +1183,7 @@
 				DD0739FD1D10DED500AC5027 /* PersonView.m in Sources */,
 				DD0739DE1D10DED500AC5027 /* BaseViewController.m in Sources */,
 				DD0739911D10DED500AC5027 /* TestTool.m in Sources */,
+				FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */,
 				DD0739961D10DED500AC5027 /* UIButton+Bootstrap.m in Sources */,
 				DD0739FE1D10DED500AC5027 /* DetailViewController.m in Sources */,
 				DD0739E61D10DED500AC5027 /* HomeCell.m in Sources */,
