@@ -69,6 +69,7 @@
     
     [self initNavBar];
     
+    
     [self initSubviews];
 }
 
@@ -83,11 +84,9 @@
     _data = @[dic1,dic2,dic3,dic4];
     
     
-    
-    
     //设置头像和名字
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
-    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@,%@",BASE_URL,userDic[@"headPhoto"]]];
+    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,userDic[@"headPhoto"]]];
     [_iconImgView setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
     _nameLabel.text = userDic[@"name"];
 
@@ -95,6 +94,12 @@
     
 }
 - (void)initSubviews {
+    _iconImgView.layer.cornerRadius = _iconImgView.width/2;
+    _iconImgView.layer.masksToBounds = YES;
+    
+//    _iconImgView.layer.borderColor = [[UIColor redColor] CGColor];
+//    _iconImgView.layer.borderWidth = 1.f;
+    
     self.tableView.backgroundColor = [UIColor clearColor];
     //设置代理
     self.tableView.dataSource = self;
@@ -110,6 +115,12 @@
     _photoView.frame = CGRectMake(0, -64, KScreenWidth, KScreenHeight);
     _photoView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
 
+    __weak typeof(UIImageView *)weakIcon = _iconImgView;
+    [_photoView setPhotoBlock:^(NSString *filePath) {
+        NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,filePath]];
+        [weakIcon setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
+        
+    }];
     [self.view addSubview:_photoView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
