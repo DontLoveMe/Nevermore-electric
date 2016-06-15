@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonViewController">
             <connections>
                 <outlet property="alterButton" destination="3B2-hi-AZ2" id="Nn8-3L-3c2"/>
+                <outlet property="iconImgView" destination="7je-xf-jP0" id="sP1-FS-s3c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

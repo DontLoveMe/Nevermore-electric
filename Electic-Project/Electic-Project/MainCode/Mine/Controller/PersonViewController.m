@@ -8,10 +8,12 @@
 
 #import "PersonViewController.h"
 #import "PersonView.h"
+#import "UIImageView+AFNetWorking.h"
 
 
 @interface PersonViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *alterButton;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
 
 @end
 
@@ -44,6 +46,13 @@
     
     [self initNavBar];
     
+    
+    _iconImgView.layer.cornerRadius = _iconImgView.width/2;
+    _iconImgView.layer.masksToBounds = YES;
+    //设置头像和名字
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,userDic[@"headPhoto"]]];
+    [_iconImgView setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
