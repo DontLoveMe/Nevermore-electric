@@ -114,10 +114,16 @@
     self.nameLabel.text = [NSString stringWithFormat:@"%@",model.boxName];
     
     
+//    
+//    self.temperatureLabel.text = [NSString stringWithFormat:@"温度:%@",model.temperature];
+//    
+//    
+//    
+//    self.residualcurrentLabel.text = [NSString stringWithFormat:@"剩余电量:%@",model.current];
     
-    self.temperatureLabel.text = [NSString stringWithFormat:@"温度:%@",model.temperature];
+    self.temperatureLabel.text = @"温度:38.5°C";
     
-    self.residualcurrentLabel.text = [NSString stringWithFormat:@"剩余电量:%@",model.current];
+    self.residualcurrentLabel.text = @"剩余电量:1A";
     
     
 

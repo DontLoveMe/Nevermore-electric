@@ -8,7 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface IdeaViewController : BaseViewController
+@interface IdeaViewController : BaseViewController<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *contactTF;
 

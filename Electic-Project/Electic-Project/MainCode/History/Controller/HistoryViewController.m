@@ -7,13 +7,17 @@
 //
 
 #import "HistoryViewController.h"
+#import "HistoryCell.h"
+#import "HistoryHeaderView.h"
 
 @interface HistoryViewController ()<UISearchBarDelegate,UIScrollViewDelegate>
 {
 
     UISearchBar *_searchBar;
     
-
+    UICollectionView *_collectionView;
+    
+    NSMutableArray *_data;
     
 }
 
@@ -52,8 +56,10 @@
     [self creatSearch];
     
     //创建列表视图
-    [self creatUI];
+    [self creatCollectionView];
     
+    //数据加载
+    [self loaddata];
 }
 
 -(void)creatSearch
@@ -73,103 +79,160 @@
     
     [self.view addSubview:_searchBar];
     
-
+    
 }
 
--(void)creatUI
+-(void)creatCollectionView
 {
 
     //名字
-    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 85, 60, 40)];
-    
-    nameLabel.text = @"黎小美";
+    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 70, 100, 40)];
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    nameLabel.text = userDic[@"name"];
     
     nameLabel.textColor = [UIColor colorWithRed:26/256.0 green:154/256.0 blue:245/256.0 alpha:1];
     
     [self.view addSubview:nameLabel];
-    
-    //地址
-    UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(19, 130, 20, 25)];
-    
-    iconView.image = [UIImage imageNamed:@"地址图标"];
-    
-    [self.view addSubview:iconView];
-    
-    UILabel *addressLabel = [[UILabel alloc]initWithFrame:CGRectMake(45, 130, 200, 25)];
-    
-    addressLabel.text = @"航天亚卫科技园";
-    
-    addressLabel.textColor = [UIColor whiteColor];
-    
-    [self.view addSubview:addressLabel];
-    
-    //配电箱按钮
-   
-    NSArray *titleArray = @[@"1#配电箱",@"2#配电箱",@"3#配电箱",@"4#配电箱",@"5#配电箱",@"6#配电箱",@"7#配电箱",@"8#配电箱",@"9#配电箱"];
-    
-    CGFloat xSpace = (self.view.frame.size.width-150*3)/4;
-    
-    
-    for(NSInteger i=0 ; i<titleArray.count;i++)
-    {
-    
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        btn.frame = CGRectMake(xSpace+(i%3)*(xSpace+80), 160+(i/3)*(xSpace+20), 100, 40);
-        
-        [btn setTitle:titleArray[i] forState:UIControlStateNormal];
-        
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [btn setBackgroundImage:[UIImage imageNamed:@"未选中状态"] forState:UIControlStateNormal];
-        
-        [btn setBackgroundImage:[UIImage imageNamed:@"选中状态"] forState:UIControlStateSelected];
-        
-        
-        
-        [self.view addSubview:btn];
-    
-    }
 
+    //创建UICollectionViewFlowLayout
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.minimumLineSpacing = 10;
+    
+    //设置滚动方向
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
+    //设置item内边距大小
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    // 创建UICollectionView
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 110, KScreenWidth, KScreenHeight-110-64) collectionViewLayout:flowLayout];
+    
+    //设置数据源代理、collection代理
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    
+    
+    [self.view addSubview:_collectionView];
+    
+    _collectionView.backgroundColor = [UIColor clearColor];
+    
+    //注册cell
+    [_collectionView registerNib:[UINib nibWithNibName:@"HistoryCell" bundle:nil] forCellWithReuseIdentifier:@"HistoryCell"];
+ 
+    //注册headerView
+    [_collectionView registerNib:[UINib nibWithNibName:@"HistoryHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HistoryHeaderView"];
+    
+    
 
-    //地址图
-    UIImageView *iconView2 = [[UIImageView alloc]initWithFrame:CGRectMake(19, 330, 20, 25)];
+}
+//加载数据
+- (void)loaddata {
     
-    iconView2.image = [UIImage imageNamed:@"地址图标"];
-    
-    [self.view addSubview:iconView2];
-    
-    UILabel *addressLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(45, 330, 100, 25)];
-    
-    addressLabel2.text = @"湘邮科技园";
-    
-    addressLabel2.textColor = [UIColor whiteColor];
-
-    [self.view addSubview:addressLabel2];
-    
-    for (NSInteger i=0; i<titleArray.count; i++) {
-        
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        btn.frame = CGRectMake(xSpace+(i%3)*(xSpace+80), 360+(i/3)*(xSpace+20), 100, 40);
-        
-        [btn setTitle:titleArray[i] forState:UIControlStateNormal];
-        
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [btn setBackgroundImage:[UIImage imageNamed:@"未选中状态"] forState:UIControlStateNormal];
-        
-        [btn setBackgroundImage:[UIImage imageNamed:@"选中状态"] forState:UIControlStateSelected];
-        
-        
-        
-        [self.view addSubview:btn];
-        
+    if (_data == nil) {
+        _data = [NSMutableArray array];
     }
     
+    //取登录储存的数据
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:userDic[@"staffId"] forKey:@"staffId"];
     
-  
+    [self showHUD:@"正在加载"];
+    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,ElecticHistoryListURL];
+    
+    [TestTool post:url
+            params:params
+           success:^(id json) {
+               
+               [self hideSuccessHUD:[json objectForKey:@"msg"]];
+               BOOL isSuccess = [[json objectForKey:@"flag"] boolValue];
+               
+               if (isSuccess) {
+                   _data = [json objectForKey:@"data"];
+                   [_collectionView reloadData];
+               }
+               
+           } failure:^(NSError *error) {
+               
+               [self hideFailHUD:@"加载失败"];
+               NSLogSFQ(@"error:%@",error);
+               
+           }];
+    
 
+    
+}
+#pragma mark - UICollectionViewDataSource
+//组数
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return _data.count;
+}
+
+//每一组的个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    NSDictionary *dic = _data[section];
+    NSArray *arr = dic[@"boxs"];
+    return arr.count;
+}
+
+//单元格
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 1.去重用队列中查找
+    HistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HistoryCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+    //数据处理
+    NSDictionary *dic = _data[indexPath.section];
+    NSArray *arr = dic[@"boxs"];
+    NSDictionary *boxDic = arr[indexPath.row];
+    cell.titleLabel.text = boxDic[@"boxName"];
+    
+    return cell;
+}
+
+#pragma mark 处理点击事件
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = _data[indexPath.section];
+    NSArray *arr = dic[@"boxs"];
+    NSDictionary *boxDic = arr[indexPath.row];
+    NSLog(@"%@",boxDic[@"id"]);
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+#pragma mark 设置item的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(110, 40);
+}
+
+#pragma mark 设置header
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (kind == UICollectionElementKindSectionHeader) {
+        // 去重用队列取可用的header
+        HistoryHeaderView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HistoryHeaderView" forIndexPath:indexPath];
+        
+        reusableView.backgroundColor = [UIColor clearColor];
+       
+        //数据处理
+        NSDictionary *dic = _data[indexPath.section];
+        NSString *orgName = dic[@"orgName"];
+        reusableView.placeLabel.text = orgName;
+        
+        return reusableView;
+    }
+    return nil;
+}
+
+#pragma mark 设置header高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(self.view.bounds.size.width, 50);
 }
 
 #pragma mark - UISearchBarDelegate
@@ -184,14 +247,8 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
 
-    [self didClickedSearchButton:nil];//点击按钮
 }
 
-- (void)didClickedSearchButton:(UIButton *)sender{
-    
-    [self refreshData];//点击按钮的网络请求
-    
-}
 
 #pragma mark - UIScrollViewDelegate
 
@@ -202,13 +259,6 @@
 
 }
 
--(void)refreshData
-{
-
-    [_searchBar resignFirstResponder];
- 
-
-}
 
 
 

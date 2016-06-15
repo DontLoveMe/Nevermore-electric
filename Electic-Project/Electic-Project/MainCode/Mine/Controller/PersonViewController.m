@@ -49,14 +49,15 @@
     
     _iconImgView.layer.cornerRadius = _iconImgView.width/2;
     _iconImgView.layer.masksToBounds = YES;
-    //设置头像和名字
+    //设置头像
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
     NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,userDic[@"headPhoto"]]];
     [_iconImgView setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
+    
+    [self initSubviews];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)initSubviews {
     //取登录储存的数据
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
     NSString *name = userDic[@"name"];
@@ -87,6 +88,8 @@
         NSDictionary *dic = dicArr[i];
         [pView setImageName:dic[@"image"] labelText:dic[@"title"] textFielText:dic[@"content"]];
         [self.view addSubview:pView];
+        
+        pView.textFiel.delegate = self;
     }
     float height = 60 * dicArr.count;
     //退出登录的按钮
@@ -101,6 +104,8 @@
 
     
 }
+#pragma mark - 按钮的点击
+//编辑
 - (IBAction)alterAction:(UIButton *)sender {
     sender.hidden = YES;
     
@@ -113,6 +118,7 @@
     }
 }
 
+//保存
 - (void)preserveAction:(UIButton *)button {
     
     button.hidden = YES;
@@ -177,6 +183,23 @@
 
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    for (int i = 0; i < 4; i ++) {
+        PersonView *pView = [self.view viewWithTag:100+i];
+        if ([pView.textFiel isFirstResponder]) {
+            [pView.textFiel resignFirstResponder];
+        }
+        
+    }
+    
+}
 @end

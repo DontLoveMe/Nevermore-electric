@@ -10,4 +10,6 @@
 
 @interface HistoryAlarmController : BaseViewController
 
+@property(nonatomic,copy)NSString *boxIDD;
+
 @end

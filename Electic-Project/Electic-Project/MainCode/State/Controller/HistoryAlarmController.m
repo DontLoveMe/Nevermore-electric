@@ -7,8 +7,21 @@
 //
 
 #import "HistoryAlarmController.h"
+#import "Common.h"
+#import "TestTool.h"
+#import "MyOneTableViewCell.h"
+#import "MyTwoModel.h"
+@interface HistoryAlarmController ()<UITableViewDataSource,UITableViewDelegate>
+{
 
-@interface HistoryAlarmController ()
+
+    NSMutableArray *_dataArray;
+    
+    UITableView *_TableView;
+    
+    MyTwoModel *_model;
+
+}
 
 @end
 
@@ -42,10 +55,117 @@
     
     [super viewDidLoad];
     
+    _dataArray = [NSMutableArray array];
+    
     self.title = @"历史报警";
     
     [self initNavBar];
     
+    
+    [self creatData];
+    
+    
+    [self creatTableView];
+}
+
+#pragma mark---数据源相关
+-(void)creatData
+{
+
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *userDic = [defaults objectForKey:@"userDic"];
+
+    
+    [params setObject:@{@"boxId":_boxIDD,
+                        @"staffId":[userDic objectForKey:@"staffId"]
+                        } forKey:@"paramsMap"];
+    
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,WarnningHistoryListURL];
+    
+    
+    [TestTool post:url params:params success:^(id json) {
+        
+        NSLog(@"%@",json);
+//        
+//        NSArray *rootArray = [json objectForKey:@"data"];
+//        
+//        for (NSDictionary *dic in rootArray) {
+//            
+//            
+//            _model = [[MyTwoModel alloc]init];
+//            
+//            [_model setValuesForKeysWithDictionary:dic];
+//            
+//            [_dataArray addObject:_model];
+//            
+//            
+//            
+//        }
+//        
+        [_TableView reloadData];
+
+        
+    } failure:^(NSError *error) {
+        
+    }];
+
+   
+
+
+}
+
+-(void)creatTableView
+{
+
+
+    _TableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+    
+    _TableView.dataSource = self;
+    
+    _TableView.delegate = self;
+    
+    [self.view addSubview:_TableView];
+
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    return _dataArray.count;
+
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    MyOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    if (!cell) {
+        
+        cell = [[MyOneTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        
+        cell.iconView.image = [UIImage imageNamed:@"警告图像"];
+    }
+    
+    
+    MyTwoModel *model = _dataArray[indexPath.row];
+    
+    [cell configCellWithModel:model];
+    
+    return cell;
+   
+
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+
 }
 
 - (void)didReceiveMemoryWarning {

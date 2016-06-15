@@ -45,11 +45,15 @@
 }
 
 - (void)initSubviews {
+    _userTF.delegate = self;
     _userTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入您的手机号码"
                                                                     attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:0.7],NSFontAttributeName:[UIFont systemFontOfSize:15]}];
     
+    _oldPasswordTF.delegate = self;
     _oldPasswordTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入旧密码（至少6位）"
                                                                            attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:0.7],NSFontAttributeName:[UIFont systemFontOfSize:15]}];
+    
+    _passwordTF.delegate = self;
     _passwordTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入新密码（至少6位）"
                                                                         attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:0.7],NSFontAttributeName:[UIFont systemFontOfSize:15]}];
 }
@@ -85,6 +89,34 @@
                NSLog(@"error:%@",error);
                
            }];
+}
+
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if ([_userTF isFirstResponder]) {
+        
+        [_userTF resignFirstResponder];
+        
+    }
+    
+    if ([_oldPasswordTF isFirstResponder]) {
+        
+        [_oldPasswordTF resignFirstResponder];
+    }
+    if ([_passwordTF isFirstResponder]) {
+        
+        [_passwordTF resignFirstResponder];
+    }
+    
 }
 
 @end
