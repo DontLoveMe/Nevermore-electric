@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonViewController">
+            <connections>
+                <outlet property="alterButton" destination="3B2-hi-AZ2" id="Nn8-3L-3c2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-EB-YBJ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="个人资料_头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="7je-xf-jP0">
+                            <rect key="frame" x="260" y="20" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="BMt-bM-gre"/>
+                                <constraint firstAttribute="width" constant="80" id="S4m-IN-2aV"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B2-hi-AZ2">
+                            <rect key="frame" x="390" y="47" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="HPJ-X1-UOK"/>
+                                <constraint firstAttribute="height" constant="25" id="dAw-qW-wqa"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="个人资料_修改.png"/>
+                            <connections>
+                                <action selector="alterAction:" destination="-1" eventType="touchUpInside" id="SVw-Po-4P8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="5jM-fQ-Z4c"/>
+                        <constraint firstItem="7je-xf-jP0" firstAttribute="centerX" secondItem="wFn-EB-YBJ" secondAttribute="centerX" id="8rt-KP-mbJ"/>
+                        <constraint firstItem="3B2-hi-AZ2" firstAttribute="leading" secondItem="7je-xf-jP0" secondAttribute="trailing" constant="50" id="NeN-Xb-mrR"/>
+                        <constraint firstItem="3B2-hi-AZ2" firstAttribute="centerY" secondItem="wFn-EB-YBJ" secondAttribute="centerY" id="kHq-eX-DUZ"/>
+                        <constraint firstItem="7je-xf-jP0" firstAttribute="centerY" secondItem="wFn-EB-YBJ" secondAttribute="centerY" id="qlH-Nv-gOu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wFn-EB-YBJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bse-Il-04v"/>
+                <constraint firstAttribute="trailing" secondItem="wFn-EB-YBJ" secondAttribute="trailing" id="a6J-lZ-LAM"/>
+                <constraint firstItem="wFn-EB-YBJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xJa-Pn-QgT"/>
+            </constraints>
+            <point key="canvasLocation" x="322" y="329"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="个人资料_修改.png" width="45" height="45"/>
+        <image name="个人资料_头像.png" width="160" height="160"/>
+    </resources>
+</document>

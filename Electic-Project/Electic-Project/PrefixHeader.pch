@@ -1,0 +1,41 @@
+//
+//  PrefixHeader.pch
+//  ElectricProject
+//
+//  Created by coco船长 on 16/6/14.
+//  Copyright © 2016年 nevermore. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import "Common.h"
+#import "UIViewExt.h"
+#import "UIColor+RGB.h"
+#import "MBProgressHUD.h"
+#import "MD5Security.h"
+#import "TestTool.h"
+#endif
+
+//主色调
+#define ThemeColor @"171718"
+
+//取得屏幕的宽、高
+#define KScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//导航栏和标签栏的高度
+#define kNavigationBarHeight 64
+#define kTabBarHeight 49
+
+//判断尺寸
+#define kkDeviceVersion UIDevice.currentDevice.systemVersion.floatValue >= 7.0
+
+//调试状态
+#ifdef DEBUG
+#define NSLogSFQ(...) NSLog(__VA_ARGS__)
+#else
+#define NSLogSFQ(...)
+#endif
+#endif /* PrefixHeader_pch */
