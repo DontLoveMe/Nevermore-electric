@@ -463,11 +463,9 @@
     NSDictionary *dic = [_selectArr objectAtIndex:indexPath.row];
     
     if (_textFieldType == 100) {
-        if (![[dic objectForKey:@"companyAddress"] isKindOfClass:[NSNull class]]) {
-            cell.textLabel.text = [dic objectForKey:@"companyAddress"];
-        }else{
-            cell.textLabel.text = @"暂无数据";
-        }
+   
+        cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",[dic objectForKey:@"companyAddress"],[dic objectForKey:@"name"]];
+
     }else if (_textFieldType == 101) {
         if (![[dic objectForKey:@"seqNum"] isKindOfClass:[NSNull class]]) {
             cell.textLabel.text = [dic objectForKey:@"seqNum"];
@@ -495,7 +493,7 @@
     
     if (_textFieldType == 100) {
         
-        _addressTF.text = [dic objectForKey:@"companyAddress"];
+        _addressTF.text = [NSString stringWithFormat:@"%@  %@",[dic objectForKey:@"companyAddress"],[dic objectForKey:@"name"]];
         _selectID = [NSString stringWithFormat:@"%ld",[[dic objectForKey:@"id"] integerValue]];
         
     }else if (_textFieldType == 101) {
