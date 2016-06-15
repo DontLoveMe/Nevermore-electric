@@ -53,6 +53,9 @@
     //选中的label(100->地址，101->序列号，102->账户)
     NSInteger       _textFieldType;
     
+    //选中的账号
+    NSString        *_selectID;
+    
     //用户传的参数
     NSMutableDictionary *_params;
     

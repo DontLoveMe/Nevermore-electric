@@ -14,6 +14,7 @@
 #import "StateViewController.h"
 #import "AlarmViewController.h"
 #import "HistoryViewController.h"
+#import "DeviceVerdifyController.h"
 
 @interface HomeViewController ()
 
@@ -67,9 +68,11 @@
     NSDictionary *dic2 = @{@"image":@"首页_报警",@"name":@"报警",@"annotate":@"随手掌握异常情况！"};
     NSDictionary *dic3 = @{@"image":@"首页_历史",@"name":@"历史",@"annotate":@"数据保存，方便查询。"};
     NSDictionary *dic4 = @{@"image":@"首页_我的",@"name":@"我的",@"annotate":@"个人资料完美改善！"};
+    NSDictionary *dic5 = @{@"image":@"首页_设备验证",@"name":@"设备验证",@"annotate":@"设备验证，方便快捷！"};
     
-    _data = @[dic0,dic1,dic2,dic3,dic4];
+    _data = @[dic0,dic1,dic2,dic3,dic4,dic5];
     [_tableView reloadData];
+    
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -129,7 +132,13 @@
             
         }
             break;
+        case 5:
+        {
+            DeviceVerdifyController *DVC = [[DeviceVerdifyController alloc] init];
+            [self.navigationController pushViewController:DVC animated:YES];
             
+        }
+            break;
         default:
             break;
     }

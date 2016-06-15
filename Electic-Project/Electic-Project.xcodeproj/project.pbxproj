@@ -12,6 +12,10 @@
 		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
 		D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */; };
 		D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */; };
+		DD0680A51D1168E900B4DA6C /* DeviceVerdifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */; };
+		DD0680A61D1168E900B4DA6C /* DeviceVerdifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */; };
+		DD0680A81D116ABB00B4DA6C /* 首页_设备验证.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0680A71D116ABB00B4DA6C /* 首页_设备验证.png */; };
+		DD0680AB1D11703B00B4DA6C /* 验证-按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0680AA1D11703B00B4DA6C /* 验证-按钮.png */; };
 		DD0738A21D10DE5000AC5027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0738A11D10DE5000AC5027 /* main.m */; };
 		DD0738A51D10DE5000AC5027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0738A41D10DE5000AC5027 /* AppDelegate.m */; };
 		DD0738AD1D10DE5000AC5027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0738AC1D10DE5000AC5027 /* Assets.xcassets */; };
@@ -154,6 +158,11 @@
 		D6A9F4341D113289009E38A2 /* HistoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryHeaderView.h; sourceTree = "<group>"; };
 		D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHeaderView.m; sourceTree = "<group>"; };
 		D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		DD0680A21D1168E900B4DA6C /* DeviceVerdifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceVerdifyController.h; sourceTree = "<group>"; };
+		DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceVerdifyController.m; sourceTree = "<group>"; };
+		DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceVerdifyController.xib; sourceTree = "<group>"; };
+		DD0680A71D116ABB00B4DA6C /* 首页_设备验证.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_设备验证.png"; sourceTree = "<group>"; };
+		DD0680AA1D11703B00B4DA6C /* 验证-按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "验证-按钮.png"; sourceTree = "<group>"; };
 		DD07389D1D10DE5000AC5027 /* Electic-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electic-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0738A11D10DE5000AC5027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD0738A31D10DE5000AC5027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -351,6 +360,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DD06809E1D1168CD00B4DA6C /* DeviceVerdify */ = {
+			isa = PBXGroup;
+			children = (
+				DD06809F1D1168CD00B4DA6C /* Controller */,
+				DD0680A01D1168CD00B4DA6C /* Model */,
+				DD0680A11D1168CD00B4DA6C /* View */,
+			);
+			path = DeviceVerdify;
+			sourceTree = "<group>";
+		};
+		DD06809F1D1168CD00B4DA6C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD0680A21D1168E900B4DA6C /* DeviceVerdifyController.h */,
+				DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */,
+				DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD0680A01D1168CD00B4DA6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD0680A11D1168CD00B4DA6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD0680A91D11703B00B4DA6C /* 设备验证 */ = {
+			isa = PBXGroup;
+			children = (
+				DD0680AA1D11703B00B4DA6C /* 验证-按钮.png */,
+			);
+			path = "设备验证";
+			sourceTree = "<group>";
+		};
 		DD0738941D10DE5000AC5027 = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0738D91D10DED500AC5027 /* 前进.png */,
+				DD0680A91D11703B00B4DA6C /* 设备验证 */,
 				DD0738DA1D10DED500AC5027 /* 历史 */,
 				DD0738E01D10DED500AC5027 /* 启动页 */,
 				DD0738E21D10DED500AC5027 /* 我的 */,
@@ -628,6 +680,7 @@
 		DD0739191D10DED500AC5027 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				DD0680A71D116ABB00B4DA6C /* 首页_设备验证.png */,
 				DD07391A1D10DED500AC5027 /* 首页_单元格背景(深).png */,
 				DD07391B1D10DED500AC5027 /* 首页_单元格背景.png */,
 				DD07391C1D10DED500AC5027 /* 首页_历史.png */,
@@ -645,6 +698,7 @@
 		DD0739241D10DED500AC5027 /* MainCode */ = {
 			isa = PBXGroup;
 			children = (
+				DD06809E1D1168CD00B4DA6C /* DeviceVerdify */,
 				DD0739251D10DED500AC5027 /* Alarm */,
 				DD0739321D10DED500AC5027 /* Base */,
 				DD0739361D10DED500AC5027 /* Bind */,
@@ -1049,12 +1103,14 @@
 				DD0739A81D10DED500AC5027 /* 我的_版本信息.png in Resources */,
 				DD0739CF1D10DED500AC5027 /* 首页_单元格背景.png in Resources */,
 				DD0739CA1D10DED500AC5027 /* 绑定-未选.png in Resources */,
+				DD0680A81D116ABB00B4DA6C /* 首页_设备验证.png in Resources */,
 				DD0739AD1D10DED500AC5027 /* 我的_拍照.png in Resources */,
 				DD07399E1D10DED500AC5027 /* 启动页.png in Resources */,
 				DD0739B61D10DED500AC5027 /* 剩余电量.png in Resources */,
 				DD0739F21D10DED500AC5027 /* MineViewController.xib in Resources */,
 				DD0739C81D10DED500AC5027 /* 绑定-地址.png in Resources */,
 				DD0738B01D10DE5000AC5027 /* LaunchScreen.storyboard in Resources */,
+				DD0680AB1D11703B00B4DA6C /* 验证-按钮.png in Resources */,
 				DD0739C01D10DED500AC5027 /* 登录_横线.png in Resources */,
 				DD0739991D10DED500AC5027 /* 地址图标.png in Resources */,
 				FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */,
@@ -1080,6 +1136,7 @@
 				DD0739B11D10DED500AC5027 /* 按钮点击后.png in Resources */,
 				DD0739B51D10DED500AC5027 /* 横线.png in Resources */,
 				DD0739A01D10DED500AC5027 /* 个人资料_修改.png in Resources */,
+				DD0680A61D1168E900B4DA6C /* DeviceVerdifyController.xib in Resources */,
 				DD0739E11D10DED500AC5027 /* BindController.xib in Resources */,
 				DD0739A61D10DED500AC5027 /* 我的_头像.png in Resources */,
 				DD0739AA1D10DED500AC5027 /* 我的_设置.png in Resources */,
@@ -1197,6 +1254,7 @@
 				DD0739D81D10DED500AC5027 /* AlarmDetailController.m in Sources */,
 				DD0739ED1D10DED500AC5027 /* EditionViewController.m in Sources */,
 				DD07398D1D10DED500AC5027 /* MBProgressHUD.m in Sources */,
+				DD0680A51D1168E900B4DA6C /* DeviceVerdifyController.m in Sources */,
 				DD0739F11D10DED500AC5027 /* MineViewController.m in Sources */,
 				DD0739DA1D10DED500AC5027 /* AlarmViewController.m in Sources */,
 				DD0739FD1D10DED500AC5027 /* PersonView.m in Sources */,

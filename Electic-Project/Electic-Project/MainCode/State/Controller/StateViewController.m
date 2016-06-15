@@ -131,9 +131,6 @@ static NSString *headerViewIdentifier = @"hederview";
             params:params
            success:^(id json) {
                
-            
-        
-                   
                _dataArray = [json objectForKey:@"data"];
                
                

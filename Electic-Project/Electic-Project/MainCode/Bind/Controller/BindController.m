@@ -38,6 +38,7 @@
     
     self.title = @"绑定操作";
     self.view.backgroundColor = [UIColor colorFromHexRGB:@"121213"];
+    _selectID = @"";
     _selectArr = [NSMutableArray array];
     _params = [NSMutableDictionary dictionary];
     [_params setObject:@"1"
@@ -352,19 +353,45 @@
 }
 
 #pragma mark - UITextfieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    if (textField.tag == 101 ) {
+        _textFieldType = 101;
+        if (_selectID.length != 0) {
+            [self requestListWithString:_selectID withTextField:textField withType:_textFieldType];
+        }else{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                                     message:@"请先选择地址！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     [alertController dismissViewControllerAnimated:YES
+                                                                                                         completion:nil];
+                                                                 }];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+            return NO;
+        }
+    }
+    return YES;
+    
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     if (textField.tag == 100) {
         _textFieldType = 100;
         [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
-    }else if (textField.tag == 101) {
-        _textFieldType = 101;
-         [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
     }else if (textField.tag == 102) {
         _textFieldType = 102;
          [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
     }
-
+//    else if (textField.tag == 101) {
+//        _textFieldType = 101;
+//        [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
+//    }
     return YES;
 
 }
@@ -469,6 +496,7 @@
     if (_textFieldType == 100) {
         
         _addressTF.text = [dic objectForKey:@"companyAddress"];
+        _selectID = [NSString stringWithFormat:@"%ld",[[dic objectForKey:@"id"] integerValue]];
         
     }else if (_textFieldType == 101) {
         
@@ -476,6 +504,7 @@
         _devicePhoneTF.text = [dic objectForKey:@"phone"];
         _complanyTF.text = [dic objectForKey:@"companyName"];
         [_params setObject:[dic objectForKey:@"boxId"] forKey:@"boxId"];
+        
     }else if (_textFieldType == 102) {
 
         _acountexistTF.text = [NSString stringWithFormat:@"%@ %@",[dic objectForKey:@"name"],[dic objectForKey:@"phone"]];
