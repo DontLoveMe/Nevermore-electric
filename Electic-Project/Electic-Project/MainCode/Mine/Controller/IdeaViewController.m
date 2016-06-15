@@ -43,6 +43,8 @@
     
     _contactTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请留下您的联系方式（选填：QQ，电话，邮箱）"
                                                                       attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:0.7],NSFontAttributeName:[UIFont systemFontOfSize:13]}];
+    
+    _contactTF.delegate = self;
 }
 #pragma mark - 按钮的点击事件
 - (IBAction)feedbackAction:(UIButton *)sender {
@@ -73,6 +75,28 @@
                
            }];
 }
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if ([_contactTF isFirstResponder]) {
+        
+        [_contactTF resignFirstResponder];
+       
+    }
+    
+    if ([_textView isFirstResponder]) {
+        
+        [_textView resignFirstResponder];
+    }
+
+    
+}
 
 @end

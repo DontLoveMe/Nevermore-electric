@@ -8,5 +8,5 @@
 
 #import "BaseViewController.h"
 
-@interface PersonViewController : BaseViewController
+@interface PersonViewController : BaseViewController<UITextFieldDelegate>
 @end

@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface ModifyPasswordController : BaseViewController
+@interface ModifyPasswordController : BaseViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userTF;
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordTF;
