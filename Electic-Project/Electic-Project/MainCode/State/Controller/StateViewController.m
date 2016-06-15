@@ -130,41 +130,34 @@ static NSString *headerViewIdentifier = @"hederview";
     [TestTool post:url
             params:params
            success:^(id json) {
-               
-            
-        
                    
                _dataArray = [json objectForKey:@"data"];
                
-               
-             
                for (NSDictionary *rootdic in _dataArray) {
                    
                   
                    NSArray *array = [rootdic objectForKey:@"boxs"];
                    
-               
+                   NSLog(@"%@",array);
                    for (NSDictionary *dic in array) {
+                       
+                       NSLog(@"%@",[dic objectForKey:@""]);
                        
                        _model = [[MyOneModel alloc]init];
                        
                        [_model setValuesForKeysWithDictionary:dic];
                        
                        [_dataArray2 addObject:_model];
-                       
-                   }
                    
-               }
-               
+                   }}
+                   
                
                [_collectionView reloadData];
               
             
            } failure:^(NSError *error) {
+               
            }];
-
-
-
 
 }
 
@@ -173,7 +166,6 @@ static NSString *headerViewIdentifier = @"hederview";
 {
 
     //名字
-
     _nameLabel = [[UILabel alloc]init];
     
     [self.view addSubview:_nameLabel];
@@ -281,8 +273,7 @@ static NSString *headerViewIdentifier = @"hederview";
     VC.boxID = model.id;
     
     VC.name = model.boxName;
-    
-   
+     
     NSLog(@"%@",VC.boxID);
     
     NSLog(@"%@",VC.name);
@@ -301,14 +292,44 @@ static NSString *headerViewIdentifier = @"hederview";
         
         MyOneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
         
-        MyOneModel *model = _dataArray2[indexPath.row];
-        
-        [cell configCellWithModel:model];
-    
-        
-        return cell;
+//        MyOneModel *model = _dataArray2[indexPath.row];
+////
+//        [cell configCellWithModel:model];
     
     
+    NSDictionary *dic = [_dataArray objectAtIndex:indexPath.section];
+    NSArray *arr = [dic
+                    objectForKey:@"boxs"];
+    NSDictionary *dataDic = [arr objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [dataDic objectForKey:@"boxName"];
+    
+    cell.backView.image = [UIImage imageNamed:@"背景矩形常态"];
+
+    NSDictionary *monitorDic = [dataDic objectForKey:@"monitors"];
+    
+    if (![[monitorDic objectForKey:@"current"] isKindOfClass:[NSNull class]]) {
+        NSDictionary *currentDic = [monitorDic objectForKey:@"current"];
+            cell.residualcurrentLabel.text = [NSString stringWithFormat:@"%ldA",[[currentDic objectForKey:@"curValue"] integerValue]];
+    }else
+    {
+    
+        cell.residualcurrentLabel.text = @"暂无数据";
+    
+    }
+    
+     if (![[monitorDic objectForKey:@"temperature"] isKindOfClass:[NSNull class]]) {
+        NSDictionary *temperatureDic = [monitorDic objectForKey:@"temperature"];
+
+    
+    cell.temperatureLabel.text = [NSString stringWithFormat:@"%ld℃",[[temperatureDic objectForKey:@"curValue"] integerValue]];
+     }else
+     {
+     
+       cell.temperatureLabel.text = @"暂无数据";
+     }
+    
+    
+    return cell;
    
 
 }

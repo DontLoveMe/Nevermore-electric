@@ -20,7 +20,7 @@
 
 @property(nonatomic,strong)UILabel *staeLabel;
 
--(void)configCellWithModel:(MyTwoModel *)model;
+-(void)configCellWithModelTwo:(MyTwoModel *)model;
 
 
 @end

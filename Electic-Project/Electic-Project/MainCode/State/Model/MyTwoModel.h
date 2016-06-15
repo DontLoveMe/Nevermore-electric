@@ -11,7 +11,7 @@
 @interface MyTwoModel : NSObject
 
 //电箱名称
-@property(nonatomic,copy)NSString *BoxName;
+@property(nonatomic,copy)NSString *boxName;
 
 //处理状态
 @property(nonatomic,copy)NSString *wranType;
@@ -20,6 +20,6 @@
 @property(nonatomic,copy)NSString *createDate;
 
 //预警类型
-@property(nonatomic,copy)NSString *Stutas;
+@property(nonatomic,copy)NSString *stutas;
 
 @end

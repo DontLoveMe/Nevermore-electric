@@ -26,9 +26,7 @@
 {
 
     self.backView = [[UIImageView alloc]init];
-    
-    self.backView.image = [UIImage imageNamed:@"背景矩形常态"];
-    
+        
     [self.contentView addSubview:self.backView];
     
     _backView.sd_layout
@@ -59,7 +57,7 @@
     
     _temperatureView.sd_layout
     .leftSpaceToView(_backView,10)
-    .topSpaceToView(_nameLabel,12)
+    .topSpaceToView(_nameLabel,4)
     .widthIs(20)
     .heightIs(20);
     
@@ -111,7 +109,7 @@
 -(void)configCellWithModel:(MyOneModel *)model
 {
 
-    self.nameLabel.text = [NSString stringWithFormat:@"%@",model.boxName];
+    //self.nameLabel.text = [NSString stringWithFormat:@"%@",model.boxName];
     
     
 //    
@@ -120,10 +118,7 @@
 //    
 //    
 //    self.residualcurrentLabel.text = [NSString stringWithFormat:@"剩余电量:%@",model.current];
-    
-    self.temperatureLabel.text = @"温度:38.5°C";
-    
-    self.residualcurrentLabel.text = @"剩余电量:1A";
+
     
     
 

@@ -62,10 +62,12 @@
     [self initNavBar];
     
     
+    [self creatTableView];
+
+    
     [self creatData];
     
     
-    [self creatTableView];
 }
 
 #pragma mark---数据源相关
@@ -90,25 +92,21 @@
     
     [TestTool post:url params:params success:^(id json) {
         
-        NSLog(@"%@",json);
-//        
-//        NSArray *rootArray = [json objectForKey:@"data"];
-//        
-//        for (NSDictionary *dic in rootArray) {
-//            
-//            
-//            _model = [[MyTwoModel alloc]init];
-//            
-//            [_model setValuesForKeysWithDictionary:dic];
-//            
-//            [_dataArray addObject:_model];
-//            
-//            
-//            
-//        }
-//        
+        
+        NSArray *rootArray = [json objectForKey:@"data"];
+        
+        for (NSDictionary *dic in rootArray) {
+            
+            
+            _model = [[MyTwoModel alloc]init];
+            
+            
+            [_model setValuesForKeysWithDictionary:dic];
+            
+            [_dataArray addObject:_model];
+        }
+        
         [_TableView reloadData];
-
         
     } failure:^(NSError *error) {
         
@@ -123,12 +121,13 @@
 {
 
 
-    _TableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+    _TableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight-64) style:UITableViewStylePlain];
     
     _TableView.dataSource = self;
     
     _TableView.delegate = self;
     
+   _TableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
     [self.view addSubview:_TableView];
 
 }
@@ -143,28 +142,31 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    MyOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    MyOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (!cell) {
         
         cell = [[MyOneTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
         
-        cell.iconView.image = [UIImage imageNamed:@"警告图像"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+        
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+                
     }
     
+    MyTwoModel *modell = _dataArray[indexPath.row];
+   
     
-    MyTwoModel *model = _dataArray[indexPath.row];
-    
-    [cell configCellWithModel:model];
+    [cell configCellWithModelTwo:modell];
     
     return cell;
-   
 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+   
+    return 100;
 
 }
 

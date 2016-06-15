@@ -10,6 +10,12 @@
 #import "UIView+SDAutoLayout.h"
 @implementation MyOneTableViewCell
 
+{
+
+    MyTwoModel *_model;
+
+}
+
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
 
@@ -27,15 +33,18 @@
 {
 
   
-    self.iconView = [[UIImageView alloc]init];
+    _iconView = [[UIImageView alloc]init];
     
-    [self.contentView addSubview:self.iconView];
+    _iconView.image = [UIImage imageNamed:@"警告图像"];
+
+    
+    [self.contentView addSubview:_iconView];
     
     _iconView.sd_layout
     .leftSpaceToView(self.contentView,15)
-    .topSpaceToView(self.contentView,19)
-    .widthIs(40)
-    .heightIs(40);
+    .topSpaceToView(self.contentView,30)
+    .widthIs(45)
+    .heightIs(45);
     
     self.nameLabel = [[UILabel alloc]init];
     
@@ -47,7 +56,7 @@
     
     _nameLabel.sd_layout
     .leftSpaceToView(_iconView,10)
-    .topSpaceToView(self.contentView,15)
+    .topSpaceToView(self.contentView,30)
     .widthIs(60)
     .heightIs(20);
     
@@ -62,7 +71,7 @@
     _typeLabel.sd_layout
     .leftSpaceToView(_iconView,10)
     .topSpaceToView(_nameLabel,7)
-    .widthIs(80)
+    .widthIs(120)
     .heightIs(20);
     
     self.timeLabel = [[UILabel alloc]init];
@@ -75,8 +84,8 @@
     
     _timeLabel.sd_layout
     .rightSpaceToView(self.contentView,15)
-    .topSpaceToView(self.contentView,21)
-    .widthIs(40)
+    .topSpaceToView(self.contentView,30)
+    .widthIs(120)
     .heightIs(20);
     
     self.staeLabel = [[UILabel alloc]init];
@@ -98,18 +107,48 @@
 
 }
 
--(void)configCellWithModel:(MyTwoModel *)model
+-(void)configCellWithModelTwo:(MyTwoModel *)model
 {
 
 
-    self.nameLabel.text = model.BoxName;
+    _model=model;
     
-    self.typeLabel.text = model.Stutas;
-    
-    self.timeLabel.text = model.createDate;
-    
-    self.staeLabel.text = model.wranType;
+  _iconView.image = [UIImage imageNamed:@"警告图像"];
 
+    
+    self.nameLabel.text = model.boxName;
+    
+    
+     self.timeLabel.text = model.createDate;
+//
+    
+    NSString *str =  [NSString stringWithFormat:@"%@",model.wranType];
+    
+    
+    if ([str isEqualToString:@"1"]) {
+        
+        self.typeLabel.text = @"检测到温度异常";
+
+    }else
+    {
+    
+        self.typeLabel.text = @"检测到电流异常";
+
+      }
+    
+    NSString *str2 = [NSString stringWithFormat:@"%@",model.stutas];
+    
+    if ([str2 isEqualToString:@"1"]) {
+        
+        self.staeLabel.text = @"已处理";
+        
+    }else
+    {
+        
+        self.staeLabel.text = @"未处理";
+        
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
