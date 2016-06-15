@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 
+@property (nonatomic,copy)void(^photoBlock)(NSString *filePath);
+
 @end

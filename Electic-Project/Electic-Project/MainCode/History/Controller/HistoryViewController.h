@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface HistoryViewController : BaseViewController
+@interface HistoryViewController : BaseViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

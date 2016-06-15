@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9F4222319C40D85D41C091F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B846AFA75DA5AA157F2D46C /* libPods.a */; };
+		D6A9F4321D1131D9009E38A2 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4301D1131D8009E38A2 /* HistoryCell.m */; };
+		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
+		D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */; };
+		D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */; };
 		DD0738A21D10DE5000AC5027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0738A11D10DE5000AC5027 /* main.m */; };
 		DD0738A51D10DE5000AC5027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0738A41D10DE5000AC5027 /* AppDelegate.m */; };
 		DD0738AD1D10DE5000AC5027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0738AC1D10DE5000AC5027 /* Assets.xcassets */; };
@@ -144,6 +148,12 @@
 		20ED9C73FED64B661B9798D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		37D49375C206104E5A1A67DE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8B846AFA75DA5AA157F2D46C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6A9F42F1D1131D8009E38A2 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
+		D6A9F4301D1131D8009E38A2 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
+		D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		D6A9F4341D113289009E38A2 /* HistoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryHeaderView.h; sourceTree = "<group>"; };
+		D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHeaderView.m; sourceTree = "<group>"; };
+		D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
 		DD07389D1D10DE5000AC5027 /* Electic-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Electic-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0738A11D10DE5000AC5027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD0738A31D10DE5000AC5027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -761,6 +771,12 @@
 		DD0739431D10DED500AC5027 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6A9F42F1D1131D8009E38A2 /* HistoryCell.h */,
+				D6A9F4301D1131D8009E38A2 /* HistoryCell.m */,
+				D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */,
+				D6A9F4341D113289009E38A2 /* HistoryHeaderView.h */,
+				D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */,
+				D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,12 +1109,14 @@
 				DD0739A91D10DED500AC5027 /* 我的_联系我们.png in Resources */,
 				DD0739E91D10DED500AC5027 /* ForgetPasswordController.xib in Resources */,
 				DD0739CB1D10DED500AC5027 /* 绑定-设备.png in Resources */,
+				D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */,
 				DD0739DB1D10DED500AC5027 /* AlarmViewController.xib in Resources */,
 				DD0739AF1D10DED500AC5027 /* 竖线.png in Resources */,
 				DD0739B21D10DED500AC5027 /* 输入框1.png in Resources */,
 				DD0739D21D10DED500AC5027 /* 首页_报警.png in Resources */,
 				DD0739CC1D10DED500AC5027 /* 绑定-账号.png in Resources */,
 				DD0739D11D10DED500AC5027 /* 首页_我的.png in Resources */,
+				D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */,
 				DD0739C31D10DED500AC5027 /* 登录_选中(暗).png in Resources */,
 				DD0739EB1D10DED500AC5027 /* LoginViewController.xib in Resources */,
 				DD0739C21D10DED500AC5027 /* 登录_输入框.png in Resources */,
@@ -1164,6 +1182,7 @@
 			files = (
 				DD0739F31D10DED500AC5027 /* ModifyPasswordController.m in Sources */,
 				DD0739E01D10DED500AC5027 /* BindController.m in Sources */,
+				D6A9F4321D1131D9009E38A2 /* HistoryCell.m in Sources */,
 				DD0739EA1D10DED500AC5027 /* LoginViewController.m in Sources */,
 				DD0739941D10DED500AC5027 /* NSString+FontAwesome.m in Sources */,
 				DD0739921D10DED500AC5027 /* UIViewExt.m in Sources */,
@@ -1187,6 +1206,7 @@
 				DD0739961D10DED500AC5027 /* UIButton+Bootstrap.m in Sources */,
 				DD0739FE1D10DED500AC5027 /* DetailViewController.m in Sources */,
 				DD0739E61D10DED500AC5027 /* HomeCell.m in Sources */,
+				D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */,
 				DD07398E1D10DED500AC5027 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				DD0739971D10DED500AC5027 /* UIColor+RGB.m in Sources */,
 				DD0738A21D10DE5000AC5027 /* main.m in Sources */,
