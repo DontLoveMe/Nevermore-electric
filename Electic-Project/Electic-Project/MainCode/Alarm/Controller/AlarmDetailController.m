@@ -62,7 +62,6 @@
 - (void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@?id=%ld",BASE_URL,WarnningDetailURL,_boxID]]];
     [_webView loadRequest:request];
     

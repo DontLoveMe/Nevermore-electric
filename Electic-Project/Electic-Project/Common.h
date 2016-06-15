@@ -21,6 +21,8 @@
 #define WarnningDetailURL @"/eps/monitor/history/barchart"
 //配电箱历史报警列表
 #define WarnningHistoryListURL @"/eps/monitor/history/box/list"
+//配电箱报警趋势图
+#define WarnningHistoryPicURL @"/eps/monitor/history/temLineChart"
 
 /*--------------电箱------------------*/
 //配电箱列表
