@@ -13,6 +13,8 @@
 //标题
 @property(nonatomic,copy)NSString *name;
 
+@property(nonatomic,copy)NSString *textTitle;
+
 //配电箱ID
 @property(nonatomic,copy)NSString *boxID;
 

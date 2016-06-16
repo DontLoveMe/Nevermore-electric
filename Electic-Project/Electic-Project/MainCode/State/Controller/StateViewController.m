@@ -26,8 +26,13 @@ static NSString *headerViewIdentifier = @"hederview";
 
     UICollectionView *_collectionView;
     
+    DetailViewController *VC;
     //组数
     NSMutableArray *_dataArray;
+    
+    UILabel *_tempLabel;
+    
+    UILabel *_currentLabel;
     
     
     
@@ -263,20 +268,26 @@ static NSString *headerViewIdentifier = @"hederview";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    
+    NSDictionary *dic = [_dataArray objectAtIndex:indexPath.section];
+    NSArray *arr = [dic
+                    objectForKey:@"boxs"];
+    NSDictionary *dataDic = [arr objectAtIndex:indexPath.row];
+    
     MyOneModel *model = _dataArray2[indexPath.row];
     
     
 
-    DetailViewController *VC = [[DetailViewController alloc]init];
+    VC = [[DetailViewController alloc]init];
     
     
     VC.boxID = model.id;
     
-    VC.name = model.boxName;
-     
-    NSLog(@"%@",VC.boxID);
+    VC.name = [[_dataArray objectAtIndex:indexPath.section] objectForKey:@"orgName"];
+ ;
+  
+    VC.textTitle = [dataDic objectForKey:@"boxName"];
     
-    NSLog(@"%@",VC.name);
     
     [self.navigationController pushViewController:VC animated:YES];
     
@@ -309,7 +320,11 @@ static NSString *headerViewIdentifier = @"hederview";
     
     if (![[monitorDic objectForKey:@"current"] isKindOfClass:[NSNull class]]) {
         NSDictionary *currentDic = [monitorDic objectForKey:@"current"];
+        
             cell.residualcurrentLabel.text = [NSString stringWithFormat:@"%ldA",[[currentDic objectForKey:@"curValue"] integerValue]];
+        
+        
+            
     }else
     {
     
@@ -322,10 +337,13 @@ static NSString *headerViewIdentifier = @"hederview";
 
     
     cell.temperatureLabel.text = [NSString stringWithFormat:@"%ld℃",[[temperatureDic objectForKey:@"curValue"] integerValue]];
+        
+         
      }else
      {
      
        cell.temperatureLabel.text = @"暂无数据";
+         
      }
     
     

@@ -144,6 +144,12 @@
 		DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739891D10DED500AC5027 /* MyOneHeaderView.m */; };
 		FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */; };
 		FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */; };
+		FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F211D123E2800ADA911 /* 报警详情背景.png */; };
+		FC901F251D1240EF00ADA911 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC901F241D1240EF00ADA911 /* ListViewController.m */; };
+		FC901F271D1248CE00ADA911 /* 右按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F261D1248CE00ADA911 /* 右按钮.png */; };
+		FC901F291D124D0000ADA911 /* 选择器背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F281D124D0000ADA911 /* 选择器背景图.png */; };
+		FC901F2E1D124FC700ADA911 /* 线.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F2D1D124FC700ADA911 /* 线.png */; };
+		FC901F311D12510E00ADA911 /* MyTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC901F301D12510E00ADA911 /* MyTwoTableViewCell.m */; };
 		FCE4B8001D114942009996A7 /* MyOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */; };
 		FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8011D114A56009996A7 /* 警告图像.png */; };
 /* End PBXBuildFile section */
@@ -334,6 +340,14 @@
 		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTwoModel.m; path = Model/MyTwoModel.m; sourceTree = "<group>"; };
 		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOneModel.h; path = Model/MyOneModel.h; sourceTree = "<group>"; };
 		FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOneModel.m; path = Model/MyOneModel.m; sourceTree = "<group>"; };
+		FC901F211D123E2800ADA911 /* 报警详情背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警详情背景.png"; sourceTree = "<group>"; };
+		FC901F231D1240EF00ADA911 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		FC901F241D1240EF00ADA911 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		FC901F261D1248CE00ADA911 /* 右按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右按钮.png"; sourceTree = "<group>"; };
+		FC901F281D124D0000ADA911 /* 选择器背景图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择器背景图.png"; sourceTree = "<group>"; };
+		FC901F2D1D124FC700ADA911 /* 线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "线.png"; sourceTree = "<group>"; };
+		FC901F2F1D12510E00ADA911 /* MyTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTwoTableViewCell.h; sourceTree = "<group>"; };
+		FC901F301D12510E00ADA911 /* MyTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTwoTableViewCell.m; sourceTree = "<group>"; };
 		FCE4B7FE1D114942009996A7 /* MyOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneTableViewCell.h; sourceTree = "<group>"; };
 		FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneTableViewCell.m; sourceTree = "<group>"; };
 		FCE4B8011D114A56009996A7 /* 警告图像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "警告图像.png"; sourceTree = "<group>"; };
@@ -635,6 +649,10 @@
 		DD0738FE1D10DED500AC5027 /* 状态 */ = {
 			isa = PBXGroup;
 			children = (
+				FC901F2D1D124FC700ADA911 /* 线.png */,
+				FC901F281D124D0000ADA911 /* 选择器背景图.png */,
+				FC901F261D1248CE00ADA911 /* 右按钮.png */,
+				FC901F211D123E2800ADA911 /* 报警详情背景.png */,
 				FCE4B8011D114A56009996A7 /* 警告图像.png */,
 				DD0738FF1D10DED500AC5027 /* 剩余电量.png */,
 				DD0739001D10DED500AC5027 /* 探测器.png */,
@@ -993,6 +1011,8 @@
 				DD07397F1D10DED500AC5027 /* StateViewController.h */,
 				DD0739801D10DED500AC5027 /* StateViewController.m */,
 				DD0739811D10DED500AC5027 /* StateViewController.xib */,
+				FC901F231D1240EF00ADA911 /* ListViewController.h */,
+				FC901F241D1240EF00ADA911 /* ListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1006,6 +1026,8 @@
 				DD0739891D10DED500AC5027 /* MyOneHeaderView.m */,
 				FCE4B7FE1D114942009996A7 /* MyOneTableViewCell.h */,
 				FCE4B7FF1D114942009996A7 /* MyOneTableViewCell.m */,
+				FC901F2F1D12510E00ADA911 /* MyTwoTableViewCell.h */,
+				FC901F301D12510E00ADA911 /* MyTwoTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1102,6 +1124,7 @@
 				DD0739E31D10DED500AC5027 /* HistoryViewController.xib in Resources */,
 				DD0739C51D10DED500AC5027 /* 登录_验证.png in Resources */,
 				DD0739A81D10DED500AC5027 /* 我的_版本信息.png in Resources */,
+				FC901F291D124D0000ADA911 /* 选择器背景图.png in Resources */,
 				DD0739CF1D10DED500AC5027 /* 首页_单元格背景.png in Resources */,
 				DD0739CA1D10DED500AC5027 /* 绑定-未选.png in Resources */,
 				DD0680A81D116ABB00B4DA6C /* 首页_设备验证.png in Resources */,
@@ -1114,13 +1137,16 @@
 				DD0680AB1D11703B00B4DA6C /* 验证-按钮.png in Resources */,
 				DD0739C01D10DED500AC5027 /* 登录_横线.png in Resources */,
 				DD0739991D10DED500AC5027 /* 地址图标.png in Resources */,
+				FC901F2E1D124FC700ADA911 /* 线.png in Resources */,
 				FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */,
 				DD0739B31D10DED500AC5027 /* 输入框2.png in Resources */,
 				DD0739CD1D10DED500AC5027 /* 返回.png in Resources */,
+				FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */,
 				DD0739BD1D10DED500AC5027 /* 登录_按钮背景(框).png in Resources */,
 				DD0739EE1D10DED500AC5027 /* EditionViewController.xib in Resources */,
 				DD0739A41D10DED500AC5027 /* 个人资料_电话.png in Resources */,
 				DD0739D41D10DED500AC5027 /* 首页_状态.png in Resources */,
+				FC901F271D1248CE00ADA911 /* 右按钮.png in Resources */,
 				DD073A021D10DED500AC5027 /* StateViewController.xib in Resources */,
 				DD0739C61D10DED500AC5027 /* 绑定-保存按钮.png in Resources */,
 				DD0739B81D10DED500AC5027 /* 温度.png in Resources */,
@@ -1258,6 +1284,7 @@
 				DD0680A51D1168E900B4DA6C /* DeviceVerdifyController.m in Sources */,
 				DD0739F11D10DED500AC5027 /* MineViewController.m in Sources */,
 				DD0739DA1D10DED500AC5027 /* AlarmViewController.m in Sources */,
+				FC901F251D1240EF00ADA911 /* ListViewController.m in Sources */,
 				DD0739FD1D10DED500AC5027 /* PersonView.m in Sources */,
 				DD0739DE1D10DED500AC5027 /* BaseViewController.m in Sources */,
 				DD0739911D10DED500AC5027 /* TestTool.m in Sources */,
@@ -1265,6 +1292,7 @@
 				DD0739961D10DED500AC5027 /* UIButton+Bootstrap.m in Sources */,
 				DD0739FE1D10DED500AC5027 /* DetailViewController.m in Sources */,
 				DD0739E61D10DED500AC5027 /* HomeCell.m in Sources */,
+				FC901F311D12510E00ADA911 /* MyTwoTableViewCell.m in Sources */,
 				D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */,
 				DD07398E1D10DED500AC5027 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				DD0739971D10DED500AC5027 /* UIColor+RGB.m in Sources */,
