@@ -16,6 +16,8 @@
 //处理状态
 @property(nonatomic,copy)NSString *wranType;
 
+@property(nonatomic,copy)NSString *curValue;
+
 //报警时间
 @property(nonatomic,copy)NSString *createDate;
 

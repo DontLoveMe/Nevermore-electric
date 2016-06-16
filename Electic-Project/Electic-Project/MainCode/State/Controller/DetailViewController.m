@@ -11,8 +11,13 @@
 #import "Common.h"
 #import "UIView+SDAutoLayout.h"
 #import "HistoryAlarmController.h"
+#import "ListViewController.h"
 @interface DetailViewController ()
 
+//背景图
+@property(nonatomic,strong)UIImageView *backView;
+
+@property(nonatomic,strong)UILabel *nextName;
 
 @property(nonatomic,strong)UILabel *addressLabel;
 
@@ -76,9 +81,8 @@
     [super viewDidLoad];
     
     [self initNavBar];
-    
-    self.title = _name;
-    
+
+    self.title =  _textTitle;
     
     //创建数据源
     [self creatData];
@@ -136,15 +140,43 @@
             _dispatchLabel.text = @"通讯:异常";
         }
         
-        _addressLabel.text=[NSString stringWithFormat:@"%@%@",[rootDic objectForKey:@"orgName"],[dic objectForKey:@"boxName"]];
+        _addressLabel.text=[NSString stringWithFormat:@"%@%@",_name,[dic objectForKey:@"boxName"]];
         
-//        _tempytureLabel.text = [NSString stringWithFormat:@"温度:%@",[dic objectForKey:@"temperature"]];
-//        
-//        _currentLabel.text = [NSString stringWithFormat:@"剩余电流:%@",[dic objectForKey:@"current"]];
         
-       _tempytureLabel.text = @"温度:38.5°C";
+
+        _nextName.text = [dic objectForKey:@"boxName"];
         
-       _currentLabel.text = @"剩余电量:1A";
+        NSDictionary *monitorDic = [dic objectForKey:@"monitors"];
+        
+        if (![[monitorDic objectForKey:@"current"] isKindOfClass:[NSNull class]]) {
+            NSDictionary *currentDic = [monitorDic objectForKey:@"current"];
+            
+            _currentLabel.text = [NSString stringWithFormat:@"%ldA",[[currentDic objectForKey:@"curValue"] integerValue]];
+            
+            
+            
+        }else
+        {
+            
+            _currentLabel.text = @"暂无数据";
+            
+        }
+        
+        if (![[monitorDic objectForKey:@"temperature"] isKindOfClass:[NSNull class]]) {
+            NSDictionary *temperatureDic = [monitorDic objectForKey:@"temperature"];
+            
+            
+         _tempytureLabel.text = [NSString stringWithFormat:@"%ld℃",[[temperatureDic objectForKey:@"curValue"] integerValue]];
+            
+            
+        }else
+        {
+            
+          _tempytureLabel.text = @"暂无数据";
+            
+        }
+        
+
         
     } failure:^(NSError *error) {
         
@@ -159,6 +191,33 @@
 -(void)creatUI
 {
 
+    //背景
+    _backView = [[UIImageView alloc]init];
+    
+    _backView.image = [UIImage imageNamed:@"报警详情背景"];
+    
+    [self.view addSubview:_backView];
+    
+    _backView.sd_layout
+    .leftSpaceToView(self.view,45)
+    .topSpaceToView(self.view,75)
+    .widthIs(200)
+    .heightIs(250);
+    
+    
+    //给背景添加手势
+    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    
+    tgr.numberOfTapsRequired = 1;
+    
+    tgr.numberOfTouchesRequired = 1;
+    
+    [_backView addGestureRecognizer:tgr];
+    
+    
+    _backView.userInteractionEnabled = YES;
+    
+    
  
     //地址
     _addressLabel = [[UILabel alloc]init];
@@ -326,6 +385,21 @@
     .heightIs(50);
     
     
+
+}
+
+#pragma mark --手势相关
+-(void)tap:(UITapGestureRecognizer *)tgr
+{
+
+  
+    ListViewController *VC = [[ListViewController alloc]init];
+    
+    VC.name = _textTitle;
+    
+    VC.listBoxID = _boxID;
+        
+    [self.navigationController pushViewController:VC animated:YES];
 
 }
 
