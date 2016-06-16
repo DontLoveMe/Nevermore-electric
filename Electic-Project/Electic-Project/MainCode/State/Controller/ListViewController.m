@@ -59,7 +59,10 @@
 -(void)rightClick:(UIButton *)button
 {
 
-  
+    TrendController *TVC = [[TrendController alloc] init];
+    TVC.boxID = [_listBoxID integerValue];
+    [self.navigationController pushViewController:TVC
+                                         animated:YES];
 
 }
 

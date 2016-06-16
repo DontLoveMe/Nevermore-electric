@@ -142,6 +142,8 @@
 		DD073A021D10DED500AC5027 /* StateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0739811D10DED500AC5027 /* StateViewController.xib */; };
 		DD073A041D10DED500AC5027 /* MyOneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739871D10DED500AC5027 /* MyOneCollectionViewCell.m */; };
 		DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739891D10DED500AC5027 /* MyOneHeaderView.m */; };
+		DDB47E8A1D12860300F92D5D /* TrendController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47E881D12860300F92D5D /* TrendController.m */; };
+		DDB47E8B1D12860300F92D5D /* TrendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB47E891D12860300F92D5D /* TrendController.xib */; };
 		FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */; };
 		FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */; };
 		FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F211D123E2800ADA911 /* 报警详情背景.png */; };
@@ -336,6 +338,9 @@
 		DD0739881D10DED500AC5027 /* MyOneHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneHeaderView.h; sourceTree = "<group>"; };
 		DD0739891D10DED500AC5027 /* MyOneHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneHeaderView.m; sourceTree = "<group>"; };
 		DD07398A1D10DED500AC5027 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DDB47E871D12860300F92D5D /* TrendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendController.h; sourceTree = "<group>"; };
+		DDB47E881D12860300F92D5D /* TrendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendController.m; sourceTree = "<group>"; };
+		DDB47E891D12860300F92D5D /* TrendController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrendController.xib; sourceTree = "<group>"; };
 		FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTwoModel.h; path = Model/MyTwoModel.h; sourceTree = "<group>"; };
 		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTwoModel.m; path = Model/MyTwoModel.m; sourceTree = "<group>"; };
 		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOneModel.h; path = Model/MyOneModel.h; sourceTree = "<group>"; };
@@ -1013,6 +1018,9 @@
 				DD0739811D10DED500AC5027 /* StateViewController.xib */,
 				FC901F231D1240EF00ADA911 /* ListViewController.h */,
 				FC901F241D1240EF00ADA911 /* ListViewController.m */,
+				DDB47E871D12860300F92D5D /* TrendController.h */,
+				DDB47E881D12860300F92D5D /* TrendController.m */,
+				DDB47E891D12860300F92D5D /* TrendController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1188,6 +1196,7 @@
 				DD0739A11D10DED500AC5027 /* 个人资料_头像.png in Resources */,
 				DD0739D61D10DED500AC5027 /* 首页_绑定.png in Resources */,
 				DD07398B1D10DED500AC5027 /* 37x-Checkmark.png in Resources */,
+				DDB47E8B1D12860300F92D5D /* TrendController.xib in Resources */,
 				DD0739A21D10DED500AC5027 /* 个人资料_姓名.png in Resources */,
 				DD0739D91D10DED500AC5027 /* AlarmDetailController.xib in Resources */,
 				DD0739A91D10DED500AC5027 /* 我的_联系我们.png in Resources */,
@@ -1275,6 +1284,7 @@
 				FCE4B8001D114942009996A7 /* MyOneTableViewCell.m in Sources */,
 				DD0739EF1D10DED500AC5027 /* IdeaViewController.m in Sources */,
 				FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */,
+				DDB47E8A1D12860300F92D5D /* TrendController.m in Sources */,
 				DD0739901D10DED500AC5027 /* MD5Security.m in Sources */,
 				DD0739E81D10DED500AC5027 /* ForgetPasswordController.m in Sources */,
 				DD0738A51D10DE5000AC5027 /* AppDelegate.m in Sources */,

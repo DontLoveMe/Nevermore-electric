@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
+#import "TrendController.h"
+
 @interface ListViewController : BaseViewController
 
 
@@ -15,4 +17,5 @@
 
 
 @property(nonatomic,copy)NSString *listBoxID;
+
 @end
