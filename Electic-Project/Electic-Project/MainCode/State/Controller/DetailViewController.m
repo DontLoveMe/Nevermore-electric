@@ -214,11 +214,8 @@
     
     [_backView addGestureRecognizer:tgr];
     
-    
     _backView.userInteractionEnabled = YES;
     
-    
- 
     //地址
     _addressLabel = [[UILabel alloc]init];
     
@@ -270,8 +267,6 @@
     _detectorLabel.font = [UIFont boldSystemFontOfSize:15];
     
     _detectorLabel.textColor = [UIColor whiteColor];
-    
-   
     
     [self.view addSubview:_detectorLabel];
     

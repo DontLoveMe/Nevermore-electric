@@ -201,6 +201,15 @@
     NSArray *arr = dic[@"boxs"];
     NSDictionary *boxDic = arr[indexPath.row];
     NSLog(@"%@",boxDic[@"id"]);
+    
+    ListViewController *VC = [[ListViewController alloc]init];
+    
+    VC.name = [NSString stringWithFormat:@"%@",boxDic[@"boxName"]];
+    
+    VC.listBoxID = [NSString stringWithFormat:@"%@",boxDic[@"id"]];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+    
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

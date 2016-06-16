@@ -16,6 +16,8 @@
 #import "MBProgressHUD.h"
 #import "MD5Security.h"
 #import "TestTool.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapAPI_Location/BMKLocationService.h>
 #endif
 
 //主色调

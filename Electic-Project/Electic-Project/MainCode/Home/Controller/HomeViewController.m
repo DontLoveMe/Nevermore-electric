@@ -9,9 +9,9 @@
 #import "HomeViewController.h"
 #import "HomeCell.h"
 
+#import "LocationController.h"
 #import "BindController.h"
 #import "MineViewController.h"
-#import "StateViewController.h"
 #import "AlarmViewController.h"
 #import "HistoryViewController.h"
 #import "DeviceVerdifyController.h"
@@ -62,6 +62,9 @@
 //数据加载
 - (void)loadData {
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userDic = [defaults objectForKey:@"userDic"];
+    NSInteger stationID = [[userDic objectForKey:@"stationId"] integerValue];
     //定义数据
     NSDictionary *dic0 = @{@"image":@"首页_绑定",@"name":@"绑定操作",@"annotate":@"设备绑定，一键完成!"};
     NSDictionary *dic1 = @{@"image":@"首页_状态",@"name":@"状态",@"annotate":@"一键搜索，定位精准查询。"};
@@ -70,7 +73,11 @@
     NSDictionary *dic4 = @{@"image":@"首页_我的",@"name":@"我的",@"annotate":@"个人资料完美改善！"};
     NSDictionary *dic5 = @{@"image":@"首页_设备验证",@"name":@"设备验证",@"annotate":@"设备验证，方便快捷！"};
     
-    _data = @[dic0,dic1,dic2,dic3,dic4,dic5];
+    if (stationID == 1) {
+        _data = @[dic1,dic2,dic3,dic4];
+    }else if (stationID == 2){
+        _data = @[dic0,dic5,dic4];
+    }
     [_tableView reloadData];
     
 }
@@ -84,7 +91,6 @@
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:_identify forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     cell.dic = _data[indexPath.row];
     
     return cell;
@@ -95,53 +101,80 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-        {
-            BindController *BVC = [[BindController alloc] init];
-            BVC.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:BVC animated:YES];
-            
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userDic = [defaults objectForKey:@"userDic"];
+    NSInteger stationID = [[userDic objectForKey:@"stationId"] integerValue];
+    if (stationID == 1) {
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                
+                LocationController *LVC = [[LocationController alloc] init];
+                [self.navigationController pushViewController:LVC
+                                                     animated:YES];
+                
+            }
+                break;
+            case 1:
+            {
+                AlarmViewController *AVC = [[AlarmViewController alloc] init];
+                [self.navigationController pushViewController:AVC animated:YES];
+                
+            }
+                break;
+            case 2:
+            {
+                HistoryViewController *HVC = [[HistoryViewController alloc] init];
+                [self.navigationController pushViewController:HVC animated:YES];
+                
+            }
+                break;
+            case 3:
+            {
+                MineViewController *MVC = [[MineViewController alloc] init];
+                [self.navigationController pushViewController:MVC animated:YES];
+                
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        case 1:
-        {
-            StateViewController *SVC = [[StateViewController alloc] init];
-            [self.navigationController pushViewController:SVC animated:YES];
-            
+        
+    }else if (stationID == 2){
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                BindController *BVC = [[BindController alloc] init];
+                BVC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:BVC animated:YES];
+                
+            }
+                break;
+            case 1:
+            {
+                DeviceVerdifyController *DVC = [[DeviceVerdifyController alloc] init];
+                [self.navigationController pushViewController:DVC animated:YES];
+                
+            }
+            case 2:
+            {
+                MineViewController *MVC = [[MineViewController alloc] init];
+                [self.navigationController pushViewController:MVC animated:YES];
+                
+            }
+                break;
+
+                break;
+            default:
+                break;
         }
-            break;
-        case 2:
-        {
-            AlarmViewController *AVC = [[AlarmViewController alloc] init];
-            [self.navigationController pushViewController:AVC animated:YES];
-            
-        }
-            break;
-        case 3:
-        {
-            HistoryViewController *HVC = [[HistoryViewController alloc] init];
-            [self.navigationController pushViewController:HVC animated:YES];
-            
-        }
-            break;
-        case 4:
-        {
-            MineViewController *MVC = [[MineViewController alloc] init];
-            [self.navigationController pushViewController:MVC animated:YES];
-            
-        }
-            break;
-        case 5:
-        {
-            DeviceVerdifyController *DVC = [[DeviceVerdifyController alloc] init];
-            [self.navigationController pushViewController:DVC animated:YES];
-            
-        }
-            break;
-        default:
-            break;
+        
     }
+    
+
 }
 
 @end

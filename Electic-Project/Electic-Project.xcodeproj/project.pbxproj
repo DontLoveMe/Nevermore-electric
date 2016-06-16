@@ -144,6 +144,10 @@
 		DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739891D10DED500AC5027 /* MyOneHeaderView.m */; };
 		DDB47E8A1D12860300F92D5D /* TrendController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47E881D12860300F92D5D /* TrendController.m */; };
 		DDB47E8B1D12860300F92D5D /* TrendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB47E891D12860300F92D5D /* TrendController.xib */; };
+		DDB47ED51D1291B000F92D5D /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47ED31D1291B000F92D5D /* LocationController.m */; };
+		DDB47ED61D1291B000F92D5D /* LocationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED41D1291B000F92D5D /* LocationController.xib */; };
+		DDB47EDA1D129CEA00F92D5D /* 定位-放大.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED81D129CEA00F92D5D /* 定位-放大.png */; };
+		DDB47EDB1D129CEA00F92D5D /* 定位-缩小.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED91D129CEA00F92D5D /* 定位-缩小.png */; };
 		FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */; };
 		FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */; };
 		FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F211D123E2800ADA911 /* 报警详情背景.png */; };
@@ -341,10 +345,15 @@
 		DDB47E871D12860300F92D5D /* TrendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendController.h; sourceTree = "<group>"; };
 		DDB47E881D12860300F92D5D /* TrendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendController.m; sourceTree = "<group>"; };
 		DDB47E891D12860300F92D5D /* TrendController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrendController.xib; sourceTree = "<group>"; };
-		FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTwoModel.h; path = Model/MyTwoModel.h; sourceTree = "<group>"; };
-		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTwoModel.m; path = Model/MyTwoModel.m; sourceTree = "<group>"; };
-		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOneModel.h; path = Model/MyOneModel.h; sourceTree = "<group>"; };
-		FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOneModel.m; path = Model/MyOneModel.m; sourceTree = "<group>"; };
+		DDB47ED21D1291B000F92D5D /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		DDB47ED31D1291B000F92D5D /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		DDB47ED41D1291B000F92D5D /* LocationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationController.xib; sourceTree = "<group>"; };
+		DDB47ED81D129CEA00F92D5D /* 定位-放大.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位-放大.png"; sourceTree = "<group>"; };
+		DDB47ED91D129CEA00F92D5D /* 定位-缩小.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位-缩小.png"; sourceTree = "<group>"; };
+		FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTwoModel.h; sourceTree = "<group>"; };
+		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTwoModel.m; sourceTree = "<group>"; };
+		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneModel.h; sourceTree = "<group>"; };
+		FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneModel.m; sourceTree = "<group>"; };
 		FC901F211D123E2800ADA911 /* 报警详情背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警详情背景.png"; sourceTree = "<group>"; };
 		FC901F231D1240EF00ADA911 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		FC901F241D1240EF00ADA911 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
@@ -555,6 +564,7 @@
 		DD0738D81D10DED500AC5027 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DDB47ED71D129CEA00F92D5D /* 定位 */,
 				DD0738D91D10DED500AC5027 /* 前进.png */,
 				DD0680A91D11703B00B4DA6C /* 设备验证 */,
 				DD0738DA1D10DED500AC5027 /* 历史 */,
@@ -994,10 +1004,6 @@
 		DD0739781D10DED500AC5027 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */,
-				FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */,
-				FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */,
-				FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */,
 				FC7FC7F11D1151C4008FAB7D /* Model */,
 				DD0739791D10DED500AC5027 /* Controller */,
 				DD0739851D10DED500AC5027 /* View */,
@@ -1021,6 +1027,9 @@
 				DDB47E871D12860300F92D5D /* TrendController.h */,
 				DDB47E881D12860300F92D5D /* TrendController.m */,
 				DDB47E891D12860300F92D5D /* TrendController.xib */,
+				DDB47ED21D1291B000F92D5D /* LocationController.h */,
+				DDB47ED31D1291B000F92D5D /* LocationController.m */,
+				DDB47ED41D1291B000F92D5D /* LocationController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1040,9 +1049,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DDB47ED71D129CEA00F92D5D /* 定位 */ = {
+			isa = PBXGroup;
+			children = (
+				DDB47ED81D129CEA00F92D5D /* 定位-放大.png */,
+				DDB47ED91D129CEA00F92D5D /* 定位-缩小.png */,
+			);
+			path = "定位";
+			sourceTree = "<group>";
+		};
 		FC7FC7F11D1151C4008FAB7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */,
+				FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */,
+				FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */,
+				FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1144,6 +1166,7 @@
 				DD0738B01D10DE5000AC5027 /* LaunchScreen.storyboard in Resources */,
 				DD0680AB1D11703B00B4DA6C /* 验证-按钮.png in Resources */,
 				DD0739C01D10DED500AC5027 /* 登录_横线.png in Resources */,
+				DDB47ED61D1291B000F92D5D /* LocationController.xib in Resources */,
 				DD0739991D10DED500AC5027 /* 地址图标.png in Resources */,
 				FC901F2E1D124FC700ADA911 /* 线.png in Resources */,
 				FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */,
@@ -1198,6 +1221,7 @@
 				DD07398B1D10DED500AC5027 /* 37x-Checkmark.png in Resources */,
 				DDB47E8B1D12860300F92D5D /* TrendController.xib in Resources */,
 				DD0739A21D10DED500AC5027 /* 个人资料_姓名.png in Resources */,
+				DDB47EDA1D129CEA00F92D5D /* 定位-放大.png in Resources */,
 				DD0739D91D10DED500AC5027 /* AlarmDetailController.xib in Resources */,
 				DD0739A91D10DED500AC5027 /* 我的_联系我们.png in Resources */,
 				DD0739E91D10DED500AC5027 /* ForgetPasswordController.xib in Resources */,
@@ -1212,6 +1236,7 @@
 				D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */,
 				DD0739C31D10DED500AC5027 /* 登录_选中(暗).png in Resources */,
 				DD0739EB1D10DED500AC5027 /* LoginViewController.xib in Resources */,
+				DDB47EDB1D129CEA00F92D5D /* 定位-缩小.png in Resources */,
 				DD0739C21D10DED500AC5027 /* 登录_输入框.png in Resources */,
 				DD07399A1D10DED500AC5027 /* 搜索图.png in Resources */,
 				DD0739BF1D10DED500AC5027 /* 登录_按钮背景.png in Resources */,
@@ -1317,6 +1342,7 @@
 				DD0739F51D10DED500AC5027 /* PersonViewController.m in Sources */,
 				DD0739E21D10DED500AC5027 /* HistoryViewController.m in Sources */,
 				DD073A011D10DED500AC5027 /* StateViewController.m in Sources */,
+				DDB47ED51D1291B000F92D5D /* LocationController.m in Sources */,
 				DD0739EC1D10DED500AC5027 /* LoginTextField.m in Sources */,
 				DD0739951D10DED500AC5027 /* NSString+Shove.m in Sources */,
 				DD07398F1D10DED500AC5027 /* UIView+SDAutoLayout.m in Sources */,

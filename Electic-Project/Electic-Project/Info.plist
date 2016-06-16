@@ -4,8 +4,8 @@
 <dict>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
-	<key>NSLocation WhenInUseUsageDescription</key>
-	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>GPS闹铃</string>
 	<key>CFBundleDisplayName</key>
 	<string>赛飞奇电力</string>
 	<key>LSApplicationCategoryType</key>

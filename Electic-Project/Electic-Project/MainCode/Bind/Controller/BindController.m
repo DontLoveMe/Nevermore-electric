@@ -246,11 +246,38 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
 
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     _bgScrollView.contentSize = CGSizeMake(KScreenWidth, _commitButton.bottom + 36.f);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification{
+    
+    CGRect rect1 = _bgScrollView.frame;
+    rect1.size.height = KScreenHeight - kNavigationBarHeight - 216 - 50;
+    _bgScrollView.frame = rect1;
+    
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification{
+    
+    CGRect rect1 = _bgScrollView.frame;
+    rect1.size.height = KScreenHeight - kNavigationBarHeight;
+    _bgScrollView.frame = rect1;
     
 }
 
@@ -383,10 +410,10 @@
     
     if (textField.tag == 100) {
         _textFieldType = 100;
-        [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
+        [self requestListWithString:string withTextField:textField withType:_textFieldType];
     }else if (textField.tag == 102) {
         _textFieldType = 102;
-         [self requestListWithString:textField.text withTextField:textField withType:_textFieldType];
+         [self requestListWithString:string withTextField:textField withType:_textFieldType];
     }
 //    else if (textField.tag == 101) {
 //        _textFieldType = 101;
@@ -495,6 +522,7 @@
         
         _addressTF.text = [NSString stringWithFormat:@"%@  %@",[dic objectForKey:@"companyAddress"],[dic objectForKey:@"name"]];
         _selectID = [NSString stringWithFormat:@"%ld",[[dic objectForKey:@"id"] integerValue]];
+        [_params setObject:[dic objectForKey:@"orgId"] forKey:@"orgId"];
         
     }else if (_textFieldType == 101) {
         

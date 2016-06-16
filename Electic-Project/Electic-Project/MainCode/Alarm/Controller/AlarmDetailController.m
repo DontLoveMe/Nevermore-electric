@@ -48,7 +48,7 @@
 - (void)initViews{
 
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight - kNavigationBarHeight)];
-    _webView.backgroundColor = [UIColor clearColor];
+    _webView.backgroundColor = [UIColor colorFromHexRGB:@"121212"];
     _webView.delegate = self;
     //自动适配屏幕
     //    _webView.scalesPageToFit = YES;

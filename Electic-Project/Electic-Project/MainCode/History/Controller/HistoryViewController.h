@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ListViewController.h"
 
 @interface HistoryViewController : BaseViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
