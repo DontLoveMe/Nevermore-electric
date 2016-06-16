@@ -7,8 +7,6 @@
 //  2acf72d06f8716aab8a5353ccd123157
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
-#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //1
+    
+    //注册百度地图应用
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"jNcpkw8b0LnBDz1TnPISjfwmwG9sOz3c"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

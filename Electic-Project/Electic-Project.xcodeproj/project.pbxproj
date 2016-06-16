@@ -1059,6 +1059,7 @@
 				TargetAttributes = {
 					DD07389C1D10DE5000AC5027 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 84W6EV66WN;
 					};
 				};
 			};
@@ -1385,6 +1386,7 @@
 			baseConfigurationReference = 37D49375C206104E5A1A67DE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "Electic-Project/PrefixHeader.pch";
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1398,6 +1400,7 @@
 			baseConfigurationReference = 20ED9C73FED64B661B9798D4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "Electic-Project/PrefixHeader.pch";
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
