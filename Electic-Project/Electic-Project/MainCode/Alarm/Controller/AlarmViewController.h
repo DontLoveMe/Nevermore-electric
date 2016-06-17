@@ -12,13 +12,15 @@
 
 #import "WarmCell.h"
 
-@interface AlarmViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>{
+@interface AlarmViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>{
 
     UISearchBar *_searchView;
 
     UITableView *_warmTable;
     
     NSMutableArray *_warmArr;
+    
+    NSString *_searchString;
 }
 
 @end

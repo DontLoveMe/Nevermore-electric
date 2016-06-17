@@ -53,7 +53,7 @@
     
     
     //创建搜索
-    [self creatSearch];
+//    [self creatSearch];
     
     //创建列表视图
     [self creatCollectionView];
@@ -86,7 +86,7 @@
 {
 
     //名字
-    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 70, 100, 40)];
+    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 7, 100, 40)];
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
     nameLabel.text = userDic[@"name"];
     
@@ -107,7 +107,7 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     // 创建UICollectionView
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 110, KScreenWidth, KScreenHeight-110-64) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, nameLabel.bottom+15, KScreenWidth, KScreenHeight-nameLabel.bottom-15-64) collectionViewLayout:flowLayout];
     
     //设置数据源代理、collection代理
     _collectionView.dataSource = self;
@@ -182,7 +182,7 @@
 //单元格
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 1.去重用队列中查找
+    //去重用队列中查找
     HistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HistoryCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     //数据处理

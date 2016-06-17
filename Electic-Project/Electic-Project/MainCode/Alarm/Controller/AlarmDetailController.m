@@ -51,7 +51,7 @@
     _webView.backgroundColor = [UIColor colorFromHexRGB:@"121212"];
     _webView.delegate = self;
     //自动适配屏幕
-    //    _webView.scalesPageToFit = YES;
+//    _webView.scalesPageToFit = YES;
     [self.view addSubview:_webView];
     
     //设置风火轮

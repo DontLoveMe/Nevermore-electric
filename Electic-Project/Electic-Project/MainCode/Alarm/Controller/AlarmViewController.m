@@ -53,6 +53,7 @@
     _searchView = [[UISearchBar alloc] initWithFrame:CGRectMake(4.f, 8.f, KScreenWidth - 8.f, 40.f)];
     _searchView.barStyle = UIBarStyleBlack;
     _searchView.placeholder = @"搜索";
+    _searchView.delegate = self;
     [self.view addSubview:_searchView];
     
     _warmTable = [[UITableView alloc] initWithFrame:CGRectMake(0, _searchView.bottom + 8.f, KScreenWidth, KScreenHeight - kNavigationBarHeight - 20.f - _searchView.bottom)];
@@ -81,8 +82,14 @@
     NSString *stuffID = [userDic objectForKey:@"staffId"];
     [params setObject:@"1" forKey:@"page"];
     [params setObject:@"20" forKey:@"rows"];
-    [params setObject:@{@"staffId":stuffID}
-               forKey:@"paramsMap"];
+    if (_searchString.length > 0) {
+        [params setObject:@{@"staffId":stuffID,@"searchParam":_searchString}
+                   forKey:@"paramsMap"];
+    }else {
+        
+        [params setObject:@{@"staffId":stuffID}
+                   forKey:@"paramsMap"];
+    }
     NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,WarnningListURL];
     [TestTool post:url
             params:params
@@ -190,4 +197,24 @@
     
 }
 
+#pragma mark - UISearchBarDelegate
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+//    NSLog(@"%@",searchText);
+    _searchString = searchText;
+    [self requestData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    [_searchView resignFirstResponder];
+    
+}
 @end

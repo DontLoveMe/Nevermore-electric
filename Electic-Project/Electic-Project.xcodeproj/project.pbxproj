@@ -1111,7 +1111,7 @@
 				TargetAttributes = {
 					DD07389C1D10DE5000AC5027 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 84W6EV66WN;
+						DevelopmentTeam = 9XXQS79WF8;
 					};
 				};
 			};
@@ -1454,7 +1454,7 @@
 				GCC_PREFIX_HEADER = "Electic-Project/PrefixHeader.pch";
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "sfq.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1468,7 +1468,7 @@
 				GCC_PREFIX_HEADER = "Electic-Project/PrefixHeader.pch";
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "sfq.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

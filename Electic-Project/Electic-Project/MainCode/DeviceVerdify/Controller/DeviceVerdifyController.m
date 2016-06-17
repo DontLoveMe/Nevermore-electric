@@ -139,7 +139,7 @@
 #pragma mark - UITextfieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    [self requestListWithString:textField.text withTextField:textField];
+    [self requestListWithString:string withTextField:textField];
 
     
     return YES;
@@ -172,7 +172,12 @@
                if (isSuccess) {
                    
                    _selectArr = [json objectForKey:@"data"];
-                   _selectTable.frame = CGRectMake(tf.left, tf.bottom - 8.f, tf.width, _selectArr.count * 24);
+                   if (_selectArr.count * 24 > 150.f) {
+                       _selectTable.frame = CGRectMake(tf.left, tf.bottom - 8.f, tf.width, 150.f);
+                   }else {
+                        _selectTable.frame = CGRectMake(tf.left, tf.bottom - 8.f, tf.width, _selectArr.count * 24);
+                   }
+                  
                    [self.view addSubview:_selectTable];
                    [_selectTable reloadData];
                    
