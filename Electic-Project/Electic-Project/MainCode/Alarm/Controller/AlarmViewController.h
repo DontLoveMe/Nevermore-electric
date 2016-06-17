@@ -12,6 +12,8 @@
 
 #import "WarmCell.h"
 
+#import "UIImageView+AFNetWorking.h"
+
 @interface AlarmViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>{
 
     UISearchBar *_searchView;

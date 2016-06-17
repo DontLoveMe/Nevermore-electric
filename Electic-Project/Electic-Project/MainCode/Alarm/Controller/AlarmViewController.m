@@ -151,7 +151,10 @@
         cell.stateLabel.text = @"已解决";
         cell.stateLabel.textColor = [UIColor whiteColor];
     }
-
+    //设置头像和名字
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,userDic[@"headPhoto"]]];
+    [cell.headPic setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
     
     return cell;
 }

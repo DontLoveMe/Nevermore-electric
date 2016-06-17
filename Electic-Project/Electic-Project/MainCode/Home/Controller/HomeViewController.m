@@ -159,6 +159,7 @@
                 [self.navigationController pushViewController:DVC animated:YES];
                 
             }
+                break;
             case 2:
             {
                 MineViewController *MVC = [[MineViewController alloc] init];

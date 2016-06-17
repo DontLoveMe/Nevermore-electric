@@ -165,7 +165,7 @@
     _acountLabel.font = [UIFont systemFontOfSize:16];
     [_bgScrollView addSubview:_acountLabel];
     
-    _acountView = [[UITextField alloc] initWithFrame:CGRectMake(84.f, _acountImg.bottom + 6.f, KScreenWidth - 96.f, 72.f)];
+    _acountView = [[UIView alloc] initWithFrame:CGRectMake(84.f, _acountImg.bottom + 6.f, KScreenWidth - 96.f, 72.f)];
     _acountView.backgroundColor = [UIColor clearColor];
     _acountView.layer.cornerRadius = 5.f;
     _acountView.layer.masksToBounds = YES;
@@ -290,7 +290,11 @@
         _acountUnselectButton.selected = NO;
         
         _acountAddTF.text = @"";
+//        if ([_acountAddTF isFirstResponder]) {
+//            [_acountAddTF resignFirstResponder];
+//        }
         _acountAddTF.userInteractionEnabled = NO;
+//        _acountAddTF.delegate = nil;
         _acountexistTF.userInteractionEnabled = YES;
         [_params setObject:@"1"
                     forKey:@"isExists"];
@@ -301,6 +305,10 @@
         _acountUnselectButton.selected = YES;
         
         _acountexistTF.text = @"";
+//        if ([_acountexistTF isFirstResponder]) {
+//            [_acountexistTF resignFirstResponder];
+//        }
+//        _acountexistTF.delegate = nil;
         _acountexistTF.userInteractionEnabled = NO;
         _acountAddTF.userInteractionEnabled = YES;
         [_params setObject:@"0"
@@ -315,10 +323,10 @@
     Boolean isExist = [[_params objectForKey:@"isExists"] boolValue];
     if (isExist) {
         
-        if ([[_params objectForKey:@"staffId"] isKindOfClass:[NSNull class]]) {
+        if ([[_params objectForKey:@"staffId"] isKindOfClass:[NSNull class]]||_acountexistTF.text.length == 0) {
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示"
-                                                                                     message:@"请选择账户！" preferredStyle:UIAlertControllerStyleAlert];
+                                                                                     message:@"请输入/选择账户！" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好"
                                                                    style:UIAlertActionStyleCancel
                                                                  handler:^(UIAlertAction * _Nonnull action) {
@@ -553,7 +561,7 @@
 
 }
 
-#pragma mark - 点击位置，获取位置详情
+#pragma mark - 点击隐藏选择列表
 - (void)handleSingleTap:(UITapGestureRecognizer *)theSingleTap{
     
     if (_selectTable) {
