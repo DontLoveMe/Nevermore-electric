@@ -129,7 +129,8 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSDictionary *dic = [_warmArr objectAtIndex:indexPath.row];
-    if (![[dic objectForKey:@"boxName"] isKindOfClass:[NSNull class]]) {
+    NSLog(@"看看数据:%@",dic);
+    if (![[dic objectForKey:@"staffName"] isKindOfClass:[NSNull class]]) {
         cell.nameLabel.text = [dic objectForKey:@"staffName"];
     }else{
         cell.nameLabel.text = @"无数据";
