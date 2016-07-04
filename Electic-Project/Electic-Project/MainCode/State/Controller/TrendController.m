@@ -62,7 +62,13 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@?id=%ld",BASE_URL,WarnningHistoryPicURL,_boxID]]];
+    NSString *url;
+    if (_isCurrent) {
+        url = WarnningCurrentPicURL;
+    }else {
+        url = WarnningTemperaturePicURL;
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@?id=%ld",BASE_URL,url,_boxID]]];
     [_webView loadRequest:request];
     
 }

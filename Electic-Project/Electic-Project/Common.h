@@ -22,7 +22,9 @@
 //配电箱历史报警列表
 #define WarnningHistoryListURL @"/eps/monitor/history/box/list"
 //配电箱报警趋势图
-#define WarnningHistoryPicURL @"/eps/monitor/history/temLineChart"
+#define WarnningTemperaturePicURL @"/eps/monitor/history/temLineChart"
+//配电箱报警趋势图
+#define WarnningCurrentPicURL @"/eps/monitor/history/curLineChart"
 
 /*--------------电箱------------------*/
 //配电箱列表

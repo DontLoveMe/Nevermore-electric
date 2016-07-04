@@ -17,6 +17,6 @@
 }
 
 @property (nonatomic,assign)NSInteger boxID;
-
+@property (nonatomic,assign)BOOL isCurrent;
 
 @end

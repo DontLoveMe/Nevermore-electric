@@ -22,6 +22,8 @@
     NSMutableArray *_dataArray;
     
     NSMutableArray *_dataArr;
+    
+    BOOL _isCurrent;
 }
 
 @end
@@ -61,6 +63,7 @@
 
     TrendController *TVC = [[TrendController alloc] init];
     TVC.boxID = [_listBoxID integerValue];
+    TVC.isCurrent = _isCurrent;
     [self.navigationController pushViewController:TVC
                                          animated:YES];
 
@@ -229,12 +232,14 @@
         
         _tab.hidden=YES;
         
-        
+        _isCurrent = NO;
     }else
     {
         
         _tab.hidden=NO;
         _Tab.hidden=YES;
+        
+        _isCurrent = YES;
     }
     
     
