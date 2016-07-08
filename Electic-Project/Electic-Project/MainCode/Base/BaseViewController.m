@@ -22,6 +22,12 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
 }
 
+- (void)setTitle:(NSString *)title{
+
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:title]];
+
+}
+
 //设置导航控制器的属性
 -(void)setNavigationBar{
     
