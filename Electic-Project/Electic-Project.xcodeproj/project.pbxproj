@@ -142,6 +142,8 @@
 		DD073A021D10DED500AC5027 /* StateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0739811D10DED500AC5027 /* StateViewController.xib */; };
 		DD073A041D10DED500AC5027 /* MyOneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739871D10DED500AC5027 /* MyOneCollectionViewCell.m */; };
 		DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0739891D10DED500AC5027 /* MyOneHeaderView.m */; };
+		DD1119B11D2FB1F300406352 /* 我的_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1119B01D2FB1F300406352 /* 我的_banner.png */; };
+		DD1119B31D2FB87E00406352 /* 报警按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1119B21D2FB87E00406352 /* 报警按钮.png */; };
 		DDB47E8A1D12860300F92D5D /* TrendController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47E881D12860300F92D5D /* TrendController.m */; };
 		DDB47E8B1D12860300F92D5D /* TrendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB47E891D12860300F92D5D /* TrendController.xib */; };
 		DDB47ED51D1291B000F92D5D /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47ED31D1291B000F92D5D /* LocationController.m */; };
@@ -342,6 +344,8 @@
 		DD0739881D10DED500AC5027 /* MyOneHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneHeaderView.h; sourceTree = "<group>"; };
 		DD0739891D10DED500AC5027 /* MyOneHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneHeaderView.m; sourceTree = "<group>"; };
 		DD07398A1D10DED500AC5027 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DD1119B01D2FB1F300406352 /* 我的_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_banner.png"; sourceTree = "<group>"; };
+		DD1119B21D2FB87E00406352 /* 报警按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警按钮.png"; sourceTree = "<group>"; };
 		DDB47E871D12860300F92D5D /* TrendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendController.h; sourceTree = "<group>"; };
 		DDB47E881D12860300F92D5D /* TrendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendController.m; sourceTree = "<group>"; };
 		DDB47E891D12860300F92D5D /* TrendController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrendController.xib; sourceTree = "<group>"; };
@@ -604,6 +608,7 @@
 		DD0738E21D10DED500AC5027 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				DD1119B01D2FB1F300406352 /* 我的_banner.png */,
 				DD0738E31D10DED500AC5027 /* 个人资料 */,
 				DD0738EA1D10DED500AC5027 /* 我的 */,
 				DD0738F11D10DED500AC5027 /* 我的 - 修改头像 */,
@@ -664,6 +669,7 @@
 		DD0738FE1D10DED500AC5027 /* 状态 */ = {
 			isa = PBXGroup;
 			children = (
+				DD1119B21D2FB87E00406352 /* 报警按钮.png */,
 				FC901F2D1D124FC700ADA911 /* 线.png */,
 				FC901F281D124D0000ADA911 /* 选择器背景图.png */,
 				FC901F261D1248CE00ADA911 /* 右按钮.png */,
@@ -1111,6 +1117,7 @@
 				TargetAttributes = {
 					DD07389C1D10DE5000AC5027 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 84W6EV66WN;
 					};
 				};
 			};
@@ -1158,11 +1165,13 @@
 				DD0739CA1D10DED500AC5027 /* 绑定-未选.png in Resources */,
 				DD0680A81D116ABB00B4DA6C /* 首页_设备验证.png in Resources */,
 				DD0739AD1D10DED500AC5027 /* 我的_拍照.png in Resources */,
+				DD1119B31D2FB87E00406352 /* 报警按钮.png in Resources */,
 				DD07399E1D10DED500AC5027 /* 启动页.png in Resources */,
 				DD0739B61D10DED500AC5027 /* 剩余电量.png in Resources */,
 				DD0739F21D10DED500AC5027 /* MineViewController.xib in Resources */,
 				DD0739C81D10DED500AC5027 /* 绑定-地址.png in Resources */,
 				DD0738B01D10DE5000AC5027 /* LaunchScreen.storyboard in Resources */,
+				DD1119B11D2FB1F300406352 /* 我的_banner.png in Resources */,
 				DD0680AB1D11703B00B4DA6C /* 验证-按钮.png in Resources */,
 				DD0739C01D10DED500AC5027 /* 登录_横线.png in Resources */,
 				DDB47ED61D1291B000F92D5D /* LocationController.xib in Resources */,
@@ -1455,7 +1464,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1472,7 +1481,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
