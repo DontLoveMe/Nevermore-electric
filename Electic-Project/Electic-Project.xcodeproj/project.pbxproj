@@ -12,6 +12,8 @@
 		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
 		D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */; };
 		D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */; };
+		D6D809491D2FB06A00C8DED3 /* 报警_无记录.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D809481D2FB06A00C8DED3 /* 报警_无记录.png */; };
+		D6D8094B1D2FB39400C8DED3 /* 报警.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D8094A1D2FB39400C8DED3 /* 报警.png */; };
 		DD0680A51D1168E900B4DA6C /* DeviceVerdifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */; };
 		DD0680A61D1168E900B4DA6C /* DeviceVerdifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */; };
 		DD0680A81D116ABB00B4DA6C /* 首页_设备验证.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0680A71D116ABB00B4DA6C /* 首页_设备验证.png */; };
@@ -170,6 +172,8 @@
 		D6A9F4341D113289009E38A2 /* HistoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryHeaderView.h; sourceTree = "<group>"; };
 		D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHeaderView.m; sourceTree = "<group>"; };
 		D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		D6D809481D2FB06A00C8DED3 /* 报警_无记录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警_无记录.png"; sourceTree = "<group>"; };
+		D6D8094A1D2FB39400C8DED3 /* 报警.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警.png"; sourceTree = "<group>"; };
 		DD0680A21D1168E900B4DA6C /* DeviceVerdifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceVerdifyController.h; sourceTree = "<group>"; };
 		DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceVerdifyController.m; sourceTree = "<group>"; };
 		DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceVerdifyController.xib; sourceTree = "<group>"; };
@@ -656,6 +660,8 @@
 		DD0738FB1D10DED500AC5027 /* 报警 */ = {
 			isa = PBXGroup;
 			children = (
+				D6D8094A1D2FB39400C8DED3 /* 报警.png */,
+				D6D809481D2FB06A00C8DED3 /* 报警_无记录.png */,
 				DD0738FC1D10DED500AC5027 /* 报警-无图片.png */,
 			);
 			path = "报警";
@@ -1202,6 +1208,7 @@
 				DD0739E51D10DED500AC5027 /* HomeViewController.xib in Resources */,
 				DD0738AD1D10DE5000AC5027 /* Assets.xcassets in Resources */,
 				DD0739C91D10DED500AC5027 /* 绑定-已选.png in Resources */,
+				D6D8094B1D2FB39400C8DED3 /* 报警.png in Resources */,
 				DD0739F61D10DED500AC5027 /* PersonViewController.xib in Resources */,
 				DD07399C1D10DED500AC5027 /* 未选中状态.png in Resources */,
 				DD0739B71D10DED500AC5027 /* 探测器.png in Resources */,
@@ -1233,6 +1240,7 @@
 				DD0739CC1D10DED500AC5027 /* 绑定-账号.png in Resources */,
 				DD0739D11D10DED500AC5027 /* 首页_我的.png in Resources */,
 				D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */,
+				D6D809491D2FB06A00C8DED3 /* 报警_无记录.png in Resources */,
 				DD0739C31D10DED500AC5027 /* 登录_选中(暗).png in Resources */,
 				DD0739EB1D10DED500AC5027 /* LoginViewController.xib in Resources */,
 				DDB47EDB1D129CEA00F92D5D /* 定位-缩小.png in Resources */,

@@ -23,6 +23,9 @@
     NSMutableArray *_warmArr;
     
     NSString *_searchString;
+    
+    UIImageView *_imgView;
+    UILabel *_noRecordLabel;
 }
 
 @end

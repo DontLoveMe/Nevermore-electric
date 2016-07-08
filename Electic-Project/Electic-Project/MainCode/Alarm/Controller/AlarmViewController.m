@@ -38,8 +38,7 @@
     [super viewDidLoad];
     
     self.title = @"报警";
-    self.view.backgroundColor = [UIColor blackColor];
-    
+
     _warmArr = [NSMutableArray array];
     
     [self initNavBar];
@@ -50,6 +49,16 @@
 
 - (void)initViews{
 
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake((KScreenWidth-130)/2, (KScreenHeight-150)/2-40, 130, 150)];
+    _imgView.image = [UIImage imageNamed:@"报警_无记录"];
+    [self.view addSubview:_imgView];
+    _noRecordLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_imgView.frame), KScreenWidth, 25)];
+    _noRecordLabel.text = @"暂无记录";
+    _noRecordLabel.textAlignment = NSTextAlignmentCenter;
+    _noRecordLabel.font = [UIFont boldSystemFontOfSize:23];
+    _noRecordLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:_noRecordLabel];
+    
     _searchView = [[UISearchBar alloc] initWithFrame:CGRectMake(4.f, 8.f, KScreenWidth - 8.f, 40.f)];
     _searchView.barStyle = UIBarStyleBlack;
     _searchView.placeholder = @"搜索";
@@ -60,10 +69,13 @@
     _warmTable.backgroundColor = [UIColor clearColor];
     _warmTable.delegate = self;
     _warmTable.dataSource = self;
+    _warmTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_warmTable registerNib:[UINib nibWithNibName:@"WarmCell"
                                            bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"Warm_Cell"];
     [self.view addSubview:_warmTable];
 
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -101,7 +113,8 @@
                    [self hideSuccessHUD:@"加载成功"];
                    _warmArr = [json objectForKey:@"data"];
                    [_warmTable reloadData];
-                   
+                   _imgView.hidden = YES;
+                   _noRecordLabel.hidden = YES;
                }else{
                    
                    [self hideFailHUD:@"加载失败，请重新加载"];
