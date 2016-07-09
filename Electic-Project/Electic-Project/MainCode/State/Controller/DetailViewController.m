@@ -226,7 +226,7 @@
     [self.view addSubview:_addressLabel];
     
     _addressLabel.sd_layout
-    .leftSpaceToView(self.view,50)
+    .leftSpaceToView(self.view,40)
     .topSpaceToView(self.view,80)
     .widthIs(200)
     .heightIs(20);
@@ -243,7 +243,7 @@
     [self.view addSubview:_nameLabel];
     
     _nameLabel.sd_layout
-    .leftSpaceToView(_addressLabel,40)
+    .leftSpaceToView(self.view,KScreenWidth-100)
     .topSpaceToView(self.view,80)
     .widthIs(200)
     .heightIs(20);
@@ -257,7 +257,7 @@
     [self.view addSubview:_detectorView];
    
     _detectorView.sd_layout
-    .leftSpaceToView(self.view,55)
+    .leftSpaceToView(self.view,40)
     .topSpaceToView(_addressLabel,25)
     .widthIs(20)
     .heightIs(25);
@@ -286,7 +286,7 @@
     
     
     _dispatchView.sd_layout
-    .leftSpaceToView(self.view,55)
+    .leftSpaceToView(self.view,40)
     .topSpaceToView(_detectorView,30)
     .widthIs(20)
     .heightIs(25);
@@ -314,7 +314,7 @@
     [self.view addSubview:_temptureView];
     
     _temptureView.sd_layout
-    .leftSpaceToView(self.view,55)
+    .leftSpaceToView(self.view,40)
     .topSpaceToView(_dispatchView,30)
     .widthIs(20)
     .heightIs(25);
@@ -340,7 +340,7 @@
     [self.view addSubview:_currentView];
     
     _currentView.sd_layout
-    .leftSpaceToView(self.view,55)
+    .leftSpaceToView(self.view,40)
     .topSpaceToView(_temptureView,30)
     .widthIs(20)
     .heightIs(25);
