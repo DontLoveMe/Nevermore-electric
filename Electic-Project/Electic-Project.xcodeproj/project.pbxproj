@@ -160,6 +160,7 @@
 		DD08B6FF1D3094D40000B89A /* 修改密码.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08B6FE1D3094D40000B89A /* 修改密码.png */; };
 		DD08B7011D3098500000B89A /* 配电箱详情.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08B7001D3098500000B89A /* 配电箱详情.png */; };
 		DD08B7031D3098740000B89A /* 详情.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08B7021D3098740000B89A /* 详情.png */; };
+		DD08B7051D30D8DA0000B89A /* 配电箱背景.png in Resources */ = {isa = PBXBuildFile; fileRef = DD08B7041D30D8DA0000B89A /* 配电箱背景.png */; };
 		DD1119B11D2FB1F300406352 /* 我的_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1119B01D2FB1F300406352 /* 我的_banner.png */; };
 		DD1119B31D2FB87E00406352 /* 报警按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1119B21D2FB87E00406352 /* 报警按钮.png */; };
 		DDB47E8A1D12860300F92D5D /* TrendController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB47E881D12860300F92D5D /* TrendController.m */; };
@@ -380,6 +381,7 @@
 		DD08B6FE1D3094D40000B89A /* 修改密码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "修改密码.png"; sourceTree = "<group>"; };
 		DD08B7001D3098500000B89A /* 配电箱详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "配电箱详情.png"; sourceTree = "<group>"; };
 		DD08B7021D3098740000B89A /* 详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情.png"; sourceTree = "<group>"; };
+		DD08B7041D30D8DA0000B89A /* 配电箱背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "配电箱背景.png"; sourceTree = "<group>"; };
 		DD1119B01D2FB1F300406352 /* 我的_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_banner.png"; sourceTree = "<group>"; };
 		DD1119B21D2FB87E00406352 /* 报警按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警按钮.png"; sourceTree = "<group>"; };
 		DDB47E871D12860300F92D5D /* TrendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendController.h; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 			children = (
 				DD1119B21D2FB87E00406352 /* 报警按钮.png */,
 				FC901F2D1D124FC700ADA911 /* 线.png */,
+				DD08B7041D30D8DA0000B89A /* 配电箱背景.png */,
 				FC901F281D124D0000ADA911 /* 选择器背景图.png */,
 				FC901F261D1248CE00ADA911 /* 右按钮.png */,
 				FC901F211D123E2800ADA911 /* 报警详情背景.png */,
@@ -1246,6 +1249,7 @@
 				FCE4B8021D114A56009996A7 /* 警告图像.png in Resources */,
 				DD0739B31D10DED500AC5027 /* 输入框2.png in Resources */,
 				DD0739CD1D10DED500AC5027 /* 返回.png in Resources */,
+				DD08B7051D30D8DA0000B89A /* 配电箱背景.png in Resources */,
 				FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */,
 				DD0739BD1D10DED500AC5027 /* 登录_按钮背景(框).png in Resources */,
 				DD08B6FF1D3094D40000B89A /* 修改密码.png in Resources */,

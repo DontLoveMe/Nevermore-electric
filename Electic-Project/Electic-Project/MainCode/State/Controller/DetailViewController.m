@@ -194,15 +194,15 @@
     //背景
     _backView = [[UIImageView alloc]init];
     
-    _backView.image = [UIImage imageNamed:@"报警详情背景"];
+    _backView.image = [UIImage imageNamed:@"配电箱背景"];
     
     [self.view addSubview:_backView];
     
     _backView.sd_layout
-    .leftSpaceToView(self.view,45)
-    .topSpaceToView(self.view,75)
-    .widthIs(200)
-    .heightIs(250);
+    .leftSpaceToView(self.view,10)
+    .topSpaceToView(self.view,57)
+    .widthIs((KScreenWidth-20))
+    .heightIs(300);
     
     
     //给背景添加手势
@@ -374,7 +374,7 @@
     [self.view addSubview:_btn];
     
     _btn.sd_layout
-    .rightSpaceToView(self.view,20)
+    .rightSpaceToView(self.view,30)
     .topSpaceToView(_nameLabel,40)
     .widthIs(100)
     .heightIs(50);

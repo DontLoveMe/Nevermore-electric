@@ -26,13 +26,13 @@
 {
 
     self.backView = [[UIImageView alloc]init];
-        
+    
     [self.contentView addSubview:self.backView];
     
     _backView.sd_layout
     .leftSpaceToView(self.contentView,4)
     .topSpaceToView(self.contentView,10)
-    .widthIs(120)
+    .widthIs(110)
     .heightIs(100);
     
     self.nameLabel = [[UILabel alloc]init];
@@ -72,7 +72,7 @@
     
     _temperatureLabel.sd_layout
     .leftSpaceToView(_temperatureView,6)
-    .topEqualToView(_temperatureView)
+    .centerYEqualToView(_temperatureView)
     .widthIs(100)
     .heightIs(25);
     
@@ -85,7 +85,7 @@
     
     _residualcurrentView.sd_layout
     .leftSpaceToView(_backView,10)
-    .topSpaceToView(_temperatureView,4)
+    .topSpaceToView(_temperatureView,2)
     .widthIs(20)
     .heightIs(20);
     
@@ -98,12 +98,16 @@
     
     [self.backView addSubview:self.residualcurrentLabel];
     
-    _residualcurrentLabel.sd_layout
-    .leftSpaceToView(_temperatureView,6)
-    .topSpaceToView(_temperatureLabel,6)
+//    _residualcurrentLabel.sd_layout
+//    .leftSpaceToView(_temperatureView,6)
+//    .topSpaceToView(_temperatureLabel,3)
+//    .widthIs(100)
+//    .heightIs(25);
+    _residualcurrentLabel.sd_layout.
+    leftSpaceToView(_residualcurrentView,6)
+    .centerYEqualToView(_residualcurrentView)
     .widthIs(100)
     .heightIs(25);
-    
 }
 
 -(void)configCellWithModel:(MyOneModel *)model

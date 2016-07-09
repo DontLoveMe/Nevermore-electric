@@ -126,8 +126,10 @@
     _TableView.dataSource = self;
     
     _TableView.delegate = self;
-    
-   _TableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+    _TableView.backgroundColor = [UIColor clearColor];
+    _TableView.showsVerticalScrollIndicator = NO;
+    _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//   _TableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
     [self.view addSubview:_TableView];
 
 }
@@ -150,8 +152,8 @@
         
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
-                
+//        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+        cell.backgroundColor = [UIColor clearColor];
     }
     
     MyTwoModel *modell = _dataArray[indexPath.row];

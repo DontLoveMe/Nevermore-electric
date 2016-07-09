@@ -19,8 +19,10 @@
     
     [self setNavigationBar];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
-    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+    bgImgView.image = [UIImage imageNamed:@"首页_背景"];
+    [self.view insertSubview:bgImgView atIndex:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

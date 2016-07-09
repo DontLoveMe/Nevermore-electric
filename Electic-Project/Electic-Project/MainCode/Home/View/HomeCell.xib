@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -17,13 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页_单元格背景.png" highlightedImage="首页_单元格背景(深).png" translatesAutoresizingMaskIntoConstraints="NO" id="Zlj-2w-PMO">
-                        <rect key="frame" x="8" y="8" width="310" height="82"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页_我的.png" translatesAutoresizingMaskIntoConstraints="NO" id="H5l-Ly-bbp">
-                        <rect key="frame" x="24" y="14" width="70" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="H5l-Ly-bbp" secondAttribute="height" multiplier="1:1" id="ybl-Uv-fHO"/>
-                        </constraints>
+                        <rect key="frame" x="3" y="3" width="320" height="91"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="前进.png" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-7s-6z7">
                         <rect key="frame" x="287" y="37" width="15" height="25"/>
@@ -49,24 +43,30 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页_我的.png" translatesAutoresizingMaskIntoConstraints="NO" id="H5l-Ly-bbp">
+                        <rect key="frame" x="24" y="19" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="H5l-Ly-bbp" secondAttribute="height" multiplier="1:1" id="ybl-Uv-fHO"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="jyg-7s-6z7" firstAttribute="leading" secondItem="lkn-P6-81s" secondAttribute="trailing" constant="14" id="418-RY-O1d"/>
                     <constraint firstAttribute="bottom" secondItem="fex-fj-upy" secondAttribute="bottom" constant="24" id="46S-IC-GQY"/>
-                    <constraint firstItem="Zlj-2w-PMO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="4g1-pO-dEH"/>
-                    <constraint firstItem="H5l-Ly-bbp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="8pH-IZ-hDc"/>
-                    <constraint firstAttribute="bottom" secondItem="H5l-Ly-bbp" secondAttribute="bottom" constant="13" id="9tH-VT-RkH"/>
+                    <constraint firstItem="Zlj-2w-PMO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="4g1-pO-dEH"/>
+                    <constraint firstItem="H5l-Ly-bbp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4sj-9c-jZS"/>
+                    <constraint firstAttribute="bottom" secondItem="H5l-Ly-bbp" secondAttribute="bottom" constant="18" id="9tH-VT-RkH"/>
                     <constraint firstItem="lkn-P6-81s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="AhF-CJ-YKl"/>
                     <constraint firstItem="H5l-Ly-bbp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="JpY-6z-L2r"/>
-                    <constraint firstItem="Zlj-2w-PMO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Vq9-vi-41G"/>
-                    <constraint firstAttribute="bottom" secondItem="Zlj-2w-PMO" secondAttribute="bottom" constant="7" id="XUI-rh-aoh"/>
+                    <constraint firstItem="Zlj-2w-PMO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="Vq9-vi-41G"/>
+                    <constraint firstAttribute="bottom" secondItem="Zlj-2w-PMO" secondAttribute="bottom" constant="3" id="XUI-rh-aoh"/>
                     <constraint firstAttribute="bottom" secondItem="jyg-7s-6z7" secondAttribute="bottom" constant="35" id="dXZ-2Q-db7"/>
                     <constraint firstItem="jyg-7s-6z7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="fcp-0D-iSw"/>
                     <constraint firstItem="jyg-7s-6z7" firstAttribute="leading" secondItem="fex-fj-upy" secondAttribute="trailing" constant="14" id="hbT-wF-kIT"/>
-                    <constraint firstItem="lkn-P6-81s" firstAttribute="leading" secondItem="H5l-Ly-bbp" secondAttribute="trailing" constant="14" id="mDD-sN-RvF"/>
+                    <constraint firstItem="lkn-P6-81s" firstAttribute="leading" secondItem="H5l-Ly-bbp" secondAttribute="trailing" constant="24" id="mDD-sN-RvF"/>
                     <constraint firstAttribute="trailing" secondItem="jyg-7s-6z7" secondAttribute="trailing" constant="24" id="s3s-tM-SC7"/>
-                    <constraint firstAttribute="trailing" secondItem="Zlj-2w-PMO" secondAttribute="trailing" constant="8" id="wm6-nR-JsC"/>
-                    <constraint firstItem="fex-fj-upy" firstAttribute="leading" secondItem="H5l-Ly-bbp" secondAttribute="trailing" constant="14" id="zvj-8Q-xFv"/>
+                    <constraint firstAttribute="trailing" secondItem="Zlj-2w-PMO" secondAttribute="trailing" constant="3" id="wm6-nR-JsC"/>
+                    <constraint firstItem="fex-fj-upy" firstAttribute="leading" secondItem="H5l-Ly-bbp" secondAttribute="trailing" constant="24" id="zvj-8Q-xFv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -79,8 +79,8 @@
     </objects>
     <resources>
         <image name="前进.png" width="19" height="32"/>
-        <image name="首页_单元格背景(深).png" width="698" height="198"/>
-        <image name="首页_单元格背景.png" width="696" height="196"/>
-        <image name="首页_我的.png" width="130" height="130"/>
+        <image name="首页_单元格背景(深).png" width="704" height="204"/>
+        <image name="首页_单元格背景.png" width="704" height="204"/>
+        <image name="首页_我的.png" width="153" height="149"/>
     </resources>
 </document>

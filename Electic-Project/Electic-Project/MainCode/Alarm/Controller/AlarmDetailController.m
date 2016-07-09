@@ -56,6 +56,10 @@
     
     //设置风火轮
     _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    
+    if (KScreenWidth < 375) {
+        _webView.frame = CGRectMake(-25, 0, KScreenWidth +50, KScreenHeight - kNavigationBarHeight);
+    }
 
 }
 

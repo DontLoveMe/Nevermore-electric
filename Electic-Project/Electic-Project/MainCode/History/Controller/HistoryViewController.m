@@ -86,7 +86,7 @@
 {
 
     //名字
-    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 7, 100, 40)];
+    UILabel  *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(19, 7, 300, 40)];
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
     nameLabel.text = userDic[@"name"];
     

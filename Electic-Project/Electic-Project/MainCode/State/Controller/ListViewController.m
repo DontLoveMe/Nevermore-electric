@@ -131,7 +131,8 @@
     
     _tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-      _tab.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+//      _tab.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+    _tab.backgroundColor = [UIColor clearColor];
     _tab.dataSource = self;
     
     _tab.hidden=YES;
@@ -144,8 +145,8 @@
     
     _Tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, KScreenWidth, KScreenHeight-125) style:UITableViewStylePlain];
     
-     _Tab.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
-    
+//     _Tab.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+    _Tab.backgroundColor = [UIColor clearColor];
     _Tab.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     
@@ -283,9 +284,9 @@
             
             cell.lineTwo.image = [UIImage imageNamed:@"线"];
             
-            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+//            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
             
-            
+            cell.backgroundColor = [UIColor clearColor];
         }
         
         MyTwoModel *model = _dataArray[indexPath.row];
@@ -311,7 +312,8 @@
             
             cell.lineTwo.image = [UIImage imageNamed:@"线"];
             
-            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+//            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+            cell.backgroundColor = [UIColor clearColor];
         }
         
         MyTwoModel *model = _dataArr[indexPath.row];

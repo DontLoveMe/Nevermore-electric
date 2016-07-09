@@ -22,7 +22,7 @@
     if (_dic != dic) {
         _dic = dic;
     }
-    
+    _imgView.contentMode = UIViewContentModeScaleAspectFit;
     _imgView.image = [UIImage imageNamed:_dic[@"image"]];
     
     _nameLabel.text = _dic[@"name"];

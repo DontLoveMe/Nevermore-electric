@@ -99,19 +99,21 @@ static NSString *headerViewIdentifier = @"hederview";
 -(void)creatSearch
 {
     
-    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(11, 7, KScreenWidth-22, 60)];
-    
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(10, 7, KScreenWidth-20, 40)];
+    _searchBar.barStyle = UIBarStyleBlackTranslucent;
     _searchBar.placeholder = @"搜索";
     
     
     _searchBar.delegate = self;
     
     [_searchBar setImage:[UIImage imageNamed:@"搜索图"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-    
-    _searchBar.backgroundImage = [UIImage imageNamed:@"搜索背景图"];
-    
-    
-    
+//
+//    _searchBar.backgroundColor = [UIColor clearColor];
+//    [_searchBar setSearchFieldBackgroundImage:nil forState:UIControlStateNormal];
+//    _searchBar.backgroundImage = nil;
+//
+//    UIView *view = [_searchBar.subviews objectAtIndex:0];
+//    view.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_searchBar];
     
     
@@ -172,21 +174,22 @@ static NSString *headerViewIdentifier = @"hederview";
 
     //名字
     _nameLabel = [[UILabel alloc]init];
-    
+    _nameLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_nameLabel];
 
     _nameLabel.sd_layout
-    .leftSpaceToView(self.view,KScreenWidth/2-30)
-    .topSpaceToView(self.view,90)
-    .widthIs(60)
+    .leftSpaceToView(self.view,0)
+    .topSpaceToView(self.view,50)
+    .widthIs(KScreenWidth)
     .heightIs(40);
     
-    _nameLabel.text = @"黎小美";
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    _nameLabel.text = userDic[@"name"];
     
     _nameLabel.textColor = [UIColor whiteColor];
     
     _nameLabel.font = [UIFont boldSystemFontOfSize:17];
-    
+    _nameLabel.backgroundColor = [UIColor clearColor];
     
     //列表视图
     
@@ -198,7 +201,8 @@ static NSString *headerViewIdentifier = @"hederview";
     
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 130, KScreenWidth, KScreenHeight-200) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 90, KScreenWidth, KScreenHeight-200) collectionViewLayout:flowLayout];
+    _collectionView.backgroundColor = [UIColor clearColor];
     
     _collectionView.delegate = self;
     
@@ -258,7 +262,7 @@ static NSString *headerViewIdentifier = @"hederview";
 
     MyOneHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerViewIdentifier forIndexPath:indexPath];
     
-    
+    headerView.backgroundColor = [UIColor clearColor];
     headerView.addressLabel.text = [[_dataArray objectAtIndex:indexPath.section] objectForKey:@"orgName"];
     
     return headerView;
@@ -302,7 +306,7 @@ static NSString *headerViewIdentifier = @"hederview";
     
         
         MyOneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        
+        cell.backgroundColor = [UIColor clearColor];
 //        MyOneModel *model = _dataArray2[indexPath.row];
 ////
 //        [cell configCellWithModel:model];
@@ -314,7 +318,7 @@ static NSString *headerViewIdentifier = @"hederview";
     NSDictionary *dataDic = [arr objectAtIndex:indexPath.row];
     cell.nameLabel.text = [dataDic objectForKey:@"boxName"];
     
-    cell.backView.image = [UIImage imageNamed:@"背景矩形常态"];
+    cell.backView.image = [UIImage imageNamed:@"配电箱背景"];
 
     NSDictionary *monitorDic = [dataDic objectForKey:@"monitors"];
     

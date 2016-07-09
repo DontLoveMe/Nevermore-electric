@@ -104,7 +104,13 @@
     .heightIs(20);
     
     
-    
+    UIImageView *lineView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"线"]];
+    [self.contentView addSubview:lineView];
+    lineView.sd_layout
+    .rightSpaceToView(self.contentView,0)
+    .bottomSpaceToView(self.contentView,0)
+    .leftSpaceToView(self.contentView,0)
+    .heightIs(1);
     
 
 }
