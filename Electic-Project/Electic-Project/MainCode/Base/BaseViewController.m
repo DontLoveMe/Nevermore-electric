@@ -24,7 +24,18 @@
 
 - (void)setTitle:(NSString *)title{
 
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:title]];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
+    image.image = [UIImage imageNamed:title];
+    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    for (UIView *view in self.navigationController.navigationBar.subviews) {
+        
+        view.backgroundColor = [UIColor clearColor];
+        
+    }
+    [self.navigationController.view insertSubview:image atIndex:0];
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav.png"]];
+//    self.navigationController.  = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav.png"]];
 
 }
 
