@@ -57,7 +57,7 @@
     
     _dataArray = [NSMutableArray array];
     
-    self.title = @"历史报警";
+    self.title = @"历史数据";
     
     [self initNavBar];
     

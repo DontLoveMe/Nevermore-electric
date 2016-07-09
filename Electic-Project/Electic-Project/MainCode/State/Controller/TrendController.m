@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"报警详情";
+    self.title = @"详情";
     self.view.backgroundColor = [UIColor colorFromHexRGB:@"121212"];
     
     [self initNavBar];

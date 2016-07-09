@@ -39,7 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"找回密码";
+    self.title = @"忘记密码";
     [self initNavBar];
     
     [self initViews];

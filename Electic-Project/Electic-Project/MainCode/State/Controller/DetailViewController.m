@@ -82,7 +82,7 @@
     
     [self initNavBar];
 
-    self.title =  _textTitle;
+    self.title =  @"配电箱";
     
     //创建数据源
     [self creatData];

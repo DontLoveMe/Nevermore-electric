@@ -85,7 +85,7 @@
     
     [self initNavBar];
     
-    self.title = _name;
+    self.title = @"配电箱详情";
     
     //创建分段选择器
      [self  createSegmented];

@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"赛飞奇";
+    self.title = @"首页";
 
     //初始化子视图
     [self initViews];

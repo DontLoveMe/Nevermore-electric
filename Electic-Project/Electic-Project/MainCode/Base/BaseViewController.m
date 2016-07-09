@@ -20,12 +20,14 @@
     [self setNavigationBar];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"首页_背景"]];
+    
 }
 
-- (void)setTitle:(NSString *)title{
+- (void)viewWillAppear:(BOOL)animated{
 
+    [super viewWillAppear:animated];
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
-    image.image = [UIImage imageNamed:title];
+    image.image = [UIImage imageNamed:self.title] ;
     self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     for (UIView *view in self.navigationController.navigationBar.subviews) {
@@ -33,9 +35,12 @@
         view.backgroundColor = [UIColor clearColor];
         
     }
+    if ([self.navigationController.view.subviews[0] isKindOfClass:[UIImageView class]]) {
+        UIImageView *imageView = self.navigationController.view.subviews[0];
+        [imageView removeFromSuperview];
+        
+    }
     [self.navigationController.view insertSubview:image atIndex:0];
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav.png"]];
-//    self.navigationController.  = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav.png"]];
 
 }
 
@@ -43,10 +48,10 @@
 -(void)setNavigationBar{
     
     self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorFromHexRGB:ThemeColor]];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor colorFromHexRGB:ThemeColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSFontAttributeName:[UIFont systemFontOfSize:22],
-       NSForegroundColorAttributeName : [UIColor colorFromHexRGB:@"1073CB"]}];
+       NSForegroundColorAttributeName : [UIColor clearColor]}];
     [self _addBackItem];
 }
 

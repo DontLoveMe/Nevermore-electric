@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,12 +12,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9m-9l-tIh">
                         <rect key="frame" x="8" y="2" width="304" height="67"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页_单元格背景(深).png" translatesAutoresizingMaskIntoConstraints="NO" id="dEu-ci-HDu">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="67"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="报警-无图片.png" translatesAutoresizingMaskIntoConstraints="NO" id="kV3-kJ-Bfz">
                                 <rect key="frame" x="12" y="8" width="51" height="51"/>
                                 <constraints>
@@ -63,13 +66,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.12549019607843137" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="dEu-ci-HDu" firstAttribute="leading" secondItem="A9m-9l-tIh" secondAttribute="leading" id="1R2-PT-aKj"/>
+                            <constraint firstAttribute="trailing" secondItem="dEu-ci-HDu" secondAttribute="trailing" id="1oB-kf-zME"/>
                             <constraint firstAttribute="bottom" secondItem="vJP-KB-MJZ" secondAttribute="bottom" constant="8" id="3bD-vS-oTK"/>
                             <constraint firstItem="kV3-kJ-Bfz" firstAttribute="top" secondItem="A9m-9l-tIh" secondAttribute="top" constant="8" id="4NF-zP-Xpm"/>
                             <constraint firstAttribute="trailing" secondItem="vJP-KB-MJZ" secondAttribute="trailing" constant="12" id="9GS-DH-7GO"/>
                             <constraint firstItem="mAF-yu-Lgt" firstAttribute="leading" secondItem="kV3-kJ-Bfz" secondAttribute="trailing" constant="8" id="CBX-Ym-z2m"/>
                             <constraint firstAttribute="trailing" secondItem="izz-WU-JY5" secondAttribute="trailing" constant="12" id="HtE-bj-SZO"/>
+                            <constraint firstItem="dEu-ci-HDu" firstAttribute="top" secondItem="A9m-9l-tIh" secondAttribute="top" id="Js5-gE-p89"/>
                             <constraint firstItem="izz-WU-JY5" firstAttribute="top" secondItem="A9m-9l-tIh" secondAttribute="top" constant="8" id="V53-6S-M4n"/>
                             <constraint firstItem="gjm-qb-EeK" firstAttribute="leading" secondItem="kV3-kJ-Bfz" secondAttribute="trailing" constant="8" id="Wha-wd-iPO"/>
                             <constraint firstItem="mAF-yu-Lgt" firstAttribute="top" secondItem="A9m-9l-tIh" secondAttribute="top" constant="8" id="aEe-dd-LKx"/>
@@ -78,6 +83,7 @@
                             <constraint firstAttribute="bottom" secondItem="gjm-qb-EeK" secondAttribute="bottom" constant="8" id="bgH-v8-NEZ"/>
                             <constraint firstItem="izz-WU-JY5" firstAttribute="leading" secondItem="mAF-yu-Lgt" secondAttribute="trailing" constant="8" id="qBI-bq-uYu"/>
                             <constraint firstItem="kV3-kJ-Bfz" firstAttribute="leading" secondItem="A9m-9l-tIh" secondAttribute="leading" constant="12" id="t8x-Ns-93K"/>
+                            <constraint firstAttribute="bottom" secondItem="dEu-ci-HDu" secondAttribute="bottom" id="wyD-Rw-r5I"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -100,5 +106,6 @@
     </objects>
     <resources>
         <image name="报警-无图片.png" width="80" height="80"/>
+        <image name="首页_单元格背景(深).png" width="704" height="204"/>
     </resources>
 </document>
