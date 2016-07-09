@@ -54,7 +54,7 @@
     
     //设备
     _deviceImg = [[UIImageView alloc] initWithFrame:CGRectMake(16.f, 36.f, 16.f, 20.f)];
-    _deviceImg.image = [UIImage imageNamed:@"绑定-设备"];
+    _deviceImg.image = [UIImage imageNamed:@"验证_设备"];
     [self.view addSubview:_deviceImg];
     
     _deviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(_deviceImg.right + 4, 36.f, KScreenWidth - 52.f, 20.f)];
@@ -126,11 +126,37 @@
 #pragma mark - 按钮事件
 - (void)resetAction:(UIButton *)button{
     
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                             message:@"恭喜您，复位成功！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [alertController dismissViewControllerAnimated:YES
+                                                                                                 completion:nil];
+                                                         }];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+
     NSLog(@"复位了");
     
 }
 
 - (void)dampAction:(UIButton *)button{
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示"
+                                                                             message:@"恭喜您，消声成功！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"好"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [alertController dismissViewControllerAnimated:YES
+                                                                                                 completion:nil];
+                                                         }];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
 
     NSLog(@"消声了");
 

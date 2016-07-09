@@ -72,11 +72,11 @@
     NSDictionary *dic3 = @{@"image":@"首页_历史",@"name":@"历史",@"annotate":@"数据保存，方便查询。"};
     NSDictionary *dic4 = @{@"image":@"首页_我的",@"name":@"我的",@"annotate":@"个人资料完美改善！"};
     NSDictionary *dic5 = @{@"image":@"首页_设备验证",@"name":@"设备验证",@"annotate":@"设备验证，方便快捷！"};
-    
+    NSDictionary *dic6 = @{@"image":@"首页_历史",@"name":@"我的",@"annotate":@"个人资料完美改善！"};
     if (stationID == 1) {
         _data = @[dic1,dic2,dic3,dic4];
     }else if (stationID == 2){
-        _data = @[dic0,dic5,dic4];
+        _data = @[dic0,dic5,dic6];
     }
     [_tableView reloadData];
     
