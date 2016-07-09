@@ -27,7 +27,7 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="23" minY="8" maxX="41" maxY="10"/>
                             <state key="normal" title="相册" image="我的_照片.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="photographAlbumAction:" destination="8he-qJ-mGB" eventType="touchUpInside" id="1EE-AI-PzD"/>
@@ -37,7 +37,7 @@
                             <rect key="frame" x="150" y="159" width="150" height="41"/>
                             <inset key="imageEdgeInsets" minX="6" minY="7" maxX="17" maxY="10"/>
                             <state key="normal" title="拍照" image="我的_拍照.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="takePhotoAction:" destination="8he-qJ-mGB" eventType="touchUpInside" id="cBd-Jo-WJQ"/>
@@ -64,7 +64,6 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改头像" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDy-a7-b3P">
                             <rect key="frame" x="122" y="103" width="56" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="竖线.png" translatesAutoresizingMaskIntoConstraints="NO" id="UNs-aB-Pqx">
@@ -75,7 +74,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="UNs-aB-Pqx" firstAttribute="centerX" secondItem="XRP-Om-RJR" secondAttribute="centerX" id="2y7-RI-UfZ"/>
                         <constraint firstAttribute="trailing" secondItem="TvL-Qg-0ps" secondAttribute="trailing" id="7Ki-VT-z9n"/>

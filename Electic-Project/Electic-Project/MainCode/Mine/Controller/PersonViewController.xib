@@ -20,6 +20,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-EB-YBJ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="29W-By-sEJ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="个人资料_头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="7je-xf-jP0">
                             <rect key="frame" x="260" y="20" width="80" height="80"/>
                             <constraints>
@@ -44,8 +47,12 @@
                         <constraint firstAttribute="height" constant="120" id="5jM-fQ-Z4c"/>
                         <constraint firstItem="7je-xf-jP0" firstAttribute="centerX" secondItem="wFn-EB-YBJ" secondAttribute="centerX" id="8rt-KP-mbJ"/>
                         <constraint firstItem="3B2-hi-AZ2" firstAttribute="leading" secondItem="7je-xf-jP0" secondAttribute="trailing" constant="50" id="NeN-Xb-mrR"/>
+                        <constraint firstItem="29W-By-sEJ" firstAttribute="top" secondItem="wFn-EB-YBJ" secondAttribute="top" id="iee-2e-Eua"/>
                         <constraint firstItem="3B2-hi-AZ2" firstAttribute="centerY" secondItem="wFn-EB-YBJ" secondAttribute="centerY" id="kHq-eX-DUZ"/>
+                        <constraint firstItem="29W-By-sEJ" firstAttribute="leading" secondItem="wFn-EB-YBJ" secondAttribute="leading" id="lUZ-ed-jpt"/>
                         <constraint firstItem="7je-xf-jP0" firstAttribute="centerY" secondItem="wFn-EB-YBJ" secondAttribute="centerY" id="qlH-Nv-gOu"/>
+                        <constraint firstAttribute="bottom" secondItem="29W-By-sEJ" secondAttribute="bottom" id="vGo-Dd-hxb"/>
+                        <constraint firstAttribute="trailing" secondItem="29W-By-sEJ" secondAttribute="trailing" id="xiV-lw-mGa"/>
                     </constraints>
                 </view>
             </subviews>
@@ -61,5 +68,6 @@
     <resources>
         <image name="个人资料_修改.png" width="45" height="45"/>
         <image name="个人资料_头像.png" width="160" height="160"/>
+        <image name="我的_banner.png" width="720" height="326"/>
     </resources>
 </document>
