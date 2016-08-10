@@ -65,6 +65,7 @@
     _searchView.delegate = self;
     [self.view addSubview:_searchView];
     
+    
     _warmTable = [[UITableView alloc] initWithFrame:CGRectMake(0, _searchView.bottom + 8.f, KScreenWidth, KScreenHeight - kNavigationBarHeight - 20.f - _searchView.bottom)];
     _warmTable.backgroundColor = [UIColor clearColor];
     _warmTable.delegate = self;
@@ -74,8 +75,6 @@
                                            bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"Warm_Cell"];
     [self.view addSubview:_warmTable];
 
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -95,8 +94,10 @@
     [params setObject:@"1" forKey:@"page"];
     [params setObject:@"20" forKey:@"rows"];
     if (_searchString.length > 0) {
+        
         [params setObject:@{@"staffId":stuffID,@"searchParam":_searchString}
                    forKey:@"paramsMap"];
+    
     }else {
         
         [params setObject:@{@"staffId":stuffID}
