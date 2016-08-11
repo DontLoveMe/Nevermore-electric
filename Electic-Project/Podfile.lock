@@ -19,7 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.0)
-  - BaiduMapKit (~> 3.0.0)
+  - BaiduMapKit
   - JSONKit-NoWarning (~> 1.1)
 
 SPEC CHECKSUMS:
@@ -27,6 +27,6 @@ SPEC CHECKSUMS:
   BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
 
-PODFILE CHECKSUM: 7cf7c19d09be14c7343c684da6c54980c5dacc8b
+PODFILE CHECKSUM: e0784e3c35782d5f44641945daaf4d400aef36f6
 
 COCOAPODS: 1.1.0.beta.1

@@ -9,11 +9,10 @@
 #import "BaseViewController.h"
 #import "StateViewController.h"
 
-@interface LocationController : BaseViewController<BMKMapViewDelegate,BMKLocationServiceDelegate,UISearchBarDelegate>{
+@interface LocationController : BaseViewController<BMKMapViewDelegate,BMKLocationServiceDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource>{
 
     BMKMapView *_mapView;
     BMKLocationService *_locationService;
-    
     UIButton    *_zoomIn;
     UIButton    *_zoomOut;
 

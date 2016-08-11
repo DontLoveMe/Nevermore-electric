@@ -38,7 +38,7 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
 
     //当后台切换至后台
-    [BMKMapView willBackGround];
+//    [BMKMapView willBackGround];
     
 }
 
@@ -54,7 +54,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
     //应用恢复前台，重新调用，渲染界面
-    [BMKMapView didForeGround];
+//    [BMKMapView didForeGround];
     
 }
 
