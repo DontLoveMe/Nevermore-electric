@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F4222319C40D85D41C091F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B846AFA75DA5AA157F2D46C /* libPods.a */; };
 		D69723F61D30A4610002D26D /* 验证_设备.png in Resources */ = {isa = PBXBuildFile; fileRef = D69723F51D30A4610002D26D /* 验证_设备.png */; };
 		D6A9F4321D1131D9009E38A2 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4301D1131D8009E38A2 /* HistoryCell.m */; };
 		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
@@ -169,6 +168,7 @@
 		DDB47ED61D1291B000F92D5D /* LocationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED41D1291B000F92D5D /* LocationController.xib */; };
 		DDB47EDA1D129CEA00F92D5D /* 定位-放大.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED81D129CEA00F92D5D /* 定位-放大.png */; };
 		DDB47EDB1D129CEA00F92D5D /* 定位-缩小.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB47ED91D129CEA00F92D5D /* 定位-缩小.png */; };
+		F1BDADB562EE3AD1CE2B37C0 /* libPods-Electic-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7F83A08FECAB5AF7C98E66 /* libPods-Electic-Project.a */; };
 		FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */; };
 		FC7FC7FA1D1152BF008FAB7D /* MyOneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */; };
 		FC901F221D123E2800ADA911 /* 报警详情背景.png in Resources */ = {isa = PBXBuildFile; fileRef = FC901F211D123E2800ADA911 /* 报警详情背景.png */; };
@@ -182,9 +182,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20ED9C73FED64B661B9798D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		37D49375C206104E5A1A67DE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8B846AFA75DA5AA157F2D46C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F89AB25EDB34E1E3857F2E9 /* Pods-Electic-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electic-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project.release.xcconfig"; sourceTree = "<group>"; };
 		D69723F51D30A4610002D26D /* 验证_设备.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "验证_设备.png"; sourceTree = "<group>"; };
 		D6A9F42F1D1131D8009E38A2 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
 		D6A9F4301D1131D8009E38A2 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
@@ -392,6 +390,8 @@
 		DDB47ED41D1291B000F92D5D /* LocationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationController.xib; sourceTree = "<group>"; };
 		DDB47ED81D129CEA00F92D5D /* 定位-放大.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位-放大.png"; sourceTree = "<group>"; };
 		DDB47ED91D129CEA00F92D5D /* 定位-缩小.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位-缩小.png"; sourceTree = "<group>"; };
+		E09D0DBDDCC2A896DE2488D3 /* Pods-Electic-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electic-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		FA7F83A08FECAB5AF7C98E66 /* libPods-Electic-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Electic-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTwoModel.h; sourceTree = "<group>"; };
 		FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTwoModel.m; sourceTree = "<group>"; };
 		FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneModel.h; sourceTree = "<group>"; };
@@ -414,20 +414,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F4222319C40D85D41C091F2 /* libPods.a in Frameworks */,
+				F1BDADB562EE3AD1CE2B37C0 /* libPods-Electic-Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CBBB9EC1424DE7D5098E4211 /* Pods */ = {
+		339FA18900F07958D7E68DD4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37D49375C206104E5A1A67DE /* Pods.debug.xcconfig */,
-				20ED9C73FED64B661B9798D4 /* Pods.release.xcconfig */,
+				E09D0DBDDCC2A896DE2488D3 /* Pods-Electic-Project.debug.xcconfig */,
+				1F89AB25EDB34E1E3857F2E9 /* Pods-Electic-Project.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E1B5F7FA30BB03450320AA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F83A08FECAB5AF7C98E66 /* libPods-Electic-Project.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DD06809E1D1168CD00B4DA6C /* DeviceVerdify */ = {
@@ -478,8 +486,8 @@
 			children = (
 				DD07389F1D10DE5000AC5027 /* Electic-Project */,
 				DD07389E1D10DE5000AC5027 /* Products */,
-				CBBB9EC1424DE7D5098E4211 /* Pods */,
-				FD3719CF396F480D7C27D7F0 /* Frameworks */,
+				339FA18900F07958D7E68DD4 /* Pods */,
+				5E1B5F7FA30BB03450320AA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1140,14 +1148,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FD3719CF396F480D7C27D7F0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8B846AFA75DA5AA157F2D46C /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1155,12 +1155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD0738B41D10DE5000AC5027 /* Build configuration list for PBXNativeTarget "Electic-Project" */;
 			buildPhases = (
-				1D6782745625CF4E4108723E /* Check Pods Manifest.lock */,
+				91BE628341D34F49BD5C7AC2 /* [CP] Check Pods Manifest.lock */,
 				DD0738991D10DE5000AC5027 /* Sources */,
 				DD07389A1D10DE5000AC5027 /* Frameworks */,
 				DD07389B1D10DE5000AC5027 /* Resources */,
-				FDC6B2156FDF870218DFA2DE /* Embed Pods Frameworks */,
-				41CCEA2DE08F164E062FECC0 /* Copy Pods Resources */,
+				89E4DF7B00750B452EF57314 /* [CP] Embed Pods Frameworks */,
+				CF8FFAF207F05610D2DD1786 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1338,49 +1338,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D6782745625CF4E4108723E /* Check Pods Manifest.lock */ = {
+		89E4DF7B00750B452EF57314 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41CCEA2DE08F164E062FECC0 /* Copy Pods Resources */ = {
+		91BE628341D34F49BD5C7AC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FDC6B2156FDF870218DFA2DE /* Embed Pods Frameworks */ = {
+		CF8FFAF207F05610D2DD1786 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1539,7 +1539,7 @@
 		};
 		DD0738B51D10DE5000AC5027 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37D49375C206104E5A1A67DE /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E09D0DBDDCC2A896DE2488D3 /* Pods-Electic-Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1557,7 +1557,7 @@
 		};
 		DD0738B61D10DE5000AC5027 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20ED9C73FED64B661B9798D4 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1F89AB25EDB34E1E3857F2E9 /* Pods-Electic-Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

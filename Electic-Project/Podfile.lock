@@ -1,30 +1,32 @@
 PODS:
-  - AFNetworking (3.0.0):
-    - AFNetworking/NSURLSession (= 3.0.0)
-    - AFNetworking/Reachability (= 3.0.0)
-    - AFNetworking/Security (= 3.0.0)
-    - AFNetworking/Serialization (= 3.0.0)
-    - AFNetworking/UIKit (= 3.0.0)
-  - AFNetworking/NSURLSession (3.0.0):
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.0)
-  - AFNetworking/Security (3.0.0)
-  - AFNetworking/Serialization (3.0.0)
-  - AFNetworking/UIKit (3.0.0):
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - BaiduMapKit (2.9.1)
+  - BaiduMapKit (3.0.0)
   - JSONKit-NoWarning (1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.0)
-  - BaiduMapKit (~> 2.9.1)
+  - BaiduMapKit (~> 3.0.0)
   - JSONKit-NoWarning (~> 1.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 932ff751f9d6fb1dad0b3af58b7e3ffba0a4e7fd
-  BaiduMapKit: 97d2d44b41a876de2371fb91ddf78cdf84dafa05
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 7cf7c19d09be14c7343c684da6c54980c5dacc8b
+
+COCOAPODS: 1.1.0.beta.1
