@@ -10,6 +10,9 @@
 
 @interface LocationController ()
 
+@property (nonatomic,strong) NSArray *data;
+@property (nonatomic,strong) UISearchBar *searchBar;
+
 @end
 
 @implementation LocationController
@@ -36,10 +39,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavBar];
-    self.title = @"当前位置";
+    self.title = @"赛飞奇";
+    
+    [self requestData];
     
     [self initViews];
     
+    [self createSearchBar];
+}
+
+- (void)createSearchBar {
+    
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 3, KScreenWidth-20, 30)];
+
+    _searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    _searchBar.placeholder = @"搜索";
+    _searchBar.delegate = self;
+    
+    [self.view addSubview:_searchBar];
+}
+
+- (void)requestData {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *userDic = [defaults objectForKey:@"userDic"];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [params setObject:[userDic objectForKey:@"staffId"] forKey:@"staffId"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,ElecticBoxPointURL];
+    
+    [TestTool post:url
+            params:params
+           success:^(id json) {
+               
+               if ([json[@"flag"] boolValue]) {
+                   _data = json[@"data"];
+               }
+               
+               
+           } failure:^(NSError *error) {
+               
+           }];
+
 }
 
 - (void)initViews{
@@ -53,6 +96,7 @@
     _locationService = [[BMKLocationService alloc] init];
     _locationService.delegate = self;
     [_locationService startUserLocationService];
+    
     
     //放大
     _zoomIn = [[UIButton alloc] initWithFrame:CGRectMake(12.f, _mapView.bottom - 144.f, 55.f, 55.f)];
@@ -71,6 +115,7 @@
                  action:@selector(zoomOutAction:)
        forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_zoomOut];
+    
     
 }
 
@@ -122,5 +167,18 @@
         [self.navigationController pushViewController:SVC animated:YES];
   
 }
+
+
+#pragma mark - UISearchBarDelegate
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
 
 @end

@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "StateViewController.h"
 
-@interface LocationController : BaseViewController<BMKMapViewDelegate,BMKLocationServiceDelegate>{
+@interface LocationController : BaseViewController<BMKMapViewDelegate,BMKLocationServiceDelegate,UISearchBarDelegate>{
 
     BMKMapView *_mapView;
     BMKLocationService *_locationService;

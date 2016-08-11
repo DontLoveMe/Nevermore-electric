@@ -10,7 +10,9 @@
 #define Common_h
 
 //测试服务器
-#define BASE_URL @"http://120.24.41.38:8182"
+//#define BASE_URL @"http://120.24.41.38:8182"
+
+#define BASE_URL @"http://192.168.0.252:8887"
 //正式服务器
 //#define BASE_URL @"http://120.76.192.1:8081"
 ////图片地址
@@ -32,6 +34,8 @@
 #define WarnningCurrentPicURL @"/eps/monitor/history/curLineChart"
 
 /*--------------电箱------------------*/
+//配电箱地点
+#define ElecticBoxPointURL @"/eps/electric/box/point"
 //配电箱列表
 #define ElecticBoxListURL @"/eps/electric/box/list"
 //配电箱搜索
