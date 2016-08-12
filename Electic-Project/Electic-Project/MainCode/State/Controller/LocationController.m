@@ -50,17 +50,17 @@
         [self.navigationController popViewControllerAnimated:YES];
         
     }else if (button.tag == 102) {
-        //三目判断左右翻转
-        UIViewAnimationOptions options = _mapView.hidden?UIViewAnimationOptionTransitionFlipFromLeft:UIViewAnimationOptionTransitionFlipFromRight;
+//        //三目判断左右翻转
+//        UIViewAnimationOptions options = _mapView.hidden?UIViewAnimationOptionTransitionFlipFromLeft:UIViewAnimationOptionTransitionFlipFromRight;
         
         
         //按钮翻转动画
         
-        [UIView transitionWithView:self.view
-                          duration:0.35
-                           options:options
-                        animations:nil
-                        completion:nil];
+//        [UIView transitionWithView:self.view
+//                          duration:1
+//                           options:UIViewAnimationOptionTransitionCrossDissolve
+//                        animations:nil
+//                        completion:nil];
         
         //视图的显示与隐藏
         _mapView.hidden = !_mapView.hidden;
@@ -73,6 +73,7 @@
     [self initNavBar];
     self.title = @"赛飞奇";
     
+    _anotationTag = 0;
     [self requestData];
     
     [self initViews];
@@ -108,6 +109,7 @@
                
                if ([json[@"flag"] boolValue]) {
                    _data = json[@"data"];
+                   [_collectionView reloadData];
                    for (int i = 0; i < _data.count; i ++) {
                        NSDictionary *dic = _data[i];
                        // 添加一个PointAnnotation
@@ -118,6 +120,9 @@
                        annotation.coordinate = coor;
                        annotation.title = dic[@"orgName"];
                        [_mapView addAnnotation:annotation];
+                       
+                      
+                       [_mapView setCenterCoordinate:coor];
                    }
                   
                }
@@ -133,14 +138,14 @@
 
     //地图
     _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight - kNavigationBarHeight)];
-    _mapView.showsUserLocation = YES;
-    _mapView.userTrackingMode = BMKUserTrackingModeNone;
+//    _mapView.showsUserLocation = YES;
     [_mapView setZoomLevel:15.f];
     [self.view addSubview:_mapView];
     
-    _locationService = [[BMKLocationService alloc] init];
-    _locationService.delegate = self;
-    [_locationService startUserLocationService];
+    
+//    _locationService = [[BMKLocationService alloc] init];
+//    _locationService.delegate = self;
+//    [_locationService startUserLocationService];
     
     
     //放大
@@ -207,24 +212,27 @@
 }
 
 #pragma  mark - BMKMapUserlocationDelegate
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation{
-
-    [_mapView setCenterCoordinate:userLocation.location.coordinate];
-    [_mapView updateLocationData:userLocation];
-    
-}
-
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
-    
-    [_mapView setCenterCoordinate:userLocation.location.coordinate];
-    [_mapView updateLocationData:userLocation];
-
-}
+//- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation{
+//
+//    [_mapView setCenterCoordinate:userLocation.location.coordinate];
+//    [_mapView updateLocationData:userLocation];
+//    
+//}
+//
+//- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+//    
+//    [_mapView setCenterCoordinate:userLocation.location.coordinate];
+//    [_mapView updateLocationData:userLocation];
+//
+//}
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
 
-//        StateViewController *SVC = [[StateViewController alloc] init];
-//        [self.navigationController pushViewController:SVC animated:YES];
+    NSDictionary *dic = self.data[view.tag];
+//    NSLog(@"orgId%@tag%ld",dic[@"orgId"],view.tag);
+    StateViewController *SVC = [[StateViewController alloc] init];
+    SVC.orgId = dic[@"orgId"];
+    [self.navigationController pushViewController:SVC animated:YES];
   
 }
 
@@ -232,14 +240,17 @@
   
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
         BMKPinAnnotationView *newAnnotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
+        
+        newAnnotationView.tag = _anotationTag;
+        _anotationTag ++;
         newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
 //        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
         return newAnnotationView;
     }
     return nil;
 }
-#pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
 
+#pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     return self.data.count;
@@ -250,6 +261,7 @@
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"未选中状态"]];
     UILabel *lable = [[UILabel alloc] initWithFrame:cell.bounds];
+    lable.textColor = [UIColor whiteColor];
     lable.textAlignment = NSTextAlignmentCenter;
     lable.font = [UIFont systemFontOfSize:15];
     [cell addSubview:lable];
@@ -261,6 +273,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSDictionary *dic = self.data[indexPath.row];
+//    NSLog(@"org%@,tag%ld",dic[@"orgId"],indexPath.row);
+    StateViewController *SVC = [[StateViewController alloc] init];
+    SVC.orgId = dic[@"orgId"];
+    [self.navigationController pushViewController:SVC animated:YES];
 }
 
 #pragma mark - UISearchBarDelegate

@@ -10,4 +10,6 @@
 
 @interface StateViewController : BaseViewController
 
+@property (nonatomic,strong)NSNumber *orgId;
+
 @end

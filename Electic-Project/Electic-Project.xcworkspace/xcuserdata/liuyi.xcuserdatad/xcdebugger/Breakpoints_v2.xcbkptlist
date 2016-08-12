@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electic-Project/MainCode/State/Controller/StateViewController.m"
+            timestampString = "492663552.836704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-creatData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electic-Project/MainCode/State/Controller/StateViewController.m"
+            timestampString = "492663576.756418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-creatData"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[StateViewController creatData]_block_invoke"
+                  moduleName = "Electic-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyi/Desktop/%E8%B5%9B%E9%A3%9E%E5%A5%87/Electic-Project/Electic-Project/MainCode/State/Controller/StateViewController.m"
+                  timestampString = "492663576.760411"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[StateViewController creatData]_block_invoke"
+                  moduleName = "Electic-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyi/Desktop/%E8%B5%9B%E9%A3%9E%E5%A5%87/Electic-Project/Electic-Project/MainCode/State/Controller/StateViewController.m"
+                  timestampString = "492663576.760627"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

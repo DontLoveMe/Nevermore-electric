@@ -1182,7 +1182,7 @@
 				TargetAttributes = {
 					DD07389C1D10DE5000AC5027 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 28272X6MBL;
+						DevelopmentTeam = 9XXQS79WF8;
 					};
 				};
 			};
@@ -1549,7 +1549,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project00";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1567,7 +1567,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project00";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

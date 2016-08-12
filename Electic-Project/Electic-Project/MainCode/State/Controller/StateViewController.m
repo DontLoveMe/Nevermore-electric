@@ -131,6 +131,9 @@ static NSString *headerViewIdentifier = @"hederview";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [params setObject:[userDic objectForKey:@"staffId"] forKey:@"staffId"];
+    if (_orgId) {
+        [params setObject:_orgId forKey:@"orgId"];
+    }
     
     NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,ElecticBoxStatusListURL];
     

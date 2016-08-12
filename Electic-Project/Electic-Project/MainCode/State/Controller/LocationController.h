@@ -15,6 +15,8 @@
     BMKLocationService *_locationService;
     UIButton    *_zoomIn;
     UIButton    *_zoomOut;
+    
+    NSInteger   _anotationTag;
 
 }
 
