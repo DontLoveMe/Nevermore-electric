@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSArray *data;
 @property (nonatomic,strong) UISearchBar *searchBar;
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) NSMutableArray *annotations;
 
 @end
 
@@ -88,11 +89,19 @@
     _searchBar.searchBarStyle = UISearchBarStyleMinimal;
     _searchBar.placeholder = @"搜索";
     _searchBar.delegate = self;
+    _searchBar.barTintColor = [UIColor whiteColor];
+    
+    UITextField *searchField = [_searchBar valueForKey:@"_searchField"];
+    // 输入文本颜色
+    searchField.textColor = [UIColor whiteColor];
+    // 默认文本颜色
+//    [searchField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     
     [self.view addSubview:_searchBar];
 }
 
 - (void)requestData {
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSDictionary *userDic = [defaults objectForKey:@"userDic"];
@@ -100,6 +109,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [params setObject:[userDic objectForKey:@"staffId"] forKey:@"staffId"];
+    if (_searchString) {
+        [params setObject:_searchString forKey:@"orgName"];
+    }
     
     NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,ElecticBoxPointURL];
     
@@ -108,22 +120,32 @@
            success:^(id json) {
                
                if ([json[@"flag"] boolValue]) {
+                   
                    _data = json[@"data"];
                    [_collectionView reloadData];
-                   for (int i = 0; i < _data.count; i ++) {
-                       NSDictionary *dic = _data[i];
-                       // 添加一个PointAnnotation
-                       BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
-                       CLLocationCoordinate2D coor;
-                       coor.latitude = [dic[@"latitude"] floatValue];
-                       coor.longitude = [dic[@"longitude"] floatValue];
-                       annotation.coordinate = coor;
-                       annotation.title = dic[@"orgName"];
-                       [_mapView addAnnotation:annotation];
-                       
-                      
-                       [_mapView setCenterCoordinate:coor];
+                   
+                   if (_annotations == nil) {
+                       _annotations = [NSMutableArray array];
                    }
+                   [_mapView removeAnnotations:_annotations];
+                   [_annotations removeAllObjects];
+                   
+                       for (int i = 0; i < _data.count; i ++) {
+                           NSDictionary *dic = _data[i];
+                           // 添加一个PointAnnotation
+                           BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+                           CLLocationCoordinate2D coor;
+                           coor.latitude = [dic[@"latitude"] floatValue];
+                           coor.longitude = [dic[@"longitude"] floatValue];
+                           annotation.coordinate = coor;
+                           annotation.title = dic[@"orgName"];
+                           [_annotations addObject:annotation];
+                           if (i == 0) {
+                               [_mapView setCenterCoordinate:coor];
+                           }
+
+                       }
+                       [_mapView addAnnotations:_annotations];
                   
                }
                
@@ -228,6 +250,7 @@
 
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
 
+    view.selected = NO;
     NSDictionary *dic = self.data[view.tag];
 //    NSLog(@"orgId%@tag%ld",dic[@"orgId"],view.tag);
     StateViewController *SVC = [[StateViewController alloc] init];
@@ -235,7 +258,6 @@
     [self.navigationController pushViewController:SVC animated:YES];
   
 }
-
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation {
   
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
@@ -258,15 +280,16 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+//    UICollectionViewCell *cell = []
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"未选中状态"]];
+    
     UILabel *lable = [[UILabel alloc] initWithFrame:cell.bounds];
     lable.textColor = [UIColor whiteColor];
     lable.textAlignment = NSTextAlignmentCenter;
     lable.font = [UIFont systemFontOfSize:15];
     [cell addSubview:lable];
-    
-    lable.text = self.data[indexPath.row][@"name"];
+    lable.text = self.data[indexPath.row][@"companyName"];
     
     return cell;
 }
@@ -284,11 +307,15 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
+//    _searchString = searchText;
+//    [self requestData];
     
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+    _searchString = searchBar.text;
+    [self requestData];
 }
 #pragma mark - UIScrollViewDelegate
 

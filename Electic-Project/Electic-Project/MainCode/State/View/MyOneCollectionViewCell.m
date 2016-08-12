@@ -30,23 +30,35 @@
     [self.contentView addSubview:self.backView];
     
     _backView.sd_layout
-    .leftSpaceToView(self.contentView,4)
-    .topSpaceToView(self.contentView,10)
-    .widthIs(110)
+    .leftSpaceToView(self.contentView,0)
+    .topSpaceToView(self.contentView,3)
+    .rightSpaceToView(self.contentView,0)
     .heightIs(100);
+    
+    self.stateLabel = [[UILabel alloc] init];
+    self.stateLabel.textAlignment = NSTextAlignmentCenter;
+    self.stateLabel.textColor = [UIColor whiteColor];
+    self.stateLabel.font = [UIFont systemFontOfSize:14];
+    [self.contentView addSubview:self.stateLabel];
+    
+    _stateLabel.sd_layout
+    .leftSpaceToView(self.contentView,4)
+    .topSpaceToView(_backView,0)
+    .rightSpaceToView(self.contentView,0)
+    .heightIs(20);
     
     self.nameLabel = [[UILabel alloc]init];
         
     self.nameLabel.font = [UIFont boldSystemFontOfSize:15];
     
     self.nameLabel.textColor = [UIColor whiteColor];
-    
+    self.nameLabel.textAlignment = NSTextAlignmentCenter;
     [_backView addSubview:self.nameLabel];
     
     _nameLabel.sd_layout
-    .leftSpaceToView(_backView,_backView.frame.size.width/2-30)
+    .leftSpaceToView(_backView,0)
     .topSpaceToView(_backView,15)
-    .widthIs(80)
+    .rightSpaceToView(_backView,0)
     .heightIs(20);
     
     self.temperatureView = [[UIImageView alloc]init];
@@ -64,14 +76,14 @@
     
     self.temperatureLabel = [[UILabel alloc]init];
     
-    self.temperatureLabel.textColor = [UIColor grayColor];
+    self.temperatureLabel.textColor = [UIColor whiteColor];
     
-    self.temperatureLabel.font = [UIFont systemFontOfSize:12];
-    
+    self.temperatureLabel.font = [UIFont systemFontOfSize:11];
+    self.temperatureLabel.text = @"温度：未知";
     [self.backView addSubview:self.temperatureLabel];
     
     _temperatureLabel.sd_layout
-    .leftSpaceToView(_temperatureView,6)
+    .leftSpaceToView(_temperatureView,3)
     .centerYEqualToView(_temperatureView)
     .widthIs(100)
     .heightIs(25);
@@ -92,10 +104,10 @@
     
     self.residualcurrentLabel = [[UILabel alloc]init];
     
-    self.residualcurrentLabel.textColor = [UIColor grayColor];
+    self.residualcurrentLabel.textColor = [UIColor whiteColor];
     
-    self.residualcurrentLabel.font = [UIFont systemFontOfSize:12];
-    
+    self.residualcurrentLabel.font = [UIFont systemFontOfSize:11];
+    self.residualcurrentLabel.text = @"剩余电流：未知";
     [self.backView addSubview:self.residualcurrentLabel];
     
 //    _residualcurrentLabel.sd_layout
@@ -104,7 +116,7 @@
 //    .widthIs(100)
 //    .heightIs(25);
     _residualcurrentLabel.sd_layout.
-    leftSpaceToView(_residualcurrentView,6)
+    leftSpaceToView(_residualcurrentView,3)
     .centerYEqualToView(_residualcurrentView)
     .widthIs(100)
     .heightIs(25);

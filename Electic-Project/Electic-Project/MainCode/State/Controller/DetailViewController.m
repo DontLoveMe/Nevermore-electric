@@ -115,7 +115,9 @@
     [TestTool post:url params:params success:^(id json) {
         
 
-        
+        if (!json[@"flag"]) {
+            return ;
+        }
         
         NSDictionary *rootDic = [json objectForKey:@"data"];
         
@@ -127,56 +129,54 @@
             
             _detectorLabel.text = @"探测器: 正常";
             
-            _dispatchLabel.text = @"通讯:正常";
         }else
         {
         
             _detectorLabel.textColor = [UIColor redColor];
             
-            _dispatchLabel.textColor = [UIColor redColor];
-            
             _detectorLabel.text = @"探测器: 异常";
+        }
+        if ([[[dic objectForKey:@"isOnline"]stringValue] isEqualToString:@"0"]) {
             
+            
+            _dispatchLabel.text = @"通讯:正常";
+        }else{
+            _dispatchLabel.textColor = [UIColor redColor];
             _dispatchLabel.text = @"通讯:异常";
         }
         
         _addressLabel.text=[NSString stringWithFormat:@"%@%@",_name,[dic objectForKey:@"boxName"]];
         
         
-
-        _nextName.text = [dic objectForKey:@"boxName"];
-        
-        NSDictionary *monitorDic = [dic objectForKey:@"monitors"];
-        
-        if (![[monitorDic objectForKey:@"current"] isKindOfClass:[NSNull class]]) {
-            NSDictionary *currentDic = [monitorDic objectForKey:@"current"];
+        if (![dic[@"monitors"] isEqual:[NSNull null]]) {
+            NSDictionary *monitors = dic[@"monitors"];
+            NSArray *temperatures = monitors[@"temperature"];
+            if (temperatures.count>0) {
+                NSMutableArray *tems = [NSMutableArray array];
+                for (int i=0; i<temperatures.count; i++) {
+                    NSDictionary *tDic = temperatures[i];
+                    NSString *tString = [NSString stringWithFormat:@"%@℃",tDic[@"curValue"]];
+                    [tems addObject:tString];
+                }
+                _tempytureLabel.text = [NSString stringWithFormat:@"温度：%@",[tems componentsJoinedByString:@"  "]];
+            }
             
-            _currentLabel.text = [NSString stringWithFormat:@"%ldA",[[currentDic objectForKey:@"curValue"] integerValue]];
-            
-            
-            
-        }else
-        {
-            
-            _currentLabel.text = @"暂无数据";
-            
-        }
-        
-        if (![[monitorDic objectForKey:@"temperature"] isKindOfClass:[NSNull class]]) {
-            NSDictionary *temperatureDic = [monitorDic objectForKey:@"temperature"];
-            
-            
-         _tempytureLabel.text = [NSString stringWithFormat:@"%ld℃",[[temperatureDic objectForKey:@"curValue"] integerValue]];
-            
-            
-        }else
-        {
-            
-          _tempytureLabel.text = @"暂无数据";
+            NSArray *currents = monitors[@"current"];
+            if (currents.count>0) {
+                NSMutableArray *curs = [NSMutableArray array];
+                for (int i=0; i<currents.count; i++) {
+                    NSDictionary *cDic = currents[i];
+                    NSString *tString = [NSString stringWithFormat:@"%@A",cDic[@"curValue"]];
+                    [curs addObject:tString];
+                }
+                _currentLabel.text = [NSString stringWithFormat:@"剩余电流：%@",[curs componentsJoinedByString:@"  "]];
+            }
             
         }
         
-
+            
+        
+        
         
     } failure:^(NSError *error) {
         
@@ -201,7 +201,7 @@
     _backView.sd_layout
     .leftSpaceToView(self.view,10)
     .topSpaceToView(self.view,57)
-    .widthIs((KScreenWidth-20))
+    .rightSpaceToView(self.view,10)
     .heightIs(300);
     
     
@@ -234,7 +234,8 @@
     //户主
     _nameLabel = [[UILabel alloc]init];
     
-    _nameLabel.text = @"黎小美";
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
+    _nameLabel.text = userDic[@"name"];
     
     _nameLabel.font = [UIFont boldSystemFontOfSize:15];
     
@@ -321,6 +322,7 @@
     
     _tempytureLabel = [[UILabel alloc]init];
     
+    _tempytureLabel.text = @"温度：未知";
     _tempytureLabel.font = [UIFont boldSystemFontOfSize:15];
     
     _tempytureLabel.textColor = [UIColor whiteColor];
@@ -330,7 +332,7 @@
     _tempytureLabel.sd_layout
     .leftSpaceToView(_temptureView,32)
     .topSpaceToView(_dispatchLabel,35)
-    .widthIs(120)
+    .rightSpaceToView(self.view,10)
     .heightIs(20);
     
     _currentView = [[UIImageView alloc]init];
@@ -347,6 +349,7 @@
     
     _currentLabel = [[UILabel alloc]init];
     
+    _currentLabel.text = @"剩余电流：未知";
     _currentLabel.font = [UIFont boldSystemFontOfSize:15];
     
     _currentLabel.textColor = [UIColor whiteColor];
@@ -355,7 +358,7 @@
     _currentLabel.sd_layout
     .leftSpaceToView(_currentView,32)
     .topSpaceToView(_tempytureLabel,35)
-    .widthIs(120)
+    .rightSpaceToView(self.view,10)
     .heightIs(20);
     
     
@@ -392,7 +395,7 @@
     
     VC.name = _textTitle;
     
-    VC.listBoxID = _boxID;
+    VC.listBoxID = [_boxID stringValue];
         
     [self.navigationController pushViewController:VC animated:YES];
 
@@ -403,26 +406,13 @@
 
     HistoryAlarmController *VC = [[HistoryAlarmController alloc]init];
     
-    VC.boxIDD=_boxID;
+    VC.boxIDD=[_boxID stringValue];
     
     
     [self.navigationController pushViewController:VC animated:YES];
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

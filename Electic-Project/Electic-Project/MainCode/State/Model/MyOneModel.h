@@ -12,11 +12,14 @@
 
 @property(nonatomic,copy)NSString *boxName;
 
-@property(nonatomic,copy)NSString *orgName;
+@property(nonatomic,strong)NSNumber *boxId;
 
-@property(nonatomic,copy)NSString *id;
+@property(nonatomic,strong)NSDictionary *monitors;
 
-@property(nonatomic,copy)NSString *current;
+@property(nonatomic,strong)NSNumber *isError;
 
-@property(nonatomic,copy)NSString *temperature;
+@property(nonatomic,strong)NSNumber *isOnline;
+
++ (MyOneModel *)modelWithDic:(NSDictionary *)dic;
+
 @end

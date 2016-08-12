@@ -17,6 +17,8 @@
     UIButton    *_zoomOut;
     
     NSInteger   _anotationTag;
+    
+    NSString    *_searchString;
 
 }
 

@@ -16,7 +16,7 @@
 @property(nonatomic,copy)NSString *textTitle;
 
 //配电箱ID
-@property(nonatomic,copy)NSString *boxID;
+@property(nonatomic,strong)NSNumber *boxID;
 
 //地址
 @property(nonatomic,copy)NSString *address;
