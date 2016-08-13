@@ -12,6 +12,7 @@
 		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
 		D6A9F4371D113289009E38A2 /* HistoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */; };
 		D6A9F4381D113289009E38A2 /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */; };
+		D6B18B511D5DB06D0017B0DC /* MonitorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B18B501D5DB06D0017B0DC /* MonitorModel.m */; };
 		D6D809491D2FB06A00C8DED3 /* 报警_无记录.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D809481D2FB06A00C8DED3 /* 报警_无记录.png */; };
 		DD0680A51D1168E900B4DA6C /* DeviceVerdifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */; };
 		DD0680A61D1168E900B4DA6C /* DeviceVerdifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0680A41D1168E900B4DA6C /* DeviceVerdifyController.xib */; };
@@ -190,6 +191,8 @@
 		D6A9F4341D113289009E38A2 /* HistoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryHeaderView.h; sourceTree = "<group>"; };
 		D6A9F4351D113289009E38A2 /* HistoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryHeaderView.m; sourceTree = "<group>"; };
 		D6A9F4361D113289009E38A2 /* HistoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		D6B18B4F1D5DB06D0017B0DC /* MonitorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorModel.h; sourceTree = "<group>"; };
+		D6B18B501D5DB06D0017B0DC /* MonitorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorModel.m; sourceTree = "<group>"; };
 		D6D809481D2FB06A00C8DED3 /* 报警_无记录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报警_无记录.png"; sourceTree = "<group>"; };
 		DD0680A21D1168E900B4DA6C /* DeviceVerdifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceVerdifyController.h; sourceTree = "<group>"; };
 		DD0680A31D1168E900B4DA6C /* DeviceVerdifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceVerdifyController.m; sourceTree = "<group>"; };
@@ -1142,6 +1145,8 @@
 			children = (
 				FC7FC7F81D1152BF008FAB7D /* MyOneModel.h */,
 				FC7FC7F91D1152BF008FAB7D /* MyOneModel.m */,
+				D6B18B4F1D5DB06D0017B0DC /* MonitorModel.h */,
+				D6B18B501D5DB06D0017B0DC /* MonitorModel.m */,
 				FC7FC7F41D1151F2008FAB7D /* MyTwoModel.h */,
 				FC7FC7F51D1151F2008FAB7D /* MyTwoModel.m */,
 			);
@@ -1430,6 +1435,7 @@
 				DD0739931D10DED500AC5027 /* NSString+Extension.m in Sources */,
 				DD073A051D10DED500AC5027 /* MyOneHeaderView.m in Sources */,
 				DD073A001D10DED500AC5027 /* HistoryAlarmController.m in Sources */,
+				D6B18B511D5DB06D0017B0DC /* MonitorModel.m in Sources */,
 				DD0739F91D10DED500AC5027 /* MineCell.m in Sources */,
 				DD0739F51D10DED500AC5027 /* PersonViewController.m in Sources */,
 				DD0739E21D10DED500AC5027 /* HistoryViewController.m in Sources */,
@@ -1549,7 +1555,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project00";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1567,7 +1573,7 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project00";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

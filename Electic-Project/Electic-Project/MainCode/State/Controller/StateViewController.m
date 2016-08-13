@@ -27,23 +27,10 @@ static NSString *headerViewIdentifier = @"hederview";
     UICollectionView *_collectionView;
     
     DetailViewController *VC;
-    //组数
-    NSMutableArray *_dataArray;
-    
-    UILabel *_tempLabel;
-    
-    UILabel *_currentLabel;
-    
-    
-    
-    //存储item个数的数组
-    NSMutableArray *_itemArray;
-    
-    NSMutableArray *_dataArray2;
+    //组
+    NSArray *_data;
 
-    
     MyOneModel *_model;
- 
 
 }
 
@@ -73,19 +60,14 @@ static NSString *headerViewIdentifier = @"hederview";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _dataArray = [NSMutableArray array];
 
-    _itemArray = [NSMutableArray array];
-    
-    _dataArray2 = [NSMutableArray array];
     
     self.title = @"配电箱";
     
     [self initNavBar];
     
     //创建搜索
-    [self creatSearch];
+//    [self creatSearch];
     
     //创建数据源
     [self creatData];
@@ -96,28 +78,22 @@ static NSString *headerViewIdentifier = @"hederview";
 }
 
 
--(void)creatSearch
-{
-    
-    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(10, 7, KScreenWidth-20, 40)];
-    _searchBar.barStyle = UIBarStyleBlackTranslucent;
-    _searchBar.placeholder = @"搜索";
-    
-    
-    _searchBar.delegate = self;
-    
-    [_searchBar setImage:[UIImage imageNamed:@"搜索图"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-//
-//    _searchBar.backgroundColor = [UIColor clearColor];
-//    [_searchBar setSearchFieldBackgroundImage:nil forState:UIControlStateNormal];
-//    _searchBar.backgroundImage = nil;
-//
-//    UIView *view = [_searchBar.subviews objectAtIndex:0];
-//    view.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_searchBar];
-    
-    
-}
+//-(void)creatSearch
+//{
+//    
+//    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(10, 7, KScreenWidth-20, 40)];
+//    _searchBar.barStyle = UIBarStyleBlackTranslucent;
+//    _searchBar.placeholder = @"搜索";
+//    
+//    
+//    _searchBar.delegate = self;
+//    
+//    [_searchBar setImage:[UIImage imageNamed:@"搜索图"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+
+//    [self.view addSubview:_searchBar];
+//    
+//    
+//}
 
 #pragma mark--数据源相关
 
@@ -140,30 +116,12 @@ static NSString *headerViewIdentifier = @"hederview";
     [TestTool post:url
             params:params
            success:^(id json) {
-                   
-               _dataArray = [json objectForKey:@"data"];
                
-               for (NSDictionary *rootdic in _dataArray) {
-                   
-                  
-                   NSArray *array = [rootdic objectForKey:@"boxs"];
-                   
-                   NSLog(@"%@",array);
-                   for (NSDictionary *dic in array) {
-                       
-                       NSLog(@"%@",[dic objectForKey:@""]);
-                       
-                       _model = [[MyOneModel alloc]init];
-                       
-                       [_model setValuesForKeysWithDictionary:dic];
-                       
-                       [_dataArray2 addObject:_model];
-                   
-                   }}
-                   
+               if (json[@"flag"]) {
+                   _data = json[@"data"];
+                    [_collectionView reloadData];
+               }
                
-               [_collectionView reloadData];
-              
             
            } failure:^(NSError *error) {
                
@@ -182,7 +140,7 @@ static NSString *headerViewIdentifier = @"hederview";
 
     _nameLabel.sd_layout
     .leftSpaceToView(self.view,0)
-    .topSpaceToView(self.view,50)
+    .topSpaceToView(self.view,15)
     .widthIs(KScreenWidth)
     .heightIs(40);
     
@@ -204,7 +162,7 @@ static NSString *headerViewIdentifier = @"hederview";
     
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 90, KScreenWidth, KScreenHeight-200) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 50, KScreenWidth, KScreenHeight-200) collectionViewLayout:flowLayout];
     _collectionView.backgroundColor = [UIColor clearColor];
     
     _collectionView.delegate = self;
@@ -226,27 +184,27 @@ static NSString *headerViewIdentifier = @"hederview";
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
 
-    return _dataArray.count;
+    return _data.count;
 
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    
-    NSArray *arr = [_dataArray[section] objectForKey:@"boxs"];
+    NSArray *arr = [_data[section] objectForKey:@"boxs"];
     
     return arr.count;
-    
-    
-
+   
 }
 
 //告知每个块应该有多大
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    return CGSizeMake((KScreenWidth-40)/3.0, 140);
+    if (KScreenWidth < 375) {
+        return CGSizeMake((KScreenWidth-15)/2.0, 130);
+    }
+    return CGSizeMake((KScreenWidth-20)/3.0, 130);
 
 }
 
@@ -254,7 +212,7 @@ static NSString *headerViewIdentifier = @"hederview";
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
 
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(10, 5, 10, 5);
 
 
 }
@@ -266,7 +224,7 @@ static NSString *headerViewIdentifier = @"hederview";
     MyOneHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerViewIdentifier forIndexPath:indexPath];
     
     headerView.backgroundColor = [UIColor clearColor];
-    headerView.addressLabel.text = [[_dataArray objectAtIndex:indexPath.section] objectForKey:@"orgName"];
+    headerView.addressLabel.text = _data[indexPath.section][@"orgName"];
     
     return headerView;
  
@@ -274,27 +232,12 @@ static NSString *headerViewIdentifier = @"hederview";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-    NSDictionary *dic = [_dataArray objectAtIndex:indexPath.section];
-    NSArray *arr = [dic
-                    objectForKey:@"boxs"];
-    NSDictionary *dataDic = [arr objectAtIndex:indexPath.row];
-    
-    MyOneModel *model = _dataArray2[indexPath.row];
-    
-    
-
+    NSDictionary *dic = _data[indexPath.section][@"boxs"][indexPath.row];
+    MyOneModel *model = [MyOneModel modelWithDic:dic];
+//
     VC = [[DetailViewController alloc]init];
-    
-    
-    VC.boxID = model.id;
-    
-    VC.name = [[_dataArray objectAtIndex:indexPath.section] objectForKey:@"orgName"];
- ;
-  
-    VC.textTitle = [dataDic objectForKey:@"boxName"];
-    
+    VC.boxID = model.boxId;
+    VC.name = _data[indexPath.section][@"orgName"];
     
     [self.navigationController pushViewController:VC animated:YES];
     
@@ -305,54 +248,46 @@ static NSString *headerViewIdentifier = @"hederview";
 #pragma mark---UICollectionViewDataSource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
-        
+  
         MyOneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
         cell.backgroundColor = [UIColor clearColor];
-//        MyOneModel *model = _dataArray2[indexPath.row];
-////
-//        [cell configCellWithModel:model];
     
+    [cell.backView setImage:[UIImage imageNamed:@"配电箱背景"]];
+   
+    NSDictionary *dic = _data[indexPath.section][@"boxs"][indexPath.row];
+    MyOneModel *model = [MyOneModel modelWithDic:dic];
     
-    NSDictionary *dic = [_dataArray objectAtIndex:indexPath.section];
-    NSArray *arr = [dic
-                    objectForKey:@"boxs"];
-    NSDictionary *dataDic = [arr objectAtIndex:indexPath.row];
-    cell.nameLabel.text = [dataDic objectForKey:@"boxName"];
+    cell.nameLabel.text = model.boxName;
     
-    cell.backView.image = [UIImage imageNamed:@"配电箱背景"];
-
-    NSDictionary *monitorDic = [dataDic objectForKey:@"monitors"];
-    
-    if (![[monitorDic objectForKey:@"current"] isKindOfClass:[NSNull class]]) {
-        NSDictionary *currentDic = [monitorDic objectForKey:@"current"];
-        
-            cell.residualcurrentLabel.text = [NSString stringWithFormat:@"%ldA",[[currentDic objectForKey:@"curValue"] integerValue]];
-        
-        
-            
-    }else
-    {
-    
-        cell.residualcurrentLabel.text = @"暂无数据";
-    
+    if ([model.isError boolValue]) {
+        cell.stateLabel.textColor = [UIColor redColor];
+        cell.stateLabel.text = @"异常";
+    }else {
+        cell.stateLabel.textColor = [UIColor whiteColor];
+        cell.stateLabel.text = @"正常";
     }
     
-     if (![[monitorDic objectForKey:@"temperature"] isKindOfClass:[NSNull class]]) {
-        NSDictionary *temperatureDic = [monitorDic objectForKey:@"temperature"];
+    NSArray *temperatures = model.monitors[@"temperature"];
+    if (temperatures.count>0) {
+        NSMutableArray *tems = [NSMutableArray array];
+        for (int i=0; i<1; i++) {
+            NSDictionary *tDic = temperatures[i];
+            NSString *tString = [NSString stringWithFormat:@"%@A",tDic[@"curValue"]];
+            [tems addObject:tString];
+        }
+        cell.temperatureLabel.text = [NSString stringWithFormat:@"温度：%@",[tems componentsJoinedByString:@","]];
+    }
+    NSArray *currents = model.monitors[@"current"];
+    if (currents.count>0) {
+        NSMutableArray *curs = [NSMutableArray array];
+        for (int i=0; i<1; i++) {
+            NSDictionary *cDic = currents[i];
+            NSString *tString = [NSString stringWithFormat:@"%@A",cDic[@"curValue"]];
+            [curs addObject:tString];
+        }
+        cell.residualcurrentLabel.text = [NSString stringWithFormat:@"剩余电流：%@",[curs componentsJoinedByString:@","]];
+    }
 
-    
-    cell.temperatureLabel.text = [NSString stringWithFormat:@"%ld℃",[[temperatureDic objectForKey:@"curValue"] integerValue]];
-        
-         
-     }else
-     {
-     
-       cell.temperatureLabel.text = @"暂无数据";
-         
-     }
-    
     
     return cell;
    
@@ -362,42 +297,42 @@ static NSString *headerViewIdentifier = @"hederview";
 
 #pragma mark - UISearchBarDelegate
 
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    
-    NSLog(@"%@",searchText);
-    
-}
+//-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+//{
+//    
+//    NSLog(@"%@",searchText);
+//    
+//}
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    
-    [self didClickedSearchButton:nil];//点击按钮
-}
-
-- (void)didClickedSearchButton:(UIButton *)sender{
-    
-    [self refreshData];//点击按钮的网络请求
-    
-}
+//-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+//{
+//    
+//    [self didClickedSearchButton:nil];//点击按钮
+//}
+//
+//- (void)didClickedSearchButton:(UIButton *)sender{
+//    
+//    [self refreshData];//点击按钮的网络请求
+//    
+//}
 
 
 #pragma mark - UIScrollViewDelegate
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-    [_searchBar resignFirstResponder];
-    
-}
-
--(void)refreshData
-{
-    
-    [_searchBar resignFirstResponder];
-    
-    
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    
+//    [_searchBar resignFirstResponder];
+//    
+//}
+//
+//-(void)refreshData
+//{
+//    
+//    [_searchBar resignFirstResponder];
+//    
+//    
+//}
 
 
 @end

@@ -52,10 +52,4 @@
 
 }
 
--(void)configCellWithModel:(MyOneModel *)model
-{
-    
-    self.addressLabel.text = [NSString stringWithFormat:@"%@",model.orgName];
-    
-}
 @end

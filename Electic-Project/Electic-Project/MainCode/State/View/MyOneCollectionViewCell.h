@@ -29,6 +29,9 @@
 //剩余电流值
 @property(nonatomic,strong)UILabel *residualcurrentLabel;
 
+//是否异常
+@property (nonatomic,strong)UILabel *stateLabel;
+
 -(void)configCellWithModel:(MyOneModel *)model;
 
 
