@@ -10,13 +10,12 @@
 #define Common_h
 
 //测试服务器
-//#define BASE_URL @"http://120.24.41.38:8182"
-
-//#define BASE_URL @"http://192.168.0.252:8887"
+#define BASE_URL @"http://192.168.0.252:8887"
+#define PIC_URL @"http://192.168.0.252:8000/epFile"
 //正式服务器
-#define BASE_URL @"http://120.76.192.1:8081"
+//#define BASE_URL @"http://120.76.192.1:8081"
 ////图片地址
-#define PIC_URL @"http://120.76.192.1:8082/epFile"
+//#define PIC_URL @"http://120.76.192.1:8082/epFile"
 
 
 /*--------------报警------------------*/
