@@ -22,6 +22,6 @@
 
 //隐藏HUD(失败)
 - (void)hideFailHUD:(NSString *)title;
-
+- (void)showTitle:(NSString *)title;
 
 @end

@@ -111,13 +111,24 @@
                    withObject:nil
                    afterDelay:2.f];
     }
-    
 }
 
-- (void)changgeModel{
+- (void)changgeModel {
     
     _hud.mode = MBProgressHUDModeIndeterminate;
+}
+
+- (void)showTitle:(NSString *)title
+{
+    _hud = nil;
+    _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    _hud.labelText = title;
+    _hud.mode = MBProgressHUDModeDeterminate;
+    [_hud show:YES];
+    [_hud hide:YES afterDelay:1.5];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    });
 }
 
 @end
