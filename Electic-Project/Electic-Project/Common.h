@@ -54,10 +54,12 @@
 /*--------------用户------------------*/
 //用户登录
 #define LoginURL @"/eps/sys/user/login"
+//获取验证码
+#define VerificationCodeURL @"/eps/sms/yzm"
 //用户激活（第一次登陆）
 #define ActiveUserURL @"/eps/sys/user/activate"
 //用户修改密码
-#define ModifyPasswordURL @"/eps/sys/user/password"
+#define ModifyPasswordURL @"/eps/sys/user/backpass"
 //用户修改信息
 #define ModifyUserMsgURL @"/eps/sys/staff/update"
 //用户意见反馈

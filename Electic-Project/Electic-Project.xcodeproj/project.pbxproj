@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDF748F31D66FB1400D957C7 /* WoReaderLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF748F21D66FB1400D957C7 /* WoReaderLoadingView.m */; };
 		D69723F61D30A4610002D26D /* 验证_设备.png in Resources */ = {isa = PBXBuildFile; fileRef = D69723F51D30A4610002D26D /* 验证_设备.png */; };
 		D6A9F4321D1131D9009E38A2 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4301D1131D8009E38A2 /* HistoryCell.m */; };
 		D6A9F4331D1131D9009E38A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9F4311D1131D8009E38A2 /* HistoryCell.xib */; };
@@ -184,6 +185,8 @@
 
 /* Begin PBXFileReference section */
 		1F89AB25EDB34E1E3857F2E9 /* Pods-Electic-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electic-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project.release.xcconfig"; sourceTree = "<group>"; };
+		BDF748F11D66FB1400D957C7 /* WoReaderLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoReaderLoadingView.h; sourceTree = "<group>"; };
+		BDF748F21D66FB1400D957C7 /* WoReaderLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoReaderLoadingView.m; sourceTree = "<group>"; };
 		D69723F51D30A4610002D26D /* 验证_设备.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "验证_设备.png"; sourceTree = "<group>"; };
 		D6A9F42F1D1131D8009E38A2 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
 		D6A9F4301D1131D8009E38A2 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				DD0738BA1D10DED500AC5027 /* 37x-Checkmark@2x.png */,
 				DD0738BB1D10DED500AC5027 /* MBProgressHUD.h */,
 				DD0738BC1D10DED500AC5027 /* MBProgressHUD.m */,
+				BDF748F11D66FB1400D957C7 /* WoReaderLoadingView.h */,
+				BDF748F21D66FB1400D957C7 /* WoReaderLoadingView.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -1403,6 +1408,7 @@
 				DD0739921D10DED500AC5027 /* UIViewExt.m in Sources */,
 				DD0739E41D10DED500AC5027 /* HomeViewController.m in Sources */,
 				DD073A041D10DED500AC5027 /* MyOneCollectionViewCell.m in Sources */,
+				BDF748F31D66FB1400D957C7 /* WoReaderLoadingView.m in Sources */,
 				FCE4B8001D114942009996A7 /* MyOneTableViewCell.m in Sources */,
 				DD0739EF1D10DED500AC5027 /* IdeaViewController.m in Sources */,
 				FC7FC7F71D1151F2008FAB7D /* MyTwoModel.m in Sources */,

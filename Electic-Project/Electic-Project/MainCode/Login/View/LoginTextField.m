@@ -49,10 +49,7 @@
     _textField.textColor = [UIColor colorWithWhite:1 alpha:1];
     
     [self addSubview:_textField];
-    
-    
 }
-
 
 - (void)setImageName:(NSString *)imgName
         textFielText:(NSString *)textFielText
@@ -74,7 +71,6 @@
         [_button setTitleColor:[UIColor colorFromHexRGB:@"009BFF"] forState:UIControlStateNormal];
         [self addSubview:_button];
     }
-    
 }
 
 @end
