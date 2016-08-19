@@ -86,7 +86,7 @@
     
     //设置头像和名字
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
-    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,userDic[@"headPhoto"]]];
+    NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL,userDic[@"headPhoto"]]];
     [_iconImgView setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
     _nameLabel.text = userDic[@"name"];
 
@@ -117,7 +117,7 @@
 
     __weak typeof(UIImageView *)weakIcon = _iconImgView;
     [_photoView setPhotoBlock:^(NSString *filePath) {
-        NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,filePath]];
+        NSURL *headPhotoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL,filePath]];
         [weakIcon setImageWithURL:headPhotoURL placeholderImage:[UIImage imageNamed:@"我的_头像.png"]];
         
     }];
@@ -168,7 +168,7 @@
         {
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"联系我们"
-                                                                                     message:@"0737-68593223" preferredStyle:UIAlertControllerStyleAlert];
+                                                                                     message:@"0755-27588064" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *cancelAction1 = [UIAlertAction actionWithTitle:@"取消"
                                                                     style:UIAlertActionStyleCancel
                                                                   handler:^(UIAlertAction * _Nonnull action) {
@@ -180,8 +180,9 @@
                                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                                       UIWebView *webView = [[UIWebView alloc] init];
                                                                       
-                                                                      NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",@"0737-68593223"]];
+                                                                      NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",@"0755-27588064"]];
                                                                       [webView loadRequest:[NSURLRequest requestWithURL:url]];
+                                                                      [self.view addSubview:webView];
                                                                   }];
             [alertController addAction:cancelAction1];
             [alertController addAction:cancelAction2];
@@ -210,7 +211,9 @@
             break;
             
         default:
+            
             break;
+            
     }
     
 }

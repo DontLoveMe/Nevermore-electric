@@ -499,7 +499,7 @@
     
     if (_textFieldType == 100) {
    
-        cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",[dic objectForKey:@"companyAddress"],[dic objectForKey:@"name"]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",[dic objectForKey:@"companyName"],[dic objectForKey:@"name"]];
 
     }else if (_textFieldType == 101) {
         if (![[dic objectForKey:@"seqNum"] isKindOfClass:[NSNull class]]) {

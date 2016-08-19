@@ -41,7 +41,7 @@
     
     [self initNavBar];
     
-    _contactTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请留下您的联系方式（选填：QQ，电话，邮箱）"
+    _contactTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"\t请留下您的联系方式（QQ/电话/邮箱）"
                                                                       attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:0.7],NSFontAttributeName:[UIFont systemFontOfSize:13]}];
     
     _contactTF.delegate = self;
@@ -62,9 +62,11 @@
             params:params
            success:^(id json) {
                
-               [self hideSuccessHUD:[json objectForKey:@"msg"]];
+               [self hideSuccessHUD:@"提交成功，感谢您的反馈"];
                BOOL isSuccess = [[json objectForKey:@"flag"] boolValue];
                if (isSuccess) {
+                   
+                   [self.navigationController popViewControllerAnimated:YES];
                    
                }
                

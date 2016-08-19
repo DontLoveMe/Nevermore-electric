@@ -129,20 +129,22 @@
             
             _detectorLabel.text = @"探测器: 正常";
             
-        }else
-        {
+        }else{
         
             _detectorLabel.textColor = [UIColor redColor];
             
             _detectorLabel.text = @"探测器: 异常";
         }
+        
         if ([[[dic objectForKey:@"isOnline"]stringValue] isEqualToString:@"0"]) {
             
-            
-            _dispatchLabel.text = @"通讯:正常";
-        }else{
             _dispatchLabel.textColor = [UIColor redColor];
-            _dispatchLabel.text = @"通讯:异常";
+            _dispatchLabel.text = @"通讯:离线";
+            
+        }else{
+
+            _dispatchLabel.text = @"通讯:正常";
+        
         }
         
         _addressLabel.text=[NSString stringWithFormat:@"%@%@",_name,[dic objectForKey:@"boxName"]];
@@ -166,7 +168,7 @@
                 NSMutableArray *curs = [NSMutableArray array];
                 for (int i=0; i<currents.count; i++) {
                     NSDictionary *cDic = currents[i];
-                    NSString *tString = [NSString stringWithFormat:@"%@A",cDic[@"curValue"]];
+                    NSString *tString = [NSString stringWithFormat:@"%@mA",cDic[@"curValue"]];
                     [curs addObject:tString];
                 }
                 _currentLabel.text = [NSString stringWithFormat:@"剩余电流：%@",[curs componentsJoinedByString:@"  "]];
@@ -219,7 +221,7 @@
     //地址
     _addressLabel = [[UILabel alloc]init];
     
-    _addressLabel.font = [UIFont boldSystemFontOfSize:15];
+    _addressLabel.font = [UIFont boldSystemFontOfSize:14];
     
     _addressLabel.textColor = [UIColor whiteColor];
     
@@ -237,7 +239,7 @@
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
     _nameLabel.text = userDic[@"name"];
     
-    _nameLabel.font = [UIFont boldSystemFontOfSize:15];
+    _nameLabel.font = [UIFont boldSystemFontOfSize:14];
     
     _nameLabel.textColor = [UIColor whiteColor];
     
@@ -265,7 +267,7 @@
     
     _detectorLabel = [[UILabel alloc]init];
     
-    _detectorLabel.font = [UIFont boldSystemFontOfSize:15];
+    _detectorLabel.font = [UIFont boldSystemFontOfSize:14];
     
     _detectorLabel.textColor = [UIColor whiteColor];
     
@@ -294,7 +296,7 @@
     
     _dispatchLabel = [[UILabel alloc]init];
     
-    _dispatchLabel.font = [UIFont boldSystemFontOfSize:15];
+    _dispatchLabel.font = [UIFont boldSystemFontOfSize:14];
     
     _dispatchLabel.textColor = [UIColor whiteColor];
     
@@ -323,17 +325,17 @@
     _tempytureLabel = [[UILabel alloc]init];
     
     _tempytureLabel.text = @"温度：未知";
-    _tempytureLabel.font = [UIFont boldSystemFontOfSize:15];
-    
+    _tempytureLabel.font = [UIFont boldSystemFontOfSize:14];
+    _tempytureLabel.numberOfLines = 2;
     _tempytureLabel.textColor = [UIColor whiteColor];
     
     [self.view addSubview:_tempytureLabel];
     
     _tempytureLabel.sd_layout
     .leftSpaceToView(_temptureView,32)
-    .topSpaceToView(_dispatchLabel,35)
-    .rightSpaceToView(self.view,10)
-    .heightIs(20);
+    .topSpaceToView(_dispatchLabel,24)
+    .rightSpaceToView(self.view,20)
+    .heightIs(36);
     
     _currentView = [[UIImageView alloc]init];
     
@@ -350,16 +352,16 @@
     _currentLabel = [[UILabel alloc]init];
     
     _currentLabel.text = @"剩余电流：未知";
-    _currentLabel.font = [UIFont boldSystemFontOfSize:15];
-    
+    _currentLabel.font = [UIFont boldSystemFontOfSize:14];
+    _currentLabel.numberOfLines = 2;
     _currentLabel.textColor = [UIColor whiteColor];
     
     [self.view addSubview:_currentLabel];
     _currentLabel.sd_layout
     .leftSpaceToView(_currentView,32)
-    .topSpaceToView(_tempytureLabel,35)
-    .rightSpaceToView(self.view,10)
-    .heightIs(20);
+    .topSpaceToView(_tempytureLabel,24)
+    .rightSpaceToView(self.view,20)
+    .heightIs(36);
     
     
     //报警按钮
@@ -379,11 +381,10 @@
     _btn.sd_layout
     .rightSpaceToView(self.view,30)
     .topSpaceToView(_nameLabel,40)
-    .widthIs(100)
-    .heightIs(50);
+    .widthIs(84)
+    .heightIs(40);
     
     
-
 }
 
 #pragma mark --手势相关

@@ -93,7 +93,7 @@
     
     UITextField *searchField = [_searchBar valueForKey:@"_searchField"];
     // 输入文本颜色
-    searchField.textColor = [UIColor whiteColor];
+    searchField.textColor = [UIColor darkGrayColor];
     // 默认文本颜色
 //    [searchField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     
@@ -127,25 +127,28 @@
                    if (_annotations == nil) {
                        _annotations = [NSMutableArray array];
                    }
-                   [_mapView removeAnnotations:_annotations];
-                   [_annotations removeAllObjects];
                    
-                       for (int i = 0; i < _data.count; i ++) {
-                           NSDictionary *dic = _data[i];
-                           // 添加一个PointAnnotation
-                           BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
-                           CLLocationCoordinate2D coor;
-                           coor.latitude = [dic[@"latitude"] floatValue];
-                           coor.longitude = [dic[@"longitude"] floatValue];
-                           annotation.coordinate = coor;
-                           annotation.title = dic[@"orgName"];
-                           [_annotations addObject:annotation];
-                           if (i == 0) {
-                               [_mapView setCenterCoordinate:coor];
-                           }
+                   //清除地图覆盖物，重置tag，清除标注对象
+                   [_mapView removeAnnotations:_mapView.annotations];
+                   [_annotations removeAllObjects];
+                   _anotationTag = 0;
+                   
+                    for (int i = 0; i < _data.count; i ++) {
+                        NSDictionary *dic = _data[i];
+                        // 添加一个PointAnnotation
+                        BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+                        CLLocationCoordinate2D coor;
+                        coor.latitude = [dic[@"latitude"] floatValue];
+                        coor.longitude = [dic[@"longitude"] floatValue];
+                        annotation.coordinate = coor;
+                        annotation.title = dic[@"orgName"];
+                        [_annotations addObject:annotation];
+                        if (i == 0) {
+                            [_mapView setCenterCoordinate:coor];
+                        }
 
-                       }
-                       [_mapView addAnnotations:_annotations];
+                    }
+                    [_mapView addAnnotations:_annotations];
                   
                }
                
@@ -234,20 +237,6 @@
 }
 
 #pragma  mark - BMKMapUserlocationDelegate
-//- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation{
-//
-//    [_mapView setCenterCoordinate:userLocation.location.coordinate];
-//    [_mapView updateLocationData:userLocation];
-//    
-//}
-//
-//- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
-//    
-//    [_mapView setCenterCoordinate:userLocation.location.coordinate];
-//    [_mapView updateLocationData:userLocation];
-//
-//}
-
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
 
     view.selected = NO;
@@ -266,7 +255,8 @@
         newAnnotationView.tag = _anotationTag;
         _anotationTag ++;
         newAnnotationView.pinColor = BMKPinAnnotationColorPurple;
-//        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
+        newAnnotationView.animatesDrop = YES;// 设置该标注点动画显示
+        newAnnotationView.canShowCallout = NO;
         return newAnnotationView;
     }
     return nil;
@@ -283,14 +273,25 @@
 //    UICollectionViewCell *cell = []
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"未选中状态"]];
+
+    NSArray *array = cell.subviews;
+    if ([[array lastObject] isKindOfClass:[UILabel class]]) {
+        
+        UILabel *label = [array lastObject];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:15];
+        label.text = self.data[indexPath.row][@"name"];
+        
+    }else{
     
-    UILabel *lable = [[UILabel alloc] initWithFrame:cell.bounds];
-    lable.textColor = [UIColor whiteColor];
-    lable.textAlignment = NSTextAlignmentCenter;
-    lable.font = [UIFont systemFontOfSize:15];
-    [cell addSubview:lable];
-    lable.text = self.data[indexPath.row][@"companyName"];
-    
+        UILabel *lable = [[UILabel alloc] initWithFrame:cell.bounds];
+        lable.textColor = [UIColor whiteColor];
+        lable.textAlignment = NSTextAlignmentCenter;
+        lable.font = [UIFont systemFontOfSize:15];
+        [cell addSubview:lable];
+        lable.text = self.data[indexPath.row][@"name"];
+    }
     return cell;
 }
 

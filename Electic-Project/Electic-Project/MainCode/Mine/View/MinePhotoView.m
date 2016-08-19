@@ -23,7 +23,7 @@
     _iconView.layer.masksToBounds = YES;
     
     NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"];
-    NSURL *photoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/epFile%@",BASE_URL,dic[@"headPhoto"]]];
+    NSURL *photoURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",PIC_URL,dic[@"headPhoto"]]];
     UIImage *img = [UIImage imageNamed:@"我的_头像"];
     [_iconView setImageWithURL:photoURL placeholderImage:img];
     
@@ -179,6 +179,8 @@
                       
                   }
                   [self modifyPhoto:result[@"data"][@"filePath"]];
+                  [self setHidden:YES];
+                  
               }else{
 //                  [self hideFailHUD:@"上传失败"];
               }

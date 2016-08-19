@@ -139,14 +139,12 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:userDic[@"staffId"] forKey:@"staffId"];
     
-    [self showHUD:@"正在加载"];
     NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,ElecticHistoryListURL];
     
     [TestTool post:url
             params:params
            success:^(id json) {
                
-               [self hideSuccessHUD:[json objectForKey:@"msg"]];
                BOOL isSuccess = [[json objectForKey:@"flag"] boolValue];
                
                if (isSuccess) {
@@ -156,7 +154,6 @@
                
            } failure:^(NSError *error) {
                
-               [self hideFailHUD:@"加载失败"];
                NSLogSFQ(@"error:%@",error);
                
            }];

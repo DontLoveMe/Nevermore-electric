@@ -72,6 +72,7 @@
     _hud.labelText = title;
     
     [_hud show:YES];
+    
 }
 
 - (void)hideSuccessHUD:(NSString *)title {

@@ -272,7 +272,7 @@ static NSString *headerViewIdentifier = @"hederview";
         NSMutableArray *tems = [NSMutableArray array];
         for (int i=0; i<1; i++) {
             NSDictionary *tDic = temperatures[i];
-            NSString *tString = [NSString stringWithFormat:@"%@A",tDic[@"curValue"]];
+            NSString *tString = [NSString stringWithFormat:@"%@℃",tDic[@"curValue"]];
             [tems addObject:tString];
         }
         cell.temperatureLabel.text = [NSString stringWithFormat:@"温度：%@",[tems componentsJoinedByString:@","]];
@@ -282,7 +282,7 @@ static NSString *headerViewIdentifier = @"hederview";
         NSMutableArray *curs = [NSMutableArray array];
         for (int i=0; i<1; i++) {
             NSDictionary *cDic = currents[i];
-            NSString *tString = [NSString stringWithFormat:@"%@A",cDic[@"curValue"]];
+            NSString *tString = [NSString stringWithFormat:@"%@mA",cDic[@"curValue"]];
             [curs addObject:tString];
         }
         cell.residualcurrentLabel.text = [NSString stringWithFormat:@"剩余电流：%@",[curs componentsJoinedByString:@","]];
