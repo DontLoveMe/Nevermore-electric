@@ -23,7 +23,7 @@
 
 //主色调
 #define ThemeColor      @"171718"
-#define APIKEY          @"GhKNDmw608AKAisLtZ7Ht8jW"
+#define APIKEY          @"amhxLcb8MNjiCS7ZS0sKPvk8"
 #define PushChannelID   @"channelid"
 
 //取得屏幕的宽、高

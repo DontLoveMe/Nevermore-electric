@@ -11,6 +11,7 @@
 #import "ForgetPasswordController.h"
 #import "HomeViewController.h"
 #import "TestTool.h"
+#import "BPush.h"
 
 @interface LoginViewController ()// <UITextFieldDelegate>
 
@@ -104,13 +105,13 @@
     [params setObject:_userView.textField.text forKey:@"loginName"];
     [params setObject:[MD5Security MD5String:_passwordView.textField.text] forKey:@"password"];
     [params setObject:@"4" forKey:@"deviceType"];
-//    NSString *channelID = [BPush getChannelId];
-//    if (channelID.length == 0) {
-//        [params setObject:channelID forKey:@"channelId"];
-//    }
+    NSString *channelID = [BPush getChannelId];
+    if (channelID && channelID.length > 0) {
+        [params setObject:channelID forKey:@"channelId"];
+    }
     
     [self showHUD:@"正在登录"];
-    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,LoginURL];
+    NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL,LoginURL];
 //    NSString *url = [NSString stringWithFormat:@"%@%@",@"http://192.168.0.252:8887",@"/eps/sys/user/login"];
     [TestTool post:url params:params success:^(id json) {
 

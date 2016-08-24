@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8747D0B71D6D377C00BC9B59 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8747D0B61D6D377C00BC9B59 /* libBPush.a */; };
+		8747D0B91D6D37E900BC9B59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8747D0B81D6D37E900BC9B59 /* Foundation.framework */; };
+		8747D0BB1D6D37F600BC9B59 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8747D0BA1D6D37F600BC9B59 /* CoreTelephony.framework */; };
+		8747D0BD1D6D380700BC9B59 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8747D0BC1D6D380700BC9B59 /* libz.tbd */; };
+		8747D0BF1D6D380D00BC9B59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8747D0BE1D6D380D00BC9B59 /* SystemConfiguration.framework */; };
 		BDF748F31D66FB1400D957C7 /* WoReaderLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF748F21D66FB1400D957C7 /* WoReaderLoadingView.m */; };
 		D69723F61D30A4610002D26D /* 验证_设备.png in Resources */ = {isa = PBXBuildFile; fileRef = D69723F51D30A4610002D26D /* 验证_设备.png */; };
 		D6A9F4321D1131D9009E38A2 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9F4301D1131D8009E38A2 /* HistoryCell.m */; };
@@ -185,6 +190,12 @@
 
 /* Begin PBXFileReference section */
 		1F89AB25EDB34E1E3857F2E9 /* Pods-Electic-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electic-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Electic-Project/Pods-Electic-Project.release.xcconfig"; sourceTree = "<group>"; };
+		8747D0B51D6D377C00BC9B59 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
+		8747D0B61D6D377C00BC9B59 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
+		8747D0B81D6D37E900BC9B59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8747D0BA1D6D37F600BC9B59 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8747D0BC1D6D380700BC9B59 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		8747D0BE1D6D380D00BC9B59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BDF748F11D66FB1400D957C7 /* WoReaderLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoReaderLoadingView.h; sourceTree = "<group>"; };
 		BDF748F21D66FB1400D957C7 /* WoReaderLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoReaderLoadingView.m; sourceTree = "<group>"; };
 		D69723F51D30A4610002D26D /* 验证_设备.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "验证_设备.png"; sourceTree = "<group>"; };
@@ -420,6 +431,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8747D0BF1D6D380D00BC9B59 /* SystemConfiguration.framework in Frameworks */,
+				8747D0BD1D6D380700BC9B59 /* libz.tbd in Frameworks */,
+				8747D0BB1D6D37F600BC9B59 /* CoreTelephony.framework in Frameworks */,
+				8747D0B91D6D37E900BC9B59 /* Foundation.framework in Frameworks */,
+				8747D0B71D6D377C00BC9B59 /* libBPush.a in Frameworks */,
 				F1BDADB562EE3AD1CE2B37C0 /* libPods-Electic-Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,9 +455,22 @@
 		5E1B5F7FA30BB03450320AA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8747D0BE1D6D380D00BC9B59 /* SystemConfiguration.framework */,
+				8747D0BC1D6D380700BC9B59 /* libz.tbd */,
+				8747D0BA1D6D37F600BC9B59 /* CoreTelephony.framework */,
+				8747D0B81D6D37E900BC9B59 /* Foundation.framework */,
 				FA7F83A08FECAB5AF7C98E66 /* libPods-Electic-Project.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8747D0B41D6D376F00BC9B59 /* LibBPush */ = {
+			isa = PBXGroup;
+			children = (
+				8747D0B51D6D377C00BC9B59 /* BPush.h */,
+				8747D0B61D6D377C00BC9B59 /* libBPush.a */,
+			);
+			path = LibBPush;
 			sourceTree = "<group>";
 		};
 		DD06809E1D1168CD00B4DA6C /* DeviceVerdify */ = {
@@ -534,6 +563,7 @@
 		DD0738B71D10DED500AC5027 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				8747D0B41D6D376F00BC9B59 /* LibBPush */,
 				DD0738B81D10DED500AC5027 /* MBProgressHUD */,
 				DD0738BD1D10DED500AC5027 /* SDAutoLayout */,
 				DD0738C21D10DED500AC5027 /* Security */,
@@ -1192,7 +1222,15 @@
 				TargetAttributes = {
 					DD07389C1D10DE5000AC5027 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 84W6EV66WN;
+						DevelopmentTeam = 57L7R3D5BC;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1561,7 +1599,11 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Electic-Project/3rd/LibBPush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.songming.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1579,7 +1621,11 @@
 				INFOPLIST_FILE = "Electic-Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Electic-Project";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Electic-Project/3rd/LibBPush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.songming.Electic-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
