@@ -123,7 +123,7 @@
     [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userDic"][@"loginName"] forKey:@"loginName"];
     [params setObject:_userTF.text forKey:@"phone"];
     [params setObject:_verifyTF.text forKey:@"captcha"];
-    [params setObject:_passwordTF1.text forKey:@"password"];
+    [params setObject:[MD5Security MD5String:_passwordTF1.text] forKey:@"password"];
     
     [self showHUD:@"正在保存..."];
     NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, ModifyPasswordURL];
